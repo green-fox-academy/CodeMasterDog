@@ -1,0 +1,323 @@
+#include <stdio.h>
+
+/*
+store your age, height(for example: 1.85 in meters) as different variables
+print them out, using only one printf function
+use correct variables for each
+*/
+
+int main() {
+
+float age = 35, hight = 180;
+printf("%.1f, %.2f", age, hight);
+	return 0;
+}
+
+
+//-----------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+write a program to check whether a given number is positive or negative
+*/
+
+int main()
+{
+    
+    int a = 212;
+    if (a == 0) {
+        printf("The number is zero (%d)" ,a);
+    }
+    else {
+        if (a > 0) {
+                printf("The number is positive (%d)" ,a);
+    }
+    else {
+        printf("The number is negative (%d)" ,a);
+        }
+
+    }
+    return 0;
+}
+
+//-----------------------------------
+
+#include <stdio.h>
+
+int main()
+ {
+for (int i = 0; i < 10; i++)
+{
+   printf("%d\n", i);
+}
+
+	return 0;
+}
+
+
+//-----------------------------------
+
+#include <stdio.h>
+#include <stdint.h>
+
+int main() {
+	uint8_t ae = 4;
+	// print "yeeeeeeeey" ae times
+	for (int times=0; times<ae; times++)
+        printf("yeeeeeeeey\n");
+	return 0;
+}
+
+
+//-----------------------------------
+		
+
+
+
+
+#include <stdio.h>
+
+int main() {
+	// Write a program that prints the numbers from 1 to 100.
+	// But for multiples of three print "Fizz" instead of the number
+	// and for the multiples of five print "Buzz".
+	// For numbers which are multiples of both three and five print "FizzBuzz".
+
+	int nr=0;
+
+	while(nr<=99){
+    nr++;
+    if (nr%5==0&&nr%3==0){
+        printf("FizzBuzz\n");
+        }
+    else {
+        if (nr%3==0) {
+            printf("Fizz\n");
+        }
+        else{
+            if (nr%5==0){
+                printf("Buzz\n");
+            }
+            else{
+                printf("%d\n", nr);
+            }
+        }
+    }
+    //printf("sdf\n");
+	}
+	return 0;
+}
+
+
+//-----------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+create a simple program which checks if the num is odd or even
+*/
+
+int main()
+{
+    int num, a;
+    num = 13;
+    a   =num%2;
+switch(a){
+case (0):
+    printf("A is an even number.");
+    break;
+case (1):
+     printf("A is an odd number.");
+     break;
+}
+
+    return 0;
+}
+
+//-----------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+create a program which generates numbers from 0 to 100
+for each number write if the number is odd or even (don't print out the numbers)
+*/
+
+int main()
+{
+for (int i = 0; i <= 100; i++){
+   int mod = i%2;
+   switch(mod==0){	
+	case (1):
+    	printf("I is an even number.\n");
+    	break;
+	case (0):
+     	printf("I is an odd number.\n");
+     	break;
+
+
+
+   printf("%d\n", i);
+    }
+}
+    return 0;
+}
+
+//-----------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* #9
+write a program that decides which number is bigger
+use switch-statement
+*/
+
+int main()
+{
+    int num1;
+    int num2;
+
+    num1 = 85;
+    num2 = 96;
+
+    if (num1>num2) {
+            printf("Num1 is bigger than Num2\n");
+            }
+    else{
+
+        printf("Num1 is smaller than Num2\n");
+    }
+
+    return 0;
+}
+
+//-----------------------------------
+
+//LC example for cycle
+#include <stdio.h>
+#include <stdint.h>
+
+int main() {
+	for(int i = 1; i < 11;i++){
+        printf("\n\n=== multiplication table of %d ===\n",i);
+        for (int j= 1; j< 11; j++){
+            printf("%d * %d = %d\n",i,j, i*j);
+        }
+}
+
+	return 0;
+}
+
+//-----------------------------------
+
+//LC example for (almost) random numbers
+#include <stdio.h>
+#include <stdint.h>
+
+int main() {
+for (int i = 0; i < 10; i++){
+
+        printf("%d\n", rand()%100);
+    }
+	return 0;
+}
+
+
+//-----------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/*
+write a simple program which can help you decide is it hot enough to turn on the AC or not
+for example if temperature 20 or less the output is :
+it is too cold for the AC
+or, the temperature is between 21-24:
+it is up to you to turn on the AC
+...
+*/
+
+int main()
+{
+    int temperature;
+    temperature = 51;
+if (temperature<=20){
+    printf("It is too cold to turn the AC on.");
+}
+else{
+    if (temperature>=21&&temperature<=24){
+        printf("The AC is efficient at this temperature. You can turn it on now.");
+    }
+    else if (temperature>=25&&temperature<=50) {
+        printf("The AC is not efficient at this temperature. But you can turn it on now.");
+    }
+    else{ printf("Warning! Using the AC at this temperature is NOT safe.");}
+
+}
+    return 0;
+}
+
+
+
+
+//-----------------------------------//-----------------------------------//-----------------------------------
+11.c hiányzik
+//-----------------------------------//-----------------------------------//-----------------------------------//-----------------------------------
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* 12.c
+create a program which prints out the days from monday to sunday
+use a loop and variables to do that
+for example:
+for(int i = 0; i < 6; i++){
+    printf("%d\n", i);
+}
+you can match the numbers with the name of the days
+write this program first with if and else-if statements
+then do it again with switch-statement
+take the conclusion:
+    - which method was faster?
+    - which was shorter?
+    - which one did you find easier?
+*/
+
+int main()
+{
+    for (int i = 1; i<=7; i++){
+        switch (i){
+
+        case (1):
+        printf("Sunday\n");
+        case (2):
+        printf("Monday\n");
+        case (3):
+        printf("Tuesday\n");
+        case (4):
+        printf("Wednesday\n");
+        case (5):
+        printf("Thursday\n");
+        case (6):
+        printf("Friday\n");
+        case (7):
+        printf("Saturday\n");
+
+        }
+    break;
+    }
+    return 0;
+}
+
+
+//-----------------------------------
