@@ -403,3 +403,230 @@ int main()
 
 
 //-----------------------------------
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* 15.c
+Create a program which can tell how to pay an exact amount of money
+for example 45670 Ft, is the amount (store this as an integer)
+and the output should be:
+2-20000Ft
+1-5000Ft
+1-500Ft
+1-100Ft
+1-50Ft
+1-20Ft
+*/
+
+/*
+Take care of the rounding (when giving back 5 coins):
+1, 2 - 0 down
+3, 4 - 5 up
+6, 7 - 5 down
+8, 9 - 0 up
+*/
+
+int main()
+{
+    int amount_of_money = 25642;
+    int db20000 = 0;
+       switch (amount_of_money%10){
+        case (1):
+        amount_of_money=amount_of_money-1;
+        break;
+        case (2):
+        amount_of_money=amount_of_money-2;
+        break;
+        case (3):
+        amount_of_money=amount_of_money+2;
+        break;
+        case (4):
+        amount_of_money=amount_of_money+1;
+        break;
+        case (6):
+        amount_of_money=amount_of_money-1;
+        break;
+        case (7):
+        amount_of_money=amount_of_money-2;
+        break;
+        case (8):
+        amount_of_money=amount_of_money+2;
+        break;
+        case (9):
+        amount_of_money=amount_of_money+1;
+        break;
+        default:
+        amount_of_money=amount_of_money;
+       }
+ if (amount_of_money<5){
+     printf("Az osszeg kevesebb, mint 5 Forint.");
+     return 0;
+ }
+ else {
+    while(amount_of_money>=0) {
+        amount_of_money = amount_of_money-20000;
+        db20000=db20000+1;
+        if (amount_of_money<1){
+            printf("%d db 20.000-es cimlet\n", db20000-1);
+           // printf("Maradt: %df Ft.\n", amount_of_money+20000);
+            }
+    }
+ }
+amount_of_money=amount_of_money+20000;
+db20000= 0;
+
+while(amount_of_money>=0) {
+    amount_of_money = amount_of_money-10000;
+    db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 10.000-es cimlet\n", db20000-1);
+   // printf("Maradt: %d Ft.\n", amount_of_money+10000);
+
+    }
+}
+
+amount_of_money=amount_of_money+10000;
+db20000= 0;
+
+while(amount_of_money>=0) {
+    amount_of_money = amount_of_money-5000;
+    db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 5.000-es cimlet\n", db20000-1);
+ //   printf("Maradt: %d Ft.\n", amount_of_money+5000);
+    }
+}
+
+amount_of_money=amount_of_money+5000;
+db20000= 0;
+
+while(amount_of_money>=0) {
+    amount_of_money = amount_of_money-2000;
+    db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 2.000-es cimlet\n", db20000-1);
+  //  printf("Maradt: %d Ft.\n", amount_of_money+2000);
+    }
+}
+
+amount_of_money=amount_of_money+2000;
+db20000= 0;
+
+while(amount_of_money>=0) {
+amount_of_money = amount_of_money-1000;
+db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 1.000-es cimlet\n", db20000-1);
+  //  printf("Maradt: %d Ft.\n", amount_of_money+1000);
+    }
+}
+amount_of_money=amount_of_money+1000;
+db20000= 0;
+
+while(amount_of_money>=0) {
+amount_of_money = amount_of_money-500;
+db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 500-os cimlet\n", db20000-1);
+  //  printf("Maradt: %d Ft.\n", amount_of_money+500);
+    }
+}
+amount_of_money=amount_of_money+500;
+db20000= 0;
+
+while(amount_of_money>=0) {
+    amount_of_money = amount_of_money-200;
+    db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 200-os cimlet\n", db20000-1);
+  //  printf("Maradt: %d Ft.\n", amount_of_money+200);
+    }
+}
+amount_of_money=amount_of_money+200;
+db20000= 0;
+
+while(amount_of_money>=0) {
+    amount_of_money = amount_of_money-100;
+    db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 100-os cimlet\n", db20000-1);
+ //   printf("Maradt: %d Ft.\n", amount_of_money+100);
+    }
+}
+
+
+
+
+
+
+
+
+
+amount_of_money=amount_of_money+100;
+db20000= 0;
+
+while(amount_of_money>=0) {
+amount_of_money = amount_of_money-50;
+db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 50-os cimlet\n", db20000-1);
+  //  printf("Maradt: %d Ft.\n", amount_of_money+500);
+    }
+}
+
+
+
+amount_of_money=amount_of_money+50;
+db20000= 0;
+
+while(amount_of_money>=0) {
+amount_of_money = amount_of_money-20;
+db20000=db20000+1;
+    if (amount_of_money<=1){
+    printf("%d db 20-os cimlet\n", db20000-1);
+
+    }
+}
+
+
+
+
+
+
+
+amount_of_money=amount_of_money+20;
+db20000= 0;
+
+while(amount_of_money>=0) {
+amount_of_money = amount_of_money-10;
+db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 10-os cimlet\n", db20000-1);
+  //  printf("Maradt: %d Ft.\n", amount_of_money+500);
+    }
+}
+
+
+
+
+
+
+
+amount_of_money=amount_of_money+10;
+db20000= 0;
+
+while(amount_of_money>=0) {
+    amount_of_money = amount_of_money-5;
+    db20000=db20000+1;
+    if (amount_of_money<1){
+    printf("%d db 5-os cimlet\n", db20000-1);
+   // printf("Maradt: %d Ft.\n", amount_of_money+5);
+    }
+}
+return 0;
+}
+
+
+//-----------------------------------
