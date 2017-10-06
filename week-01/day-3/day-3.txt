@@ -269,8 +269,8 @@ else{
 
 
 //-----------------------------------//-----------------------------------//-----------------------------------
-11.c hiányzik
-//-----------------------------------//-----------------------------------//-----------------------------------//-----------------------------------
+11.c skipped for now (understood, but not mine solution)
+//-----------------------------------//-----------------------------------//-----------------------------------
 
 
 
@@ -316,6 +316,88 @@ int main()
         }
     break;
     }
+    return 0;
+}
+
+
+//-----------------------------------
+
+#include <stdio.h>
+
+/* 13.c
+create a program which converts the fahrenheit to celsius
+the output should look like this:
+Fahrenheit       Celsius
+  0               -17.8
+ 20                -6.7
+ 40                 4.4
+ 60                15.6
+...
+print out at least 10 lines
+*/
+
+int main() {
+
+    for (int i = 0; i <9; i++) {
+     //rand() % (max_number + 1 - minimum_number) + minimum_number //rand in range
+     float szam = (rand() % (80 + 1 - 30) + 30);
+     printf("       F\xf8 = %.2f C\xf8", szam);
+     printf("\r%.2f\n", (szam*9/5+32));
+    }
+
+	return 0;
+}
+
+
+//-----------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* 15.c
+Create a program which can tell how to pay an exact amount of money
+for example 45670 Ft, is the amount (store this as an integer)
+and the output should be:
+2-20000Ft
+1-5000Ft
+1-500Ft
+1-100Ft
+1-50Ft
+1-20Ft
+*/
+
+/*
+Take care of the rounding (when giving back 5 coins):
+1, 2 - 0 down
+3, 4 - 5 up
+6, 7 - 5 down
+8, 9 - 0 up
+*/
+
+int main()
+{
+
+
+    int amount_of_money = 57545;
+    float floatmoney = amount_of_money;
+    int db20000 = 0;
+  //   printf("%.2f",floatmoney/20000);
+
+ if (floatmoney<5){
+    printf("Az osszeg kevesebb, mint 5 Forint.");
+ }
+ else {
+        while(floatmoney>=1) {
+    printf("%f\n", floatmoney);
+    floatmoney = floatmoney-20000;
+    db20000++;
+    printf("%d db 20.000-es cimlet\n", db20000-1);
+
+}
+
+ }
+
+
     return 0;
 }
 
