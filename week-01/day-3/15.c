@@ -30,7 +30,7 @@ int main()
 
 
     if (amount_of_money<5){
-        printf("The value is less than the value of any coins\n\     (Cannot pay from the cash register)\n\n\n");
+        printf("\nThe value is less than the value of any coins.\n     (Can not pay from the cash register.)     \n\n");
         return 0;
     }
 
