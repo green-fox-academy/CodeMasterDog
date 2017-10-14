@@ -5,14 +5,11 @@ create_palindrome();
 char mkpal[256];
 /*Palindrome builder
 What the hell is a palindrome?
-
 A palindrome is a word, phrase, number,
 or other sequence of characters which reads
 the same backward as forward, such as madam or racecar.
-
 Create a function named create palindrome following your current language's style guide.
 It should take a string, create a palindrome from it and then return it.
-
 input	    output
 ""          ""
 "greenfox"	"greenfoxxofneerg"
@@ -31,6 +28,7 @@ int create_palindrome()
     system("cls");
     printf("This sequence will be transformed to a palindrome:\n%s\n", mkpal);
     printf("\nYour palindrome:\n", mkpal[100]);
+    printf("%s", mkpal);
     for(int i = sizeof(mkpal)-1; i>-1; i--){
         if (mkpal[i] != 0)
             printf("%c", mkpal[i]);
