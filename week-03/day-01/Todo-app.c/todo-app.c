@@ -94,7 +94,7 @@ void see_tasks()
 {
 
 	printf("Num | Tasks\n");
-	for (int i = 0; i < num_tasks - 1; i++) {
+	for (int i = 0; i < num_tasks ; i++) {
 		if (tasks[i].done) {
 			printf("%d [x] - %s\n", i + 1, tasks[i].name);
 		} else {
