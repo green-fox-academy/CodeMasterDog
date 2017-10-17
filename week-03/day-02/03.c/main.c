@@ -2,7 +2,7 @@
 
 int main()
 {
-	int a = 54325;
+    int a = 54325;
     char buffer[20];
     itoa(a, buffer, 2);
     printf("buffer is: %s\n", buffer);
