@@ -1,22 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
-void print_menu_src();
-void create_file(char*);
+#include <string.h>
 
-enum progression {have_not_started_yet, in_progress, finished};
+
+//enum progression {have_not_started_yet, in_progress, finished};
 
 typedef struct Task {
-    enum progression inprog;
+  //  enum progression inprog;
     char taskname[40];
     int   priority;
 
 }TASKS;
 
+void print_menu_src();
+void create_file(char*);
+//TASKS add_new_task(enum prog, char, int);
+TASKS add_new_task(char , int);
+
 int main()
 {
+    char temp_name[40] = "";
+    int ln = 0;
+    int temp_prio = 0;
+   // enum progression temp_enum = have_not_started_yet;
+    int kabbe = 0;
+
+    TASKS tsk;
     FILE *myfile = "test.txt";
     print_menu_src();
     create_file(myfile);
+    puts("Enter task name");
+    gets(temp_name);
+    ln = strlen(temp_name);
+    puts("Enter task priority");
+    getc(temp_prio);
+    //add_new_task(enum progression, temp_name ,temp_prio );
+    add_new_task(temp_name, temp_prio );
+
     return 0;
 }
 
@@ -49,4 +69,11 @@ void print_menu_src()
 
     fprintf(fh, "10\tthis is the multi-word string");
     fclose(fh);
+}
+
+//TASKS add_new_task(enum prog, char name, int prio)
+TASKS add_new_task(char name, int prio)
+{
+    TASKS tsk = {name, prio};
+    return tsk;
 }
