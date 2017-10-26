@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 void print_menu_src();
+void createfile();
+
+enum progression {Have not started yet, In progress, Finished};
 
 typedef struct Task {
-  char taskname[40];
-  int   priority;
+    enum progression inprog
+    char taskname[40];
+    int   priority;
 }TASKS;
 
 int main()
@@ -32,3 +36,8 @@ void print_menu_src()
      -lp  Lists all the tasks by priority\n";
     printf("%s", menu);
    }
+
+  void createfile()
+  {
+
+  }
