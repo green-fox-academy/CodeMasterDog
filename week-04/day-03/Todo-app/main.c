@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 void print_menu_src();
-void createfile();
+void create_file(char*);
 
-enum progression {Have not started yet, In progress, Finished};
+enum progression {have_not_started_yet, in_progress, finished};
 
 typedef struct Task {
-    enum progression inprog
+    enum progression inprog;
     char taskname[40];
     int   priority;
+
 }TASKS;
 
 int main()
 {
-
+    FILE *myfile = "test.txt";
     print_menu_src();
-
+    create_file(myfile);
     return 0;
 }
 
@@ -37,7 +38,15 @@ void print_menu_src()
     printf("%s", menu);
    }
 
-  void createfile()
-  {
 
-  }
+
+  void create_file(char* file_path) {
+    FILE *fh = fopen(file_path, "w+");
+    if (fh == NULL) {
+        printf("Could not create file: %s", file_path);
+        return;
+    }
+
+    fprintf(fh, "10\tthis is the multi-word string");
+    fclose(fh);
+}
