@@ -26,10 +26,9 @@ int main()
     scanf("%d %d %d %d", &a, &b, &c, &d);
     st00 = constructs_a_point(a, b);
     st01 = constructs_a_point(c, d);
-    takes_2_Points(&st00, &st01);
     //printf("st00.x: %d st00.y: %d\n", st00.x, st00.y);
     //printf("st01.x: %d st01.y: %d\n", st01.x, st01.y);
-    printf("The  distance is between the two points: %f unit(s)\n", takes_2_Points(&st00, &st01));
+    printf("The  distance is between the two points: %.3f unit(s)\n", takes_2_Points(&st00, &st01));
     return 0;
 }
 
