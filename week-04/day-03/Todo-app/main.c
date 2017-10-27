@@ -23,6 +23,7 @@ int task_counter = 0;
 int main()
 {
     char temp_name[40] = "";
+    char temp_name2[40] = "masodik feladat";
     int ln = 0;
     int temp_prio = 0;
    // enum progression temp_enum = have_not_started_yet;
@@ -37,7 +38,7 @@ int main()
     getc(temp_prio);
     //add_new_task(enum progression, temp_name ,temp_prio );
     add_new_task(tskk, temp_name, temp_prio, ln);
-    add_new_task(tskk, temp_name, temp_prio, ln);
+    add_new_task(tskk, temp_name2, temp_prio, ln);
     FILE *myfile = "test.txt";
     create_file(myfile, &tskk);
     list_tasks(tskk);
@@ -76,10 +77,18 @@ void print_menu_src()
     char abc[10];
 
 
+
     strcpy (abc, var->taskname);
-    printf("creat f abc: %s\n", abc);
-    printf("\n2. from create file: %s\n", var->taskname);
-    fprintf(fh, "%s", var->taskname);
+    //printf("creat f abc: %s\n", abc);
+    //printf("\n2. from create file: %s", var->taskname);
+    for (int i = 0; i< task_counter; i++) {
+
+    fprintf(fh, "%s \n",  var[i].taskname);
+       // printf("\nkapja mar beeee: %s \n", var[0].taskname);
+    printf("\ntest print from create file fn task[nr]: %s \n", var[i].taskname);
+    }
+
+   // fprintf(fh, "%s \n", var->taskname);
     fclose(fh);
 }
 
