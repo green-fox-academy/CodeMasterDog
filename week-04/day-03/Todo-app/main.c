@@ -102,6 +102,6 @@ void add_new_task(TASKS *tskk, char *name, int prio, int len)
 void list_tasks(TASKS* var)
 {
   for (int i = 0; i <task_counter; i++) {
-    printf("%d. task: %s\n",i+1, var->taskname);
+    printf("\nFROM fn listing. %d. task: %s\n",i+1, var[i].taskname);
   }
 }
