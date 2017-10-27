@@ -16,7 +16,10 @@ void print_menu_src();
 void create_file(char*, TASKS*);
 //TASKS add_new_task(enum prog, char, int);
 void add_new_task(TASKS *, char* , int, int);
+void list_tasks(TASKS* );
+
 int task_counter = 0;
+
 int main()
 {
     char temp_name[40] = "";
@@ -34,9 +37,10 @@ int main()
     getc(temp_prio);
     //add_new_task(enum progression, temp_name ,temp_prio );
     add_new_task(tskk, temp_name, temp_prio, ln);
-     add_new_task(tskk, temp_name, temp_prio, ln);
+    add_new_task(tskk, temp_name, temp_prio, ln);
     FILE *myfile = "test.txt";
     create_file(myfile, &tskk);
+    list_tasks(tskk);
     //just for check
     //printf("task name is :%s\n", tskk.taskname);
     return 0;
@@ -72,19 +76,23 @@ void print_menu_src()
     char abc[10];
 
 
-   strcpy (abc, var->taskname);
-   printf("creat f abc: %s\n", abc);
+    strcpy (abc, var->taskname);
+    printf("creat f abc: %s\n", abc);
     printf("\n2. from create file: %s\n", var->taskname);
     fprintf(fh, "%s", var->taskname);
     fclose(fh);
 }
 
-//TASKS add_new_task(enum prog, char name, int prio)
+
 void add_new_task(TASKS *tskk, char *name, int prio, int len)
 {
-
-   strcpy (tskk[task_counter].taskname, name);
-
-     task_counter++;
+    strcpy (tskk[task_counter].taskname, name);
+    task_counter++;
 }
 
+void list_tasks(TASKS* var)
+{
+  for (int i = 0; i <task_counter; i++) {
+    printf("%d. task: %s\n",i+1, var->taskname);
+  }
+}
