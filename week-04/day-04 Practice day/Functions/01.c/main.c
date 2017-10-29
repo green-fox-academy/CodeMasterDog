@@ -9,6 +9,7 @@ int main()
 
     return 0;
 }
+
 int sum() // function definition
 {
     int a = 10000;
