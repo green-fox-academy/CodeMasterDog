@@ -31,10 +31,10 @@ int main()
     /*
     //print every element's value
     for (int i = 0; i < number+1; i++) {
-        printf("Array's element array[%d] = %d\n",i , array1[i]);
+    printf("Array's element array[%d] = %d\n",i , array1[i]);
     }
     */
-    printf("You have %d elements. (from 0 - %d)\n", number+1, number);
+    printf("You have %d elements. (from 0 - %d)\n", number + 1, number);
     printf("Number of selected elements : %d\n", count_numbers(array1, number));
     printf("Sum of all the elements of the array: %d\n", sum(array1, number));
     printf("The AVG of those elements which can be divided by 4: %.2f\n", divided_4_and_avg(array1, number));
