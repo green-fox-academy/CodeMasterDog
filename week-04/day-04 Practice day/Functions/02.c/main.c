@@ -12,12 +12,9 @@ int main()
     scanf("%d %d", &first_number, &second_number);
     printf("The sum of the two numbers: %d", sum(first_number, second_number));
 
-
     return 0;
 }
 int sum(int a, int b)
-{
-    //it should return with the sum
+{   //it should return with the sum
     return a + b;
 }
-
