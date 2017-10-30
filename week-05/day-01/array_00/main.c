@@ -12,8 +12,9 @@ int main()
 
     int nums[5];
     int rand_num;
+    int a = 1;
+
     srand(time(NULL));
-    int a =1;
 
     for(int i = 0; i < 10; i++) {
         if (i < 5) {
@@ -24,17 +25,10 @@ int main()
         if (i == 5)
             printf("\n");
         if (i >= 5) {
-
-        printf("|%d| ", nums[i-a]);
+        printf("|%d| ", nums[i - a]);
         a = a + 2;
         }
     }
-
-    /*printf("\n");
-
-    for(int i = 5; i > 0; i--) { */
-
-  //  }
 
     return 0;
 }
