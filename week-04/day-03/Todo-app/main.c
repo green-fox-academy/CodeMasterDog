@@ -17,6 +17,8 @@ void create_file(char*, TASKS*);
 //TASKS add_new_task(enum prog, char, int);
 void add_new_task(TASKS *, char* , int, int);
 void list_tasks(TASKS* );
+int get_userinput();
+
 
 int task_counter = 0;
 
@@ -92,6 +94,10 @@ void print_menu_src()
     fclose(fh);
 }
 
+int get_userinput();
+{
+    g
+}
 
 void add_new_task(TASKS *tskk, char *name, int prio, int len)
 {
