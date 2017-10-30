@@ -15,10 +15,10 @@ int main()
     int temp_prio = 0;
    // enum progression temp_enum = have_not_started_yet;
 
-    TASKS tskk[10];
-    get_userinput();
+
     print_menu_src();
-    //puts("Enter task name");
+    get_userinput();
+
     //gets(temp_name);
     //ln = strlen(temp_name);
     //puts("Enter task priority");

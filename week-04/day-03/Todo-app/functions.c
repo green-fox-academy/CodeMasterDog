@@ -2,7 +2,7 @@
 #include "functions.h"
 
 extern int task_counter;
-
+TASKS tskk[10];
 
 
 
@@ -16,6 +16,7 @@ int get_userinput()
     static char priority[0] = "";
     char first_space[255];
     char last_space[255];
+    int lenght_of_task;
 
     //strcasecmp is NOT case sensitive
     while (strcasecmp(input, "exit") != 0) {
@@ -64,13 +65,17 @@ int get_userinput()
         if (strcasecmp(command, "-a") == 0) {
             printf("Great, you just ordered command ""-a""\n");
             strcpy(task_name, strchr(input,' '));
+            lenght_of_task = strlen(task_name);
             printf("the command is: %s\n", command);
             printf("the task is: %s\n", task_name);
+            add_new_task(tskk, task_name, priority, lenght_of_task);
+            //void add_new_task(TASKS *, char* , int, int);
         }
 
         if (strcasecmp(command, "-rm") == 0) {
             printf("Great, you just ordered command ""-rm""\n");
             strcpy(task_name, strchr(input,' '));
+            lenght_of_task = strlen(task_name);
             printf("the command is: %s\n", command);
             printf("the task is: %s\n", task_name);
         }
@@ -78,6 +83,7 @@ int get_userinput()
         if (strcasecmp(command, "-c") == 0) {
             printf("Great, you just ordered command ""-c""\n");
             strcpy(task_name, strchr(input,' '));
+            lenght_of_task = strlen(task_name);
             printf("the command is: %s\n", command);
             printf("the task is: %s\n", task_name);
         }
@@ -86,6 +92,7 @@ int get_userinput()
             printf("Great, you just ordered command ""-p""\n");
             strcpy(priority, last_space);
             strncpy(task_name, first_space + 1, strlen(first_space) - (strlen(last_space) +1));
+            lenght_of_task = strlen(task_name);
             printf("the command is: %s\n", command);
             printf("the task is: %s\n", task_name);
             printf("the task's priority is: %s\n", priority);
