@@ -22,10 +22,11 @@ int get_userinput()
     while (strcasecmp(input, "exit") != 0) {
         printf("Enter Your input: \n");
         gets(input);
-        printf("Your input was: %s\n", input);
+        //printf("Your input was: %s\n", input);
         //one parameter commands
         if (strcasecmp(input, "-l") == 0) {
             printf(" Lists all the tasks\n");
+            list_tasks(tskk);
             return 1;
         }
 
@@ -63,11 +64,11 @@ int get_userinput()
             command[i] = input[i];
         }
         if (strcasecmp(command, "-a") == 0) {
-            printf("Great, you just ordered command ""-a""\n");
+            //printf("Great, you just ordered command ""-a""\n");
             strcpy(task_name, strchr(input,' '));
             lenght_of_task = strlen(task_name);
-            printf("the command is: %s\n", command);
-            printf("the task is: %s\n", task_name);
+            //printf("the command is: %s\n", command);
+            //printf("the task is: %s\n", task_name);
             add_new_task(tskk, task_name, priority, lenght_of_task);
             //void add_new_task(TASKS *, char* , int, int);
         }
@@ -120,12 +121,19 @@ void print_menu_src()
 void add_new_task(TASKS *tskk, char *name, int prio, int len)
 {
     strcpy (tskk[task_counter].taskname, name);
+    //printf("Entered task: %s\n", tskk[task_counter].taskname);
     task_counter++;
+    get_userinput();
+    /*//just for testing have to break get_input
+    for (int i = 0; i < task_counter; i++) {
+        printf("Task[%d]: %s\n", i, tskk[i].taskname);
+    }
+    */
 }
 
 void list_tasks(TASKS* var)
 {
   for (int i = 0; i <task_counter; i++) {
-    printf("\nFROM fn listing. %d. task: %s\n",i+1, var[i].taskname);
+    printf("task[%d]: %s\n",i+1, var[i].taskname);
   }
 }
