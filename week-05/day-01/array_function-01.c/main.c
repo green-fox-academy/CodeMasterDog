@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-int takes_ints( int *, int);
+int takes_ints(int *, int);
 int* searc_index(int *, int, int);
 /*
  * array_function-01.c
@@ -21,29 +21,35 @@ int* searc_index(int *, int, int);
 int main()
 {
     int lenght = 0;
+    int find_number;
+    int array[] = {1, 77, 19, 528, 28, 411, 29};
 
-    int array[] = {1, 77, 88, 8, 8, 41, 26};
     lenght = sizeof(array) / sizeof(array[0]);
     printf("original order:\t");
+
     for(int i = 0; i < lenght; i++) {
         printf("%d, ", array[i]);
     }
 
     takes_ints(array, lenght);
 
-
     printf("\nsorted order:\t");
+
     for(int i = 0; i < lenght; i++) {
         printf("%d, ", array[i]);
     }
 
-    //searc_index(array, lenght, 8);
-    printf("Return value of search: %d\n", searc_index(array, lenght, 8));
+    printf("\nwhich number do you want to find?\n");
+    scanf("%d", &find_number);
+    if (searc_index(array, lenght, find_number) != -1)
+        printf("array[%d] is the searched number (%d)\n", searc_index(array, lenght, find_number), find_number);
+    else
+        printf("The searched number is not the array's element\n");
 
     return 0;
 }
 
-int takes_ints( int *var, int ln)
+int takes_ints(int *var, int ln)
 {
     int tmp = 0;
 
@@ -64,19 +70,11 @@ int* searc_index(int *var, int ln, int find)
     int idx = 0;
     for(int i = 0; i < ln; i++) {
         if (var[i] == find){
-        printf("\nGot you!\n");
-        idx = 99;
+        //printf("\nGot you!\n");
+        idx = i;
+        return idx;
         }
     }
-    if (idx == 99)
-            return 1;
-        else
-            return -1;
-
-
-    //return idx;
+    return -1;
 }
-/*Create a second function that takes 3 arguments. An array, it's length and a number it is searching for.
- * The function should return the index of the number when found or -1 if it's not part of the array.
- * IMPORTANT: this function expects a sorted array and uses the strategy we used when we play guess the number.
-*/
+
