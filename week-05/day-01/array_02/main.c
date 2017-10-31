@@ -22,7 +22,7 @@ int main()
         printf("|%d| ", nums[i]);
     }
     //sort
-    for(int i = 0; i <ln; i++) {
+    for(int i = 0; i < ln; i++) {
         for(int a = 0; a < ln - i - 1; a++) {
             if ( nums[a] > nums[a+1]) {
                 tmp = nums[a];
