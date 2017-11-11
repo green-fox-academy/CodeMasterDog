@@ -50,7 +50,18 @@ int get_userinput()
             return 5;
         }
 
-         break;
+        if (strcasecmp(input, "exit") == 0) {
+            system("cls");
+            printf("LLAP\n");
+            return 6;
+        }
+
+        if (strchr(input,' ') == NULL) {
+            printf("Invalid input\n");
+            continue;
+        }
+
+        break;
     }
 
     strcpy(first_space, strchr(input,' '));
@@ -120,6 +131,12 @@ void print_menu_src()
 
 void add_new_task(TASKS *tskk, char *name, int prio, int len)
 {
+    if (task_counter == 10) {
+        printf("Already reached the maximum number of tasks. Can't add a new one.\n");
+        get_userinput();
+        return;
+    }
+
     strcpy (tskk[task_counter].taskname, name);
     //printf("Entered task: %s\n", tskk[task_counter].taskname);
     task_counter++;
@@ -133,7 +150,8 @@ void add_new_task(TASKS *tskk, char *name, int prio, int len)
 
 void list_tasks(TASKS* var)
 {
-  for (int i = 0; i <task_counter; i++) {
-    printf("task[%d]: %s\n",i+1, var[i].taskname);
-  }
+    for (int i = 0; i <task_counter; i++) {
+        printf("task[%d]: %s\n",i+1, var[i].taskname);
+    }
+    get_userinput();
 }
