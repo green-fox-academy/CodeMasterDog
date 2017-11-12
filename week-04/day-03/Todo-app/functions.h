@@ -13,7 +13,8 @@ int get_userinput();
 void add_new_task(TASKS *, char* , int, int);
 void list_tasks(TASKS* );
 void print_menu_src();
-void create_file(char*, TASKS*);
+void create_file(char*, TASKS *);
+void remove_task(TASKS *, char []);
 
 
 

@@ -9,9 +9,8 @@ TASKS tskk[10];
 int get_userinput()
 {
 
-
-    char input[255] = "";
-    static char command[2] = "";
+    char input[255];
+    static char command[2] = ""; // static needed
     static char task_name[255] = "";
     static char priority[0] = "";
     char first_space[255];
@@ -20,10 +19,9 @@ int get_userinput()
 
     //strcasecmp is NOT case sensitive
     while (strcasecmp(input, "exit") != 0) {
+
         printf("Enter Your input: \n");
-        gets(input);
-        //printf("Your input was: %s\n", input);
-        //one parameter commands
+            gets(input);
         if (strcasecmp(input, "-l") == 0) {
             printf(" Lists all the tasks\n");
             list_tasks(tskk);
@@ -61,19 +59,18 @@ int get_userinput()
             continue;
         }
 
-        break;
-    }
-
-    strcpy(first_space, strchr(input,' '));
-    strcpy(last_space, strrchr(input,' '));
-    //printf("len of first: %d\n", strlen(first_space));
-    //printf("len of last: %d\n",strlen(last_space));
-    //printf("len of diff: %d\n",strlen(first_space) - strlen(last_space));
-    //two parameter commands
-    if (first_space != NULL) {
-        for(int i = 0; i < strlen(input)-strlen(first_space); i++) {
-            command[i] = input[i];
+        strcpy(first_space, strchr(input,' '));
+        strcpy(last_space, strrchr(input,' '));
+        int lenght = strlen(input)-strlen(first_space);
+        //two parameter commands
+        if (first_space != NULL) {
+            for(int i = 0; i < lenght; i++) {
+                command[i] = input[i];
+                if (i == lenght - 1)
+                    command[i + 1] = '\0';
+            }
         }
+
         if (strcasecmp(command, "-a") == 0) {
             //printf("Great, you just ordered command ""-a""\n");
             strcpy(task_name, strchr(input,' '));
@@ -81,15 +78,18 @@ int get_userinput()
             //printf("the command is: %s\n", command);
             //printf("the task is: %s\n", task_name);
             add_new_task(tskk, task_name, priority, lenght_of_task);
-            //void add_new_task(TASKS *, char* , int, int);
+            return 7;
         }
 
         if (strcasecmp(command, "-rm") == 0) {
-            printf("Great, you just ordered command ""-rm""\n");
             strcpy(task_name, strchr(input,' '));
             lenght_of_task = strlen(task_name);
+            printf("Great, you just ordered command ""-rm""\n");
             printf("the command is: %s\n", command);
             printf("the task is: %s\n", task_name);
+            remove_task(tskk, task_name);
+            return 8;
+
         }
 
         if (strcasecmp(command, "-c") == 0) {
@@ -98,6 +98,7 @@ int get_userinput()
             lenght_of_task = strlen(task_name);
             printf("the command is: %s\n", command);
             printf("the task is: %s\n", task_name);
+            return 9;
         }
         //three parameter commands
         if (strcasecmp(command, "-p") == 0 && last_space != NULL && first_space != last_space) {
@@ -108,7 +109,11 @@ int get_userinput()
             printf("the command is: %s\n", command);
             printf("the task is: %s\n", task_name);
             printf("the task's priority is: %s\n", priority);
+            return 10;
         }
+
+        printf("Invalid input\n");
+
     }
 }
 
@@ -122,7 +127,7 @@ void print_menu_src()
      -rd  Read todos from a file\n\
      -l   Lists all the tasks\n\
      -e   Empty the list\n\
-     -rm   Removes a task\n\
+     -rm  Removes a task\n\
      -c   Completes a task\n\
      -p   Add priority to a task\n\
      -lp  Lists all the tasks by priority\n";
@@ -138,14 +143,22 @@ void add_new_task(TASKS *tskk, char *name, int prio, int len)
     }
 
     strcpy (tskk[task_counter].taskname, name);
-    //printf("Entered task: %s\n", tskk[task_counter].taskname);
     task_counter++;
     get_userinput();
-    /*//just for testing have to break get_input
-    for (int i = 0; i < task_counter; i++) {
-        printf("Task[%d]: %s\n", i, tskk[i].taskname);
-    }
-    */
+}
+
+void remove_task(TASKS *var, char name[])
+{
+    int task_to_delete;
+
+    //if (atoi(name) == 0 && atoi(name) < task_counter)
+    //  printf("invalid task number");
+
+    list_tasks(tskk);
+    puts("Enter the number of the task you want to delete.");
+    task_to_delete = getc();
+    printf("Tadk to delete: %s\n", name);
+    get_userinput();
 }
 
 void list_tasks(TASKS* var)
