@@ -14,7 +14,7 @@ int main() {
     srand(time(NULL));
 
     for (int i = 0; i < int_vector.size(); ++i) {
-        int_vector.at(i) = (rand() % 100 + 1);
+        int_vector.at(i) = (rand() % 10 + 1);
         cout << int_vector[i] << " ,";
     }
   return 0;
