@@ -84,9 +84,9 @@ int get_userinput()
         if (strcasecmp(command, "-rm") == 0) {
             strcpy(task_name, strchr(input,' '));
             lenght_of_task = strlen(task_name);
-            printf("Great, you just ordered command ""-rm""\n");
-            printf("the command is: %s\n", command);
-            printf("the task is: %s\n", task_name);
+            //printf("Great, you just ordered command ""-rm""\n");
+            //printf("the command is: %s\n", command);
+            //printf("the task is: %s\n", task_name);
             remove_task(tskk, task_name);
             return 8;
 
@@ -149,15 +149,21 @@ void add_new_task(TASKS *tskk, char *name, int prio, int len)
 
 void remove_task(TASKS *var, char name[])
 {
-    int task_to_delete;
+    int task_to_delete = atoi(name);
 
-    //if (atoi(name) == 0 && atoi(name) < task_counter)
-    //  printf("invalid task number");
+    if (atoi(name) == 0 || task_to_delete > task_counter || task_to_delete <= 0) {
+        printf("Invalid input.\n");
+        get_userinput();
+        return;
+    }
 
-    list_tasks(tskk);
-    puts("Enter the number of the task you want to delete.");
-    task_to_delete = getc();
-    printf("Tadk to delete: %s\n", name);
+    for (int i = 0; i < task_counter; i++) {
+        strcpy(var[i].taskname, var[i].taskname);
+        if (i >= task_to_delete)
+            strcpy(var[i - 1].taskname, var[i].taskname);
+    }
+
+    task_counter--;
     get_userinput();
 }
 
