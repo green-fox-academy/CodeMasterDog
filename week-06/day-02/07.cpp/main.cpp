@@ -1,10 +1,3 @@
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main()
-{
     // create a pirate class
     // it should have 2 methods
     // drink_rum()
@@ -12,6 +5,21 @@ int main()
     // if the drink_rum was called at least 5 times:
     // hows_goin_mate should return "Arrrr!"
     // "Nothin'" otherwise
+#include <iostream>
+#include <string>
+#include "Pirate.h"
+
+using namespace std;
+
+int main()
+{
+    Pirate pr_01;
+    pr_01.drink_rum();
+    pr_01.drink_rum();
+    pr_01.drink_rum();
+    pr_01.drink_rum();
+    pr_01.drink_rum();
+    pr_01.hows_goin_mate();
 
   return 0;
 }
