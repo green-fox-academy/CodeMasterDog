@@ -15,7 +15,7 @@ class Student
 
     private:
         string name;
-        vector <int> int_grade();;
+        vector <int> int_grade();
 
 
 };
