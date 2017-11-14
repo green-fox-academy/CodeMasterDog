@@ -1,11 +1,28 @@
 #include "Circle.h"
+#include <iostream>
 
-Circle::Circle()
+
+using namespace std;
+
+Circle::Circle(float radius)
 {
-    //ctor
+    this->radius = radius;
 }
+
+void Circle::  print_c()
+{
+    cout << "The given radius is : " <<radius << endl;
+}
+
+
+float get_area()
+{
+
+}
+
 
 Circle::~Circle()
 {
-    //dtor
+    cout << "Thanks for using this program." << endl;
 }
+
