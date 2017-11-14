@@ -1,6 +1,6 @@
 #include "Circle.h"
 #include <iostream>
-
+#include <iomanip>
 
 using namespace std;
 
@@ -9,17 +9,20 @@ Circle::Circle(float radius)
     this->radius = radius;
 }
 
-void Circle::  print_c()
+void Circle::print_fn(float var)
 {
-    cout << "The given radius is : " <<radius << endl;
+    cout << fixed << setprecision(5) << var << endl;
 }
 
-
-float get_area()
+float Circle::get_circumference()
 {
-
+    return 2 * radius * PI;
 }
 
+float Circle::get_area()
+{
+    return radius * radius* PI;
+}
 
 Circle::~Circle()
 {
