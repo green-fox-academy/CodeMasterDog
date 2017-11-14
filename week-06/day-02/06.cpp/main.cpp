@@ -6,10 +6,16 @@
 
 #include <iostream>
 #include <string>
+#include "Car.h"
 
 using namespace std;
 
 int main()
 {
+    Car car_01("Mazda", 18721.86);
+    car_01.print_car();
+    car_01.run(100);
+    car_01.print_car();
+
     return 0;
 }
