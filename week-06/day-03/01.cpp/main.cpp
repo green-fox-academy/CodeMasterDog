@@ -5,6 +5,8 @@
 // the class (so it is a private method)
 #include <iostream>
 #include <vector>
+#include "Shape.h"
+#include "Circle.h"
 
 using namespace std;
 
