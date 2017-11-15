@@ -2,11 +2,16 @@
 #define TRIANGLE_H
 #include "Shape.h"
 
-class Circle : public Shape {
+class Triangle : public Shape {
 
     public:
-        void  calc_area();
+        Triangle(double, double);
+        double calc_area();
 
+    private:
+        float result;
+        float a;
+        float m;
 };
 
 #endif // TRIANGLE_H

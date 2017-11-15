@@ -2,11 +2,15 @@
 #define CIRCLE_H
 #include "Shape.h"
 
-class Circle : public Shape {
+class Circle: public Shape {
 
     public:
-        void  calc_area();
+        Circle(double);
+        double calc_area();
 
+    private:
+        float radius;
+        float result;
 };
 
 #endif // CIRCLE_H
