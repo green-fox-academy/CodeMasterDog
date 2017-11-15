@@ -11,5 +11,5 @@ Triangle::Triangle(double a, double m)
 double Triangle::calc_area()
 {
     cout << "I'm calculating the triangle's area now..." << endl;
-    return (float)a * a * m / 2;
+    return a * a * m / 2;
 }
