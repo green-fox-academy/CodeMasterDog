@@ -14,9 +14,10 @@ int main()
 {
     Circle c(3);
     c.print_result(c.calc_area());
+    c.print_var();
     cout << endl;
-    Triangle t(7, 11);
+    Triangle t(5, 3);
     t.print_result(t.calc_area());
-
+    t.print_var();
     return 0;
 }

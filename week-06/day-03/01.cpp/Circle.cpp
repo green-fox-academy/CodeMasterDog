@@ -11,5 +11,5 @@ Circle::Circle(double radius)
 double Circle::calc_area()
 {
     cout << "I'm calculating the circle's area now..." << endl;
-    return radius * radius* PI;
+    return radius * radius * PI;
 }
