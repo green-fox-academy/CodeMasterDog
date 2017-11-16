@@ -1,17 +1,18 @@
 #include "UserInput.h"
-#include "UserInput.h"
+
 
 UserInput::UserInput()
 {
     //ctor
 }
 
-int get_userinput()
+string UserInput::get_userinput()
 {
-
+    task_name = "Feed the cat";
+    return task_name;
 }
 
-token_userinput()
+void UserInput::token_userinput()
 {
 
 }

@@ -9,13 +9,13 @@ class UserInput
 {
     public:
         UserInput();
-        int get_userinput();
-        token_userinput();
+        string get_userinput();
+        void token_userinput();
         virtual ~UserInput();
+        string task_name;
 
     protected:
         string command;
-        string task_name;
         unsigned int priority;
 
     private:
