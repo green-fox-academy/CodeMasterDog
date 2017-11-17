@@ -1,6 +1,5 @@
 #include "UserInput.h"
 
-
 UserInput::UserInput()
 {
     //ctor

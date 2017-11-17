@@ -3,14 +3,13 @@
 #include "UserInput.h"
 #include <vector>
 
-
 class DataProcessing : public UserInput
 {
     public:
         DataProcessing();
         virtual ~DataProcessing();
         int new_task_to_vector();
-
+        void print_tasks();
     protected:
         vector<string> task_vector;
     private:
