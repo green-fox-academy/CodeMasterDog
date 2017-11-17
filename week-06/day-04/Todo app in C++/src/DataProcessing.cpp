@@ -23,12 +23,9 @@ int DataProcessing::new_task_to_vector()
 
 void DataProcessing::print_tasks()
 {
-
-
-
     for( vector<string>::iterator it = task_vector.begin(); it != task_vector.end(); it++) {
         cout << task_vector[0] << endl;
-int    index = std::distance( task_vector.begin(), it );
+        int    index = std::distance( task_vector.begin(), it );
         cout << index << endl;
     }
 }
