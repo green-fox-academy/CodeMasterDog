@@ -15,6 +15,7 @@ void Student :: add_grade()
 
     for (int i = 0; i < n; ++i) {
         int tmp = 0;
+
         cout << "Enter the " << i+1 << "th grade" << endl;
         while (tmp <= 0 || tmp >= 6) {
             cin >> tmp;
