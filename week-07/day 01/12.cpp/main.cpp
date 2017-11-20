@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 int throwingFunction(int) throw (int, char const*);
