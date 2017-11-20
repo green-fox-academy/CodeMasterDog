@@ -40,8 +40,8 @@ int main() {
 		catch (bool bl){
             cout << "Type is bool, and the value is: " << bl << endl;
 		}
-		catch (int x){
-            cout << "Type is integer, and the value is: " << x << endl;
+		catch (char *str){
+            cout << "Type is string: " << str << endl;
 		}
 // Write catch blocks for each possibly thrown exception.
 // In each catch block write out what the exception's type was. And what the exceptions value was.
