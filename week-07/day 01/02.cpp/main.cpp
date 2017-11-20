@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 // Write a try - catch block.
@@ -16,7 +17,7 @@ int main()
             throw 'q';
 
         int c = a / b;
-    cout << a <<"/" <<b << " = " << c << endl;
+    cout << a << "/" << b << " = " << c << endl;
 
     }
     catch (char x)

@@ -3,9 +3,9 @@
 
 using namespace std;
 
-// Write a try - catch block.
-// Throw an char in the try block
-// Catch it in the catch block and write it out.
+// Create a function which throws an integer
+// In the main(), put that function in a try block
+// Also in the main() catch, what your function throws
 
 float divide(int, int) throw (int);
 
@@ -21,7 +21,7 @@ int main()
     }
     catch (int x)
     {
-        cout << "Error occurred, caught an integer: " << x<<  endl;
+        cout << "Error occurred, caught an integer: " << x <<  endl;
     }
 
 	return 0;
