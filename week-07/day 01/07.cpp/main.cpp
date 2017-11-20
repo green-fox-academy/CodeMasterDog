@@ -29,7 +29,7 @@ void printArray(int var[], int x, int len) throw (runtime_error)
 {
 
     if (x > len || x < 0)
-        throw runtime_error("Index is out of range");
+        throw runtime_error("Index is out of range.");
 
     cout << "|"<<var[x] <<"|" << endl;
 }
