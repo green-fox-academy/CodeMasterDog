@@ -1,7 +1,7 @@
-
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+
 using namespace std;
 
 int main() {
@@ -28,9 +28,23 @@ int main() {
 					break;
 			}
 		}
+		catch (float f){
+            cout << "Type is float, and the value is: " << f << endl;
+		}
+		catch (double d){
+            cout << "Type is double, and the value is: " << d << endl;
+		}
+		catch (char *str){
+            cout << "Type is string, and the value is: " << str << endl;
+		}
+		catch (bool bl){
+            cout << "Type is bool, and the value is: " << bl << endl;
+		}
+		catch (int x){
+            cout << "Type is integer, and the value is: " << x << endl;
+		}
 // Write catch blocks for each possibly thrown exception.
 // In each catch block write out what the exception's type was. And what the exceptions value was.
-
 	}
 
 	return 0;
