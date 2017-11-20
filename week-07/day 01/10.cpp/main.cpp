@@ -1,4 +1,7 @@
 #include <iostream>
+#include <stdexcept>
+//#include <string>
+
 using namespace std;
 
 /**
@@ -10,8 +13,28 @@ using namespace std;
  *
  * Non-positive "N" numbers should be treated as errors, handle it!
  */
+void positiveNumbers(int) throw (string);
 
 int main() {
+    try{
+    positiveNumbers(-15);
 
-  return 0;
+    }
+    catch (string err){
+        cout << err <<endl;
+    }
+
+    return 0;
+}
+
+void positiveNumbers(int n) throw (string)
+{
+    if (n < 1)
+        throw string("Error, the given number is not positive.");
+
+    for (int i =1; i <= n * 2; ++i) {
+        if ( i % 2 != 0)
+        cout << i << ", ";
+    }
+    cout << endl;
 }
