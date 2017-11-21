@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Integer.h"
 
 using namespace std;
 
