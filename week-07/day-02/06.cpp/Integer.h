@@ -1,6 +1,9 @@
 #ifndef INTEGER_H
 #define INTEGER_H
 
+// Take the Integer class from the previous exercise and add two methods:
+// One which takes an Integer& parameter and adds the value of it to the member variable of this.
+// One which takes an int and adds the value of it to the member variable of this.
 
 class Integer
 {
@@ -8,11 +11,8 @@ class Integer
         Integer(int);
         Integer(Integer& _obj, int);
         Integer();
-        add(int);
-        add(int, int);
-        add(int, int, int);
-        add(int, int, int, int);
-        add(int, int, int, int, int);
+        add();
+        add_task6(int&);
         int PrintVariavle();
         virtual ~Integer();
 

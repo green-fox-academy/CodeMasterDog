@@ -11,7 +11,16 @@ using namespace std;
 
 int main()
 {
+    int  var = 20;
+    int *ip;
+    ip = &var;
 
+    Integer obj_02(6);
+    obj_02.add_task6(*ip);
+    cout <<"obj_02.int_one is: " << obj_02.PrintVariavle() << endl;
+
+    obj_02.add();
+    cout <<"obj_02.int_one is: " << obj_02.PrintVariavle() << endl;
 
 	return 0;
 }
