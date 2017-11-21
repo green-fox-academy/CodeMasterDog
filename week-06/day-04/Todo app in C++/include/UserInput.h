@@ -10,12 +10,12 @@ class UserInput
     public:
         UserInput();
         string get_userinput();
-        void token_userinput();
+        int token_userinput(string);
         virtual ~UserInput();
-        string task_name;
 
     protected:
         string command;
+        string task_name;
         unsigned int priority;
 
     private:

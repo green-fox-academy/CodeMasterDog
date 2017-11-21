@@ -1,9 +1,13 @@
 #ifndef DATAPROCESSING_H
 #define DATAPROCESSING_H
-#include "UserInput.h"
+
+#include <string>
 #include <vector>
 
-class DataProcessing : public UserInput
+
+using namespace std;
+
+class DataProcessing
 {
     public:
         DataProcessing();
