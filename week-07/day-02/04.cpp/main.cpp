@@ -11,6 +11,20 @@ using namespace std;
 int main()
 {
 
+    Integer int_01(5);
+    cout <<"int_01.int_one is: " << int_01.PrintVariavle() << endl;
+
+    int_01.add(5);
+    cout <<"int_01.int_one is: " << int_01.PrintVariavle() << endl;
+
+    int_01.add(5, 5);
+    cout <<"int_01.int_one is: " << int_01.PrintVariavle() << endl;
+
+    int_01.add(5, 5, 5);
+    cout <<"int_01.int_one is: " << int_01.PrintVariavle() << endl;
+
+    int_01.add(5, 5, 5, -5);
+    cout <<"int_01.int_one is: " << int_01.PrintVariavle() << endl;
 
     return 0;
 }

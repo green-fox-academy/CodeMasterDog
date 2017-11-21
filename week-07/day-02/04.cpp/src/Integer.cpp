@@ -1,14 +1,38 @@
 #include "Integer.h"
 
-// Create a Class named Integer. It should have one int member variable.
-// Create add() methods to it. They should take Integer& parameters.
-// Make variations of add() method 1, 2, 3, 4 and 5 arguments respectively.
-// All methods should add the value of the parameters to the member variable of this.
-//
-// Try them out. Write code that demonstrates how they work.
-Integer::Integer()
+Integer::Integer(int int_one)
 {
-    //ctor
+    this->int_one = int_one;
+}
+
+int Integer::PrintVariavle()
+{
+    return int_one;
+}
+
+int Integer::add(int int_one)
+{
+    this->int_one += int_one;
+}
+
+int Integer::add(int int_one, int int_two)
+{
+    this->int_one += int_one + int_two;
+}
+
+int Integer::add(int int_one, int int_two, int int_three)
+{
+    this->int_one += int_one + int_two + int_three;
+}
+
+int Integer::add(int int_one, int int_two, int int_three, int int_four)
+{
+    this->int_one += int_one + int_two + int_three + int_four;
+}
+
+int Integer::add(int int_one, int int_two, int int_three, int int_four, int int_five)
+{
+    this->int_one += int_one + int_two + int_three + int_four + int_five;
 }
 
 Integer::~Integer()

@@ -5,10 +5,17 @@
 class Integer
 {
     public:
-        Integer();
+        Integer(int);
+        add(int);
+        add(int, int);
+        add(int, int, int);
+        add(int, int, int, int);
+        add(int, int, int, int, int);
+        int PrintVariavle();
         virtual ~Integer();
 
     protected:
+        int int_one;
 
     private:
 };
