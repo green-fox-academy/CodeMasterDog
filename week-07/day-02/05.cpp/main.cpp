@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Integer.h"
+
 
 using namespace std;
 
@@ -15,6 +17,14 @@ using namespace std;
 int main()
 {
 
+    Integer int_01(5);
+    cout <<"int_01.int_one is: " << int_01.PrintVariavle() << endl;
 
-	return 0;
+    Integer int_02(int_01, 2);
+    cout <<"int_02.int_one is: " << int_02.PrintVariavle() << endl;
+
+    Integer int_03;
+    cout <<"int_03.int_one is: " << int_03.PrintVariavle() << endl;
+
+    return 0;
 }
