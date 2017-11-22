@@ -24,7 +24,10 @@ int main()
         db.put_costumer_to_vector(Feloskutya);
         db.put_costumer_to_vector(Laci);
 
-        db.list_database();
+
+        //db.list_database();
+        ui_01->login();
+        //ui_01->check_pin(ui_01->get_entered_pin());
 
     } catch (...){
         delete ui_01;

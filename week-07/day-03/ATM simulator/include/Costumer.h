@@ -10,8 +10,10 @@ class Costumer
     public:
         Costumer();
         Costumer(string, string , string , float);
-        print_costumer_info();
+        void print_costumer_info();
         string getter_name();
+        string getter_pin();
+
         virtual ~Costumer();
 
     protected:
@@ -23,8 +25,9 @@ class Costumer
         string Admin_net_card;
         string Admin_pin;
         string entered_card_nr;
-        string entered_pin;
+
         float balance;
+        bool isadmin = false;
 };
 
 #endif // COSTUMER_H

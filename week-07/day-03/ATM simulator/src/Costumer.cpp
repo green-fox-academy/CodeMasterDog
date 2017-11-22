@@ -26,7 +26,12 @@ string Costumer::getter_name()
     return name;
 }
 
-Costumer::print_costumer_info()
+string Costumer::getter_pin()
+{
+    return pin;
+}
+
+void Costumer::print_costumer_info()
 {
     cout << "The card number is: " << card_nr << endl;
     cout << "The pin is: " << pin << endl;
