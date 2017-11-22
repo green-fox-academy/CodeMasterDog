@@ -12,6 +12,8 @@ int main()
     try{
         ui_01 = new UI;
         ui_01->menu_src();
+        Costumer Laci("123455676", "1234", 543256);
+        Laci.print_costumer_info();
 
     } catch (...){
         delete ui_01;
