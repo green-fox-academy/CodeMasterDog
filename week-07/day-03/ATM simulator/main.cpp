@@ -12,8 +12,19 @@ int main()
     try{
         ui_01 = new UI;
         ui_01->menu_src();
-        Costumer Laci("123455676", "1234", 543256);
-        Laci.print_costumer_info();
+
+        Costumer Lolka("Lolka", "123455670", "5475", 543256);
+        Costumer Zsele("Zsele", "123455671", "2345", 5985622);
+        Costumer Feloskutya("Feloskutya", "123455672", "1115", 3987631);
+        Costumer Laci("Laci", "123455673", "6969", 26786521);
+        //Laci.print_costumer_info();
+        DataBase db;
+        db.put_costumer_to_vector(Lolka);
+        db.put_costumer_to_vector(Zsele);
+        db.put_costumer_to_vector(Feloskutya);
+        db.put_costumer_to_vector(Laci);
+
+        db.list_database();
 
     } catch (...){
         delete ui_01;

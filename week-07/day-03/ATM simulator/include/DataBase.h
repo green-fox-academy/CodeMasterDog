@@ -12,6 +12,7 @@ class DataBase
         DataBase();
         virtual ~DataBase();
         void put_costumer_to_vector(Costumer);
+        void list_database();
 
     protected:
 

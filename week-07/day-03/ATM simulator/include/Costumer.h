@@ -9,13 +9,15 @@ class Costumer
 {
     public:
         Costumer();
-        Costumer(string card_nr, string pin, float);
+        Costumer(string, string , string , float);
         print_costumer_info();
+        string getter_name();
         virtual ~Costumer();
 
     protected:
 
     private:
+        string name;
         string card_nr;
         string pin;
         string Admin_net_card;

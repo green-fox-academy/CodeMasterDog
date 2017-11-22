@@ -12,12 +12,18 @@ Costumer::Costumer()
     //ctor
 }
 
-Costumer::Costumer(string card_nr, string pin, float balance)
+Costumer::Costumer(string name, string card_nr, string pin, float balance)
 {
+    this->name = name;
     this->card_nr = card_nr;
     this->pin = pin;
     this->balance = balance;
 
+}
+
+string Costumer::getter_name()
+{
+    return name;
 }
 
 Costumer::print_costumer_info()
