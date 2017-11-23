@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "SerialPortWrapper.h"
+#include "UI.h"
 
 using namespace std;
 
@@ -14,6 +15,8 @@ int main()
         cout << "\tPort name: " << ports.at(i) << endl;
     }
 
+    UI ui;
+    ui.menu_src();
     // connection
 
         SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
