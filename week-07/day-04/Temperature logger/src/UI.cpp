@@ -22,59 +22,70 @@ void UI::menu_src()
 
 void UI::choice()
 {
+    Storage stor;
     SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
-
-    while (key != 'e')
-    {
-        Storage stor;
+    is_opened = false;
+    while (key != 'e') {
         cout << "Press a key to command" << endl;
         key = getch();
         switch (key) {
             case 'h':
                 system("cls");
                 menu_src();
-                continue;
+                break;
 
             case 'o':
+                if (is_opened) {
+                    cout << "Port is already opened." << endl;
+                    break;
+                } else {
                     serial->openPort();
-                    cout << "port opened" << endl;
+                    cout << "Port opened." << endl;
+                    is_opened = true;
+                }
                  break;
 
             case 's':
                 {
+                if (!is_opened) {
+                    cout << "Please open the Port first." << endl;
+                    break;
+                }
                 string pressed = "a";
-                    while(pressed != "s"){
-                        string line;
-                        serial->readLineFromPort(&line);
-                        if (line.length() > 0){
-                            cout << line << endl;
-                            stor.put_into_vector(line);
-                            }
-                            if (_kbhit()){
-                                pressed = getch();
-
-                            }
+                while(pressed != "s"){
+                    string line;
+                    serial->readLineFromPort(&line);
+                    if (line.length() > 0){
+                        cout << line << endl;
+                        stor.put_into_vector(line);
                     }
+                    if (_kbhit())
+                        pressed = getch();
                 }
                 break;
+                }
 
             case 'c':
-                cout << "close port" << endl;
-                serial->closePort();
-                break;
+                if (!is_opened) {
+                    cout << "Port is already closed." << endl;
+                    break;
+                } else {
+                    serial->closePort();
+                    is_opened = false;
+                    cout << "Port closed." << endl;
+                    break;
+                }
 
             case 'l':
+                {
                 cout << "List after error handling" << endl;
                 stor.print_vector();
                 break;
+                }
 
             case 'e':
                 cout << "Exit the program" << endl;
                 exit(0);
-
-            default:
-                cout << "default" << endl;
-
         }
     }
 }

@@ -21,6 +21,7 @@ class UI
 
     private:
         char key;
+        bool is_opened;
 };
 
 #endif // UI_H
