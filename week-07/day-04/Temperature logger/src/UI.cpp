@@ -86,6 +86,9 @@ void UI::choice()
             case 'e':
                 cout << "Exit the program" << endl;
                 exit(0);
+
+            default :
+                cout << "Invalid command." << endl;
         }
     }
 }

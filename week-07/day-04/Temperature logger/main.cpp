@@ -13,6 +13,8 @@ int main()
     for (unsigned int i = 0; i < ports.size(); i++) {
         cout << "\tPort name: " << ports.at(i) << endl;
     }
+    //  strptime - date and time conversion
+    //  regex reg
 
     UI ui;
     ui.menu_src();
