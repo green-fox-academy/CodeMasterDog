@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+//#include <conio.h>
 
-#include "SerialPortWrapper.h"
+//#include "SerialPortWrapper.h"
 #include "UI.h"
 
 using namespace std;
@@ -17,17 +18,9 @@ int main()
 
     UI ui;
     ui.menu_src();
+    ui.choice();
     // connection
 
-        SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
-        serial->openPort();
-        string line;
-        while(1){
-        serial->readLineFromPort(&line);
-        if (line.length() > 0){
-        cout << line << endl;
-        }
-        }
-        serial->closePort();
+
     return 0;
 }
