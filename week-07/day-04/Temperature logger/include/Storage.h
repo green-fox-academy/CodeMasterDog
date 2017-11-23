@@ -14,7 +14,6 @@ class Storage
         void put_into_vector(string);
         void print_vector();
 
-
     protected:
 
     private:

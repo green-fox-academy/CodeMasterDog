@@ -1,6 +1,5 @@
 #include "UI.h"
 
-
 using namespace std;
 
 UI::UI()
@@ -23,22 +22,10 @@ void UI::menu_src()
 
 void UI::choice()
 {
-    //SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
-        //serial->openPort();
-        //string line;
-        //while(1){
-        //serial->readLineFromPort(&line);
-        //if (line.length() > 0){
-        //cout << line << endl;
-        //}
-        //}
-        //serial->closePort();
+    SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
 
     while (key != 'e')
     {
-        string pressed = "a";
-        SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
-
         Storage stor;
         cout << "Press a key to command" << endl;
         key = getch();
@@ -49,36 +36,27 @@ void UI::choice()
                 continue;
 
             case 'o':
-                {
                     serial->openPort();
-                    string line;
-                    //int a = 0;
-                    //while(1){
-                    while(pressed != "s"){
-                        serial->readLineFromPort(&line);
-                        stor.put_into_vector(line);
-                        if (line.length() > 0)
-                            cout << line << endl;
-                    //serial->readLineFromPort(&line);
-                   //a++;
-                   //cout << a << endl;
-                   // if (a > 8)
-                        if (_kbhit()){
-                            pressed = getch();
-                    //break;
-                        }
-
-                    }
-
-
-
-
-                }
-
+                    cout << "port opened" << endl;
+                 break;
 
             case 's':
-                cout << "Start logging / Stop logging" << endl;
-               break;
+                {
+                string pressed = "a";
+                    while(pressed != "s"){
+                        string line;
+                        serial->readLineFromPort(&line);
+                        if (line.length() > 0){
+                            cout << line << endl;
+                            stor.put_into_vector(line);
+                            }
+                            if (_kbhit()){
+                                pressed = getch();
+
+                            }
+                    }
+                }
+                break;
 
             case 'c':
                 cout << "close port" << endl;
@@ -94,14 +72,10 @@ void UI::choice()
                 cout << "Exit the program" << endl;
                 exit(0);
 
-
-         default:
+            default:
                 cout << "default" << endl;
 
         }
-
-
-
     }
 }
 

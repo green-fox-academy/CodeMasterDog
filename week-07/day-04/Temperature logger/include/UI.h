@@ -9,11 +9,6 @@
 #include <windows.h>
 #include "Storage.h"
 
-
-
-
-
-
 class UI
 {
     public:
