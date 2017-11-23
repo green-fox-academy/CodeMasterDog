@@ -13,6 +13,7 @@ int main()
         ui_01 = new UI;
         ui_01->menu_src();
 
+
         Costumer Lolka("Lolka", "123455670", "5475", 543256);
         Costumer Zsele("Zsele", "123455671", "2345", 5985622);
         Costumer Feloskutya("Feloskutya", "123455672", "1115", 3987631);
@@ -28,7 +29,7 @@ int main()
         //db.list_database();
         ui_01->login();
         //ui_01->check_pin(ui_01->get_entered_pin());
-
+//        if (ui_01->getter_entered_pin() == entered
     } catch (...){
         delete ui_01;
         cout << "Error occurred." << endl;

@@ -2,6 +2,7 @@
 #include "UI.h"
 #include "Costumer.h"
 #include "DataBase.h"
+#include <vector>
 
 using namespace std;
 UI::UI()
@@ -16,33 +17,22 @@ void  UI::menu_src()
 
 void UI::login(/*string card_nr, string entered_pin*/)
 {
+    string asd = vector_db
     cout << "Please, insert your card" << endl;
     cout << ".";
     cout << ".";
     cout << "." << endl;
     cout << "Please, enter your pin" << endl;
     cin >> entered_pin;
+    //if (entered_pin == DataBase::vector_db.at(i).getter_pin())
+
+        cout << "okay" << endl;
 }
+
 
 string UI::getter_entered_pin()
 {
-  return return entered_pin;
-}
-
-string UI::check_pin(string entered_pin)
-{
-    if (get_entered_pin() == "asd") {
-        cout << "okay" << endl;
-        //db.list_database();
-
-
-
-
-
-
-
-//get_entered_pin() = vector_db.at(i).
-    }
+  return entered_pin;
 }
 
 UI::~UI()
