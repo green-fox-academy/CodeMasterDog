@@ -34,9 +34,12 @@ void UI::choice()
         //}
         //serial->closePort();
 
-    while (key != 'c')
+    while (key != 'e')
     {
-                SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
+        string pressed = "a";
+        SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
+
+        Storage stor;
         cout << "Press a key to command" << endl;
         key = getch();
         switch (key) {
@@ -47,16 +50,31 @@ void UI::choice()
 
             case 'o':
                 {
-                serial->openPort();
-                string line;
-                while(1){
-                serial->readLineFromPort(&line);
-                if (line.length() > 0){
-                cout << line << endl;
+                    serial->openPort();
+                    string line;
+                    //int a = 0;
+                    //while(1){
+                    while(pressed != "s"){
+                        serial->readLineFromPort(&line);
+                        stor.put_into_vector(line);
+                        if (line.length() > 0)
+                            cout << line << endl;
+                    //serial->readLineFromPort(&line);
+                   //a++;
+                   //cout << a << endl;
+                   // if (a > 8)
+                        if (_kbhit()){
+                            pressed = getch();
+                    //break;
+                        }
+
+                    }
+
+
+
+
                 }
-                }
-                break;
-                }
+
 
             case 's':
                 cout << "Start logging / Stop logging" << endl;
@@ -69,6 +87,7 @@ void UI::choice()
 
             case 'l':
                 cout << "List after error handling" << endl;
+                stor.print_vector();
                 break;
 
             case 'e':
@@ -80,6 +99,7 @@ void UI::choice()
                 cout << "default" << endl;
 
         }
+
 
 
     }
