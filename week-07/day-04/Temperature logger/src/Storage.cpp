@@ -1,6 +1,7 @@
 #include "Storage.h"
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -21,6 +22,31 @@ void Storage::print_vector()
         cout << stored_data.at(i) << endl;
     }
 }
+
+temperature_record Storage::parseString(string line) {
+	int temperature;
+
+	istringstream exampleStream(line);
+	tm parsedDateTime;
+	exampleStream >> get_time(&parsedDateTime, "%Y.%m.%d %H:%M:%S")
+			>> temperature;
+	if (exampleStream.fail()) {
+		throw "Invalid string format!";
+	}
+
+
+	if (-273 > temperature || 1000 < temperature) {
+		throw "Temperature is out of range!";
+	}
+
+	long timestamp = mktime(&parsedDateTime);
+
+	temperature_record rec;
+	rec.temperature = temperature;
+	rec.timestamp = timestamp;
+	return rec;
+}
+
 
 Storage::~Storage()
 {

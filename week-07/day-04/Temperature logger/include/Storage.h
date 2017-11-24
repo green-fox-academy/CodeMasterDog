@@ -3,8 +3,15 @@
 
 #include <vector>
 #include <string>
+#include <iomanip>
+
 
 using namespace std;
+
+struct temperature_record {
+	long timestamp;
+	int temperature;
+};
 
 class Storage
 {
@@ -13,6 +20,7 @@ class Storage
         virtual ~Storage();
         void put_into_vector(string);
         void print_vector();
+        temperature_record parseString(string line);
 
     protected:
 

@@ -1,4 +1,5 @@
 #include "UI.h"
+#include "Storage.h"
 
 using namespace std;
 
@@ -22,10 +23,13 @@ void UI::menu_src()
 
 void UI::choice()
 {
+    string line, date, time;
+	int temperature;
+
     Storage stor;
     SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
     is_opened = false;
-    while (key != 'e') {
+    while (key != 'e' || 'q') {
         cout << "Press a key to command" << endl;
         key = getch();
         switch (key) {
@@ -53,11 +57,16 @@ void UI::choice()
                 }
                 string pressed = "a";
                 while(pressed != "s"){
-                    string line;
                     serial->readLineFromPort(&line);
                     if (line.length() > 0){
                         cout << line << endl;
-                        stor.put_into_vector(line);
+                        try {
+                            temperature_record good = stor.parseString(line);
+                            stor.put_into_vector(line);
+                            cout << "good.temperature: " << good.temperature << ", good.timestamp: " << good.timestamp << endl;
+                        } catch (const char *exception) {
+                            cout << "Something went wrong: " << exception << endl;
+                        }
                     }
                     if (_kbhit())
                         pressed = getch();
@@ -83,7 +92,8 @@ void UI::choice()
                 break;
                 }
 
-            case 'e':
+            case ('e'):
+            case ( 'q'):
                 cout << "Exit the program" << endl;
                 exit(0);
 
