@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include "Storage.h"
+#include <conio.h>
 
 using namespace std;
 
@@ -13,6 +14,7 @@ class FileIo
         FileIo();
         virtual ~FileIo();
         void write_to_file(Storage);
+        void delete_file();
 
     protected:
 

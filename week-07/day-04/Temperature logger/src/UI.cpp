@@ -11,15 +11,17 @@ UI::UI()
 void UI::menu_src()
 {
     cout << "Temperature Logger Application\n\
-\r==============================\n\
-\rCommands:\n\
- \rh        Show command list\n\
- \ro        Open port\n\
- \rs        Start logging / Stop logging\n\
- \rc        Close port\n\
- \rl        List after error handling\n\
- \rw        Write logged data to file\n\
- \re        Exit from the program\n" << endl;
+        \r==============================\n\
+        \rCommands:\n\
+        \rh        Show command list\n\
+        \ro        Open port\n\
+        \rs        Start logging / Stop logging\n\
+        \rc        Close port\n\
+        \rl        List after error handling\n\
+        \re        Empty memory\n\
+        \rw        Write logged data to file\n\
+        \rd        Delete log file\n\
+        \rq        Exit from the program\n" << endl;
 }
 
 void UI::choice()
@@ -30,7 +32,7 @@ void UI::choice()
     Storage stor;
     SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
     is_opened = false;
-    while (key != 'e' || 'q') {
+    while (key != 'q') {
         cout << "Press a key to command" << endl;
         key = getch();
         switch (key) {
@@ -53,7 +55,7 @@ void UI::choice()
             case 's':
                 {
                 if (!is_opened) {
-                    cout << "Please open the Port first." << endl;
+                    cout << "Please open the port first." << endl;
                     break;
                 }
                 string pressed = "a";
@@ -89,7 +91,7 @@ void UI::choice()
 
             case 'l':
                 {
-                cout << "List after error handling" << endl;
+                cout << "Stored in memory:" << endl;
                 stor.print_vector();
                 break;
                 }
@@ -101,10 +103,23 @@ void UI::choice()
                 break;
                 }
 
+            case 'd':
+                {
+                FileIo fio;
+                fio.delete_file();
+                break;
+                }
 
             case ('e'):
+
+                {
+                    stor.empty_vector();
+                    break;
+                }
+
             case ( 'q'):
-                cout << "Exit the program" << endl;
+                cout << "Thanks for using Temperature logger!" << endl;
+                cout << "See You soon!" << endl;
                 exit(0);
 
             default :

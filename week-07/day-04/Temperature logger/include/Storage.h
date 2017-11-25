@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <iomanip>
-
+#include <conio.h>
 
 using namespace std;
 
@@ -20,6 +20,7 @@ class Storage
         virtual ~Storage();
         void put_into_vector(string);
         void print_vector();
+        void empty_vector();
         temperature_record parseString(string line);
         vector<string> getter_vektor();
 

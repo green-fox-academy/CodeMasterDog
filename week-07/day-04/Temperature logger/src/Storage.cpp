@@ -17,9 +17,34 @@ void Storage::put_into_vector(string var)
 
 void Storage::print_vector()
 {
-    cout << "after logging" << endl;
     for (unsigned int i = 0; i < stored_data.size(); ++i) {
         cout << stored_data.at(i) << endl;
+    }
+}
+
+void Storage::empty_vector()
+{
+    char key;
+
+    cout << "Are you sure you want to empty the memory?" << endl;
+    cout << "\t \t y / n"<< endl;
+
+    while (key != 'y' || key != 'n') {
+        key = getch();
+
+        switch (key) {
+        case 'y':
+            stored_data.clear();
+            cout << "Memory emptied." << endl;
+            return;
+
+        case 'n':
+            return;
+
+        default :
+            cout << "Invalid command." << endl;
+            cout << "Choice: y / n." << endl;
+        }
     }
 }
 
