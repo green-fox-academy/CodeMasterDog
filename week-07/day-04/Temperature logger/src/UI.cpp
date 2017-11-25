@@ -59,11 +59,12 @@ void UI::choice()
                 while(pressed != "s"){
                     serial->readLineFromPort(&line);
                     if (line.length() > 0){
+                        correcting_format(line);
                         cout << line << endl;
                         try {
                             temperature_record good = stor.parseString(line);
                             stor.put_into_vector(line);
-                            cout << "good.temperature: " << good.temperature << ", good.timestamp: " << good.timestamp << endl;
+                            //cout << "good.temperature: " << good.temperature << ", good.timestamp: " << good.timestamp << endl;
                         } catch (const char *exception) {
                             cout << "Something went wrong: " << exception << endl;
                         }
@@ -101,6 +102,24 @@ void UI::choice()
                 cout << "Invalid command." << endl;
         }
     }
+}
+
+void UI::correcting_format(string &var)
+{
+    if (var[7] != '.') //month
+        var.insert(5, "0");
+
+    if (var[10] != ' ') // day
+        var.insert(8, "0");
+
+    if (var[13] != ':') //hour
+        var.insert(11, "0");
+
+    if (var[16] != ':') //minute
+        var.insert(14, "0");
+
+    if (var[19] != ' ') //second
+        var.insert(17, "0");
 }
 
 UI::~UI()

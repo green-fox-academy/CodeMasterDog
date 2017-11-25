@@ -47,7 +47,6 @@ temperature_record Storage::parseString(string line) {
 	return rec;
 }
 
-
 Storage::~Storage()
 {
     //dtor

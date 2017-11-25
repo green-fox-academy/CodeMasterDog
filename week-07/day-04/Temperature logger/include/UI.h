@@ -16,6 +16,7 @@ class UI
         virtual ~UI();
         void menu_src();
         void choice();
+        void correcting_format(string &);
 
     protected:
 
