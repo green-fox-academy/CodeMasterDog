@@ -18,6 +18,7 @@ void UI::menu_src()
  \rs        Start logging / Stop logging\n\
  \rc        Close port\n\
  \rl        List after error handling\n\
+ \rw        Write logged data to file\n\
  \re        Exit from the program\n" << endl;
 }
 
@@ -92,6 +93,14 @@ void UI::choice()
                 stor.print_vector();
                 break;
                 }
+            case 'w':
+                {
+                cout << "Write logged data to file" << endl;
+                FileIo fio;
+                fio.write_to_file(stor);
+                break;
+                }
+
 
             case ('e'):
             case ( 'q'):

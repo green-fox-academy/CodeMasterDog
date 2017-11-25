@@ -47,6 +47,11 @@ temperature_record Storage::parseString(string line) {
 	return rec;
 }
 
+vector<string> Storage::getter_vektor()
+{
+    return stored_data;
+}
+
 Storage::~Storage()
 {
     //dtor

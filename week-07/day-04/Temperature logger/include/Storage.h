@@ -21,6 +21,7 @@ class Storage
         void put_into_vector(string);
         void print_vector();
         temperature_record parseString(string line);
+        vector<string> getter_vektor();
 
     protected:
 

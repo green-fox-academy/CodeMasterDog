@@ -8,6 +8,8 @@
 #include "..\SerialPortWrapper.h"
 #include <windows.h>
 #include "Storage.h"
+#include "FileIo.h"
+
 
 class UI
 {
