@@ -1,9 +1,4 @@
 #include "Storage.h"
-#include <iostream>
-#include <vector>
-#include <iomanip>
-
-using namespace std;
 
 Storage::Storage()
 {

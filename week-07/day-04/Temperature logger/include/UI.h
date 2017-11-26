@@ -10,7 +10,6 @@
 #include "Storage.h"
 #include "FileIo.h"
 
-
 class UI
 {
     public:
@@ -25,6 +24,7 @@ class UI
     private:
         char key;
         bool is_opened;
+        bool is_running;
 };
 
 #endif // UI_H

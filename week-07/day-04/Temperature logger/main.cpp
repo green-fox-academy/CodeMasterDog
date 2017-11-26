@@ -10,7 +10,7 @@ int main()
 {
     vector<string> ports = SerialPortWrapper::listAvailablePorts();
     cout << "Number of found serial ports: " << ports.size() << endl;
-    for (unsigned int i = 0; i < ports.size(); i++) {
+    for (unsigned int i = 0; i < ports.size(); ++i) {
         cout << "\tPort name: " << ports.at(i) << endl;
     }
 

@@ -1,7 +1,4 @@
 #include "UI.h"
-#include "Storage.h"
-
-using namespace std;
 
 UI::UI()
 {
@@ -27,14 +24,16 @@ void UI::menu_src()
 void UI::choice()
 {
     string line, date, time;
-	int temperature;
 
     Storage stor;
     SerialPortWrapper *serial = new SerialPortWrapper("COM4", 115200);
     is_opened = false;
+    is_running = false;
+
     while (key != 'q') {
-        cout << "Press a key to command" << endl;
+        cout << "Press a command key>";
         key = getch();
+        cout << key <<endl;
         switch (key) {
             case 'h':
                 system("cls");
@@ -54,14 +53,17 @@ void UI::choice()
 
             case 's':
                 {
+
                 if (!is_opened) {
                     cout << "Please open the port first." << endl;
                     break;
                 }
+
                 string pressed = "a";
-                while(pressed != "s"){
+                cout << "Start logging" << endl;
+                while(pressed != "s") {
                     serial->readLineFromPort(&line);
-                    if (line.length() > 0){
+                    if (line.length() > 0) {
                         correcting_format(line);
                         cout << line << endl;
                         try {
@@ -72,8 +74,10 @@ void UI::choice()
                             cout << "Something went wrong: " << exception << endl;
                         }
                     }
-                    if (_kbhit())
+                    if (_kbhit()) {
                         pressed = getch();
+                        cout << "Stop logging" << endl;
+                    }
                 }
                 break;
                 }
@@ -90,32 +94,29 @@ void UI::choice()
                 }
 
             case 'l':
-                {
                 cout << "Stored in memory:" << endl;
                 stor.print_vector();
                 break;
-                }
+
             case 'w':
                 {
-                cout << "Write logged data to file" << endl;
-                FileIo fio;
-                fio.write_to_file(stor);
-                break;
+                    cout << "Write logged data to file" << endl;
+                    FileIo fio;
+                    fio.write_to_file(stor);
+                    break;
                 }
 
             case 'd':
                 {
-                FileIo fio;
-                fio.delete_file();
-                break;
+                    FileIo fio;
+                    fio.delete_file();
+                    break;
                 }
 
             case ('e'):
+                stor.empty_vector();
+                break;
 
-                {
-                    stor.empty_vector();
-                    break;
-                }
 
             case ( 'q'):
                 cout << "Thanks for using Temperature logger!" << endl;

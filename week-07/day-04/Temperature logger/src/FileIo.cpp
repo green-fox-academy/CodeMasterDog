@@ -1,7 +1,5 @@
 #include "FileIo.h"
 
-//using namespace std;
-
 FileIo::FileIo()
 {
     //ctor
@@ -16,13 +14,13 @@ void FileIo::write_to_file(Storage var)
         cout << "Do you want append the new data or overwrite the file?" << endl;
         cout << "\t\t\t a / o ?" << endl;
         char key;
+
         while (key != 'o' || key != 'a'){
             key = getch();
-            cout << key << endl;
+
             switch (key) {
 
             case 'a':
-                {
                 data.open ("Temperature_records.txt", std::ios_base::app);
                 for (unsigned int i = 0; i < var.getter_vektor().size(); ++i) {
                     string new_line;
@@ -32,9 +30,8 @@ void FileIo::write_to_file(Storage var)
                 data.close();
                 cout << "New data appended." << endl;
                 return;
-                }
+
             case 'o':
-                {
                 data.open ("Temperature_records.txt");
                 for (unsigned int i = 0; i < var.getter_vektor().size(); ++i) {
                     string new_line;
@@ -44,7 +41,7 @@ void FileIo::write_to_file(Storage var)
                 data.close();
                 cout << "File overwritten." << endl;
                 return;
-                }
+
             default :
                 cout << "Invalid command." << endl;
                 cout << "Choice: a / o." << endl;
@@ -54,7 +51,6 @@ void FileIo::write_to_file(Storage var)
 
     } else {
         data.open ("Temperature_records.txt");
-
         for (unsigned int i = 0; i < var.getter_vektor().size(); ++i) {
             string new_line;
             new_line = var.getter_vektor().at(i) + "\n";

@@ -3,13 +3,8 @@
 
 #include <iostream>
 #include <fstream>
-//#include <ios>
-
-
 #include "Storage.h"
 #include <conio.h>
-
-using namespace std;
 
 class FileIo
 {

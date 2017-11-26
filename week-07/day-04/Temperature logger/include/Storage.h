@@ -5,6 +5,7 @@
 #include <string>
 #include <iomanip>
 #include <conio.h>
+#include <iostream>
 
 using namespace std;
 
@@ -28,7 +29,6 @@ class Storage
 
     private:
         vector<string> stored_data;
-
 };
 
 #endif // STORAGE_H
