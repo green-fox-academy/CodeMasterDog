@@ -125,8 +125,11 @@ void FileIo::read_from_file(Storage &var)
                             cout << "All data written to memory from file." << endl;
                             return;
 
+                       case 27:
+                            return;
+
                         default:
-                             cout << ": choice a / o." << endl;
+                             cout << "Choice a / o or Esc." << endl;
 
                     }
                 }
@@ -143,7 +146,7 @@ void FileIo::read_from_file(Storage &var)
 
 
         default:
-            cout << "here: choice s / m." << endl;
+            cout << "Choice s / m." << endl;
         }
         return;
    }
