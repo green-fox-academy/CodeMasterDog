@@ -14,11 +14,11 @@ void UI::menu_src()
         \ro        Open port\n\
         \rs        Start logging / Stop logging\n\
         \rc        Close port\n\
-        \rl        List validated data from memory\n\
+        \rl        List after error handling\n\
         \re        Empty memory\n\
-        \rr        Read log file (to screen or memory)\n\
-        \rw        Write data to log file\n\
-        \rd        Delete the log file\n\
+        \rr        Read file to memory\n\
+        \rw        Write logged data to file\n\
+        \rd        Delete log file\n\
         \rq        Exit from the program\n" << endl;
 }
 
@@ -54,16 +54,18 @@ void UI::choice()
 
             case 's':
                 {
+
                 if (!is_opened) {
                     cout << "Please open the port first." << endl;
                     break;
                 }
+
                 string pressed = "a";
                 cout << "Start logging" << endl;
                 while(pressed != "s") {
                     serial->readLineFromPort(&line);
                     if (line.length() > 0) {
-                      stor.correcting_format(line);
+                        correcting_format(line);
                         cout << line << endl;
                         try {
                             temperature_record good = stor.parseString(line);
@@ -132,6 +134,24 @@ void UI::choice()
                 cout << "Invalid command." << endl;
         }
     }
+}
+
+void UI::correcting_format(string &var)
+{
+    if (var[7] != '.') //month
+        var.insert(5, "0");
+
+    if (var[10] != ' ') // day
+        var.insert(8, "0");
+
+    if (var[13] != ':') //hour
+        var.insert(11, "0");
+
+    if (var[16] != ':') //minute
+        var.insert(14, "0");
+
+    if (var[19] != ' ') //second
+        var.insert(17, "0");
 }
 
 UI::~UI()

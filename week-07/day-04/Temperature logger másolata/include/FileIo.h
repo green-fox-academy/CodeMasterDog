@@ -13,7 +13,7 @@ class FileIo
         FileIo();
         virtual ~FileIo();
         void write_to_file(Storage);
-        void read_from_file(Storage &);
+        void read_from_file(Storage);
         void delete_file();
 
     protected:

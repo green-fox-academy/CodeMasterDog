@@ -62,7 +62,7 @@ void FileIo::write_to_file(Storage var)
     }
 }
 
-void FileIo::read_from_file(Storage &var)
+void FileIo::read_from_file(Storage var)
 {
     if (!ifstream("Temperature_records.txt")) {
         cout << "Could not find a log file" << endl;
@@ -77,6 +77,8 @@ void FileIo::read_from_file(Storage &var)
 
     while (1) {
         key = getch();
+        cout << key << endl;
+
         switch (key) {
 
         case 's':
@@ -84,7 +86,8 @@ void FileIo::read_from_file(Storage &var)
 
             data_to_read.open("Temperature_records.txt");
             while (!data_to_read.eof()) {
-                getline(data_to_read ,output);
+         //       for (int i = 0; i <!data_to_read.eof(); ++i) {
+                    getline(data_to_read ,output);
                 cout << output + "\n";
 
             }
@@ -94,58 +97,37 @@ void FileIo::read_from_file(Storage &var)
 
         case 'm': // write to memory
 
-           if (!var.getter_vektor().empty()) {
+            if (!var.getter_vektor().empty()) {
                 cout << "Memory contains data. Do you want to append to it or overwrite?" << endl;
                 cout << "\t\t a / o or Esc" << endl;
 
                 char a;
-                while (1) {
+                while (a) {
                     a = getch();
                     switch (a) {
 
                         case 'a':
                             data_to_read.open("Temperature_records.txt");
                             while (!data_to_read.eof()) {
-                            getline(data_to_read, output);
-                            if (output != "")
-                                var.put_into_vector(output);// << output + "\n";
-                            }
-                            data_to_read.close();
-                            cout << "New data appended to memory." << endl;
-                            return;
-
-                        case 'o':
-                            var.empty_vector();
-                            data_to_read.open("Temperature_records.txt");
-                            while (!data_to_read.eof()) {
-                            getline(data_to_read, output);
+                            getline(data_to_read ,output);
                             var.put_into_vector(output);// << output + "\n";
                             }
                             data_to_read.close();
-                            cout << "All data written to memory from file." << endl;
                             return;
 
-                        default:
-                             cout << ": choice a / o." << endl;
-
+                        case 'o':
+                            cout << "nothing yet." << endl;
+                            break;
                     }
                 }
-            }
 
-            data_to_read.open("Temperature_records.txt");
-            while (!data_to_read.eof()) {
-                getline(data_to_read, output);
-                var.put_into_vector(output);
+
             }
-            data_to_read.close();
-            cout << "Data appended to memory." << endl;
-            break;
 
 
         default:
             cout << "here: choice s / m." << endl;
         }
-        return;
    }
 }
 

@@ -57,50 +57,31 @@ temperature_record Storage::parseString(string line) {
 		throw "Invalid string format!";
 	}
 
+		if (exampleStream.fail()) {
+		throw "Invalid string format!";
+	}
+
 	if (-273 > temperature || 1000 < temperature) {
 		throw "Temperature is out of range!";
 	}
 
 	long timestamp = mktime(&parsedDateTime);
 
-    if (timestamp > current_time)
-       throw "No future time allowed";
-
 	temperature_record rec;
 	rec.temperature = temperature;
 	rec.timestamp = timestamp;
-
+    if ((long long)timestamp > (long long)current_time) {
+        //throw "No future time allowed";
+        cout << " record time is greater, than current time" << endl;
+        }
+	cout << "current time is : " << current_time << endl;
+	cout << "record time is : " << timestamp << endl;
 	return rec;
 }
 
 vector<string> Storage::getter_vektor()
 {
     return stored_data;
-}
-
-void Storage::correcting_format(string &var)
-{// Hacking the year 2038 problem
-    string tmp = var.substr(0, 4);
-    int check_year;
-
-    check_year = stoi(tmp);
-    if (check_year > 2036)
-        var = "kitten" + var;
-
-    if (var[7] != '.') //month
-        var.insert(5, "0");
-
-    if (var[10] != ' ') // day
-        var.insert(8, "0");
-
-    if (var[13] != ':') //hour
-        var.insert(11, "0");
-
-    if (var[16] != ':') //minute
-        var.insert(14, "0");
-
-    if (var[19] != ' ') //second
-        var.insert(17, "0");
 }
 
 Storage::~Storage()

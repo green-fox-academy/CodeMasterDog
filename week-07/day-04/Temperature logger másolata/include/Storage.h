@@ -7,7 +7,6 @@
 #include <conio.h>
 #include <iostream>
 
-
 using namespace std;
 
 struct temperature_record {
@@ -25,7 +24,6 @@ class Storage
         void empty_vector();
         temperature_record parseString(string line);
         vector<string> getter_vektor();
-        void correcting_format(string &);
 
     protected:
 
