@@ -102,8 +102,11 @@ int main(void)
   int counter = 0;
 
   while (1)  {
-	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+	  if (BSP_PB_GetState(BUTTON_KEY) == 1) {
 		  counter++;
+		  HAL_Delay(400);
+
+	  }
 
 	  if (counter == 1) {
 		  BSP_LED_Toggle(LED_GREEN);
@@ -120,11 +123,13 @@ int main(void)
 	  	  HAL_Delay(50);
 	  }
 
-	 if (counter == 4)
+	 if (counter == 4) {
 		 BSP_LED_Off(LED_GREEN);
+	 }
 
-	 if (counter == 5)
-		 counter = 0;
+	 if (counter == 5) {
+		 counter = 1;
+	 }
   }
 }
 
