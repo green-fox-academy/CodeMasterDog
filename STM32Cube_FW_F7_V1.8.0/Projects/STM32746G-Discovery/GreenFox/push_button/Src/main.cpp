@@ -93,14 +93,75 @@ int main(void)
   BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
   BSP_LED_Init(LED_GREEN);
 
+  __HAL_RCC_GPIOA_CLK_ENABLE();    // we need to enable the GPIOA port's clock first
+  __HAL_RCC_GPIOF_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
 
-  //Turn the led on to validate the initialization is occured.
-  //BSP_LED_On(LED_GREEN);
-  /* Add your application code here     */
-  /* Infinite loop */
-  //TODO: My practice task
-  int counter = 0;
+  	GPIO_InitTypeDef tda0;           // create a config structure
+	tda0.Pin = GPIO_PIN_0;            // this is about PIN 0
+	tda0.Mode = GPIO_MODE_OUTPUT_PP;  // Configure as output with push-up-down enabled
+	tda0.Pull = GPIO_PULLDOWN;        // the push-up-down should work as pulldown
+	tda0.Speed = GPIO_SPEED_HIGH;     // we need a high-speed output
 
+	GPIO_InitTypeDef tda1;
+	tda1.Pin = GPIO_PIN_10;
+	tda1.Mode = GPIO_MODE_OUTPUT_PP;
+	tda1.Pull = GPIO_PULLDOWN;
+	tda1.Speed = GPIO_SPEED_HIGH;
+
+	GPIO_InitTypeDef tda2;
+	tda2.Pin = GPIO_PIN_9;
+	tda2.Mode = GPIO_MODE_OUTPUT_PP;
+	tda2.Pull = GPIO_PULLDOWN;
+	tda2.Speed = GPIO_SPEED_HIGH;
+
+	GPIO_InitTypeDef tda3;
+	tda3.Pin = GPIO_PIN_8;
+	tda3.Mode = GPIO_MODE_OUTPUT_PP;
+	tda3.Pull = GPIO_PULLDOWN;
+	tda3.Speed = GPIO_SPEED_HIGH;
+
+	GPIO_InitTypeDef tda4;
+	tda4.Pin = GPIO_PIN_7;
+	tda4.Mode = GPIO_MODE_INPUT;
+	tda4.Pull = GPIO_PULLUP;
+	tda4.Speed = GPIO_SPEED_FAST;
+
+
+
+	HAL_GPIO_Init(GPIOA, &tda0);
+	HAL_GPIO_Init(GPIOF, &tda1);
+	HAL_GPIO_Init(GPIOF, &tda2);
+	HAL_GPIO_Init(GPIOF, &tda3);
+	HAL_GPIO_Init(GPIOC, &tda4);
+
+
+	//Turn the led on to validate the initialization is occured.
+	//BSP_LED_On(LED_GREEN);
+	/* Add your application code here     */
+	/* Infinite loop */
+	//TODO: My practice task
+	int counter = 0;
+
+/*
+
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);   // setting the pin to 1
+	HAL_Delay(1000);                                      // wait a second
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET); // setting the pin to 0
+
+	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);   // setting the pin to 1
+	HAL_Delay(1000);                                      // wait a second
+	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET); // setting the pin to 0
+
+	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);   // setting the pin to 1
+	HAL_Delay(1000);                                      // wait a second
+	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET); // setting the pin to 0
+
+	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);   // setting the pin to 1
+	HAL_Delay(1000);                                      // wait a second
+	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET); // setting the pin to 0
+
+/*
   while (1)  {
 	  if (BSP_PB_GetState(BUTTON_KEY) == 1) {
 		  counter++;
@@ -131,6 +192,47 @@ int main(void)
 		 counter = 1;
 	 }
   }
+  *///(BSP_PB_GetState(BUTTON_KEY) != 1)
+	while (1) {
+		while (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) == 0) {
+
+		//	if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_7) == 0) {
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);  	 // setting the pin to 1
+			HAL_Delay(50);                                     		 // wait a second
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET); 	// setting the pin to 0
+
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+			HAL_Delay(100);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
+			HAL_Delay(100);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
+			HAL_Delay(50);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
+
+
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET);
+			HAL_Delay(50);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET);
+
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
+			HAL_Delay(100);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+			HAL_Delay(100);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+			HAL_Delay(50);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+		//	}
+
+		}
+	}
 }
 
 /**
