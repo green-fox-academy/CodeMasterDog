@@ -48,6 +48,25 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+//#define HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET) LED01_ON;
+#define LED00_ON HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET)
+#define LED01_ON HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET)
+#define LED02_ON HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET)
+#define LED03_ON HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET)
+#define LED04_ON HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET)
+#define LED05_ON HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET)
+#define LED06_ON HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET)
+#define LED07_ON HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET)
+#define LED00_OFF HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET)
+#define LED01_OFF HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET)
+#define LED02_OFF HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET)
+#define LED03_OFF HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)
+#define LED04_OFF HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET)
+#define LED05_OFF HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET)
+#define LED06_OFF HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET)
+#define LED07_OFF HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET)
+
+
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
@@ -55,10 +74,139 @@ static void SystemClock_Config(void);
 static void Error_Handler(void);
 static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
-
-/* Private functions ---------------------------------------------------------*/
 void Light_Up_All(int);
 void switch_off_ALL();
+void chase_light(int, int);
+
+/* Private functions ---------------------------------------------------------*/
+void Light_Up_All(int var)
+{
+	if (var == 0) {
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
+	} else {
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
+		HAL_Delay(var);
+		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+		HAL_Delay(var);
+	}
+}
+
+void switch_off_ALL()
+{
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
+
+}
+
+void chase_light(int var1, int var2)
+{
+	if (var2 == 0) {
+	Light_Up_All(0);
+	HAL_Delay(var1);
+	LED00_OFF;
+	HAL_Delay(var1);
+	LED00_ON;
+
+	LED01_OFF;
+	HAL_Delay(var1);
+	LED01_ON;
+
+	LED02_OFF;
+	HAL_Delay(var1);
+	LED02_ON;
+
+	LED03_OFF;
+	HAL_Delay(var1);
+	LED03_ON;
+
+	LED04_OFF;
+	HAL_Delay(var1);
+	LED04_ON;
+
+	LED05_OFF;
+	HAL_Delay(var1);
+	LED05_ON;
+
+	LED06_OFF;
+	HAL_Delay(var1);
+	LED06_ON;
+
+	LED07_OFF;
+	HAL_Delay(var1);
+	LED07_ON;
+	} else {
+	Light_Up_All(0);
+	HAL_Delay(var1);
+
+	LED07_OFF;
+	HAL_Delay(var1);
+	LED07_ON;
+
+	LED06_OFF;
+	HAL_Delay(var1);
+	LED06_ON;
+
+	LED05_OFF;
+	HAL_Delay(var1);
+	LED05_ON;
+
+	LED04_OFF;
+	HAL_Delay(var1);
+	LED04_ON;
+
+	LED03_OFF;
+	HAL_Delay(var1);
+	LED03_ON;
+
+	LED02_OFF;
+	HAL_Delay(var1);
+	LED02_ON;
+
+	LED01_OFF;
+	HAL_Delay(var1);
+	LED01_ON;
+
+	LED00_OFF;
+	HAL_Delay(var1);
+	LED00_ON;
+
+
+	}
+
+
+
+	/*
+	Light_Up_All(0);
+	GPIOC->ODR = GPIOC->ODR & 0000000000000000;
+	*/
+}
 
 /**
   * @brief  Main program
@@ -166,14 +314,42 @@ int main(void)
 	HAL_GPIO_Init(GPIOI, &Led_05);
 	HAL_GPIO_Init(GPIOH, &Led_06);
 	HAL_GPIO_Init(GPIOI, &Led_07);
-
 	HAL_GPIO_Init(GPIOI, &Button_00);
 
+	int counter = 0;
 
- // while (1)  {
-	  Light_Up_All(0);
-	  HAL_Delay(500);
-	  switch_off_ALL();
+//  while (1)  {
+
+	 if (HAL_GPIO_ReadPin(GPIOI, GPIO_PIN_2) == 0) {
+		  ++counter;
+		  HAL_Delay(400);
+
+	  }
+	/*  if (counter == 0)
+		  switch_off_ALL();
+
+	  if (counter == 1)
+		  Light_Up_All(0);
+
+	  if (counter == 2)
+  		  Light_Up_All(250);
+
+	  if (counter == 3)
+		  counter = 0;
+*/
+	 //Light_Up_All(0);
+	 //HAL_Delay(1000);
+
+ for (unsigned int i = 0; i < 7; ++i) {
+		 chase_light(100, 0);
+		 chase_light(50, 1);
+	 }
+
+	 //Light_Up_All(0);
+	 //chase_light();
+
+
+ //}
 
 
 
@@ -181,60 +357,15 @@ int main(void)
 
 
 
- // }
 
 
 
 
 
 
-
-}
-
-void Light_Up_All(int var)
-{
-	if (var == 0) {
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
-	} else {
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
-		HAL_Delay(var);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-	}
-}
-
-void switch_off_ALL()
-{
-	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
 
 }
+
 
 /**
   * @brief  System Clock Configuration
