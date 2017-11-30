@@ -37,6 +37,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <string.h>
+
 
 /** @addtogroup STM32F7xx_HAL_Examples
   * @{
@@ -45,12 +47,23 @@
 /** @addtogroup Templates
   * @{
   */ 
-
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef uart_handle;
+RNG_HandleTypeDef rndCfg; //mine
+
 /* Private function prototypes -----------------------------------------------*/
+
+#ifdef __GNUC__
+/* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
+   set to 'Yes') calls __io_putchar() */
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif /* __GNUC__ */
+
 static void SystemClock_Config(void);
 static void Error_Handler(void);
 static void MPU_Config(void);
@@ -65,7 +78,6 @@ static void CPU_CACHE_Enable(void);
   */
 int main(void)
 {
-
   /* This project template calls firstly two functions in order to configure MPU feature 
      and to enable the CPU Cache, respectively MPU_Config() and CPU_CACHE_Enable().
      These functions are provided as template implementation that User may integrate 
@@ -89,20 +101,115 @@ int main(void)
   /* Configure the System clock to have a frequency of 216 MHz */
   SystemClock_Config();
 
+  rndCfg.Instance = RNG; //mine
+  HAL_RNG_Init(&rndCfg); //mine
+  uint32_t random_number = 0; //mine
+  uint32_t start = 0; //mine
 
-  /* Add your application code here     */
+
+  /* Add your application code here
+     */
   BSP_LED_Init(LED_GREEN);
-  BSP_LED_On(LED_GREEN);
+  BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
 
-  /* Infinite loop */
- //BSP_LED_Off(LED1);
-  while (1)
- {
-	  //TODO:
-	  //Flash the ledwith 200 ms period time
-	  HAL_Delay(200);
-	  BSP_LED_Toggle(LED1);
+  uart_handle.Init.BaudRate   = 115200;
+  uart_handle.Init.WordLength = UART_WORDLENGTH_8B;
+  uart_handle.Init.StopBits   = UART_STOPBITS_1;
+  uart_handle.Init.Parity     = UART_PARITY_NONE;
+  uart_handle.Init.HwFlowCtl  = UART_HWCONTROL_NONE;
+  uart_handle.Init.Mode       = UART_MODE_TX_RX;
+
+  BSP_COM_Init(COM1, &uart_handle);
+
+  /* Output a message using printf function */
+  printf("\n------------------WELCOME------------------\r\n");
+  printf("**********in STATIC reaction game**********\r\n\n");
+  printf("Let's play a game! Are you ready?\r\n\n"); //mine
+
+  while (BSP_PB_GetState(BUTTON_KEY) == 0) {
+  	  BSP_LED_On(LED_GREEN);
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  BSP_LED_Off(LED_GREEN);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+
+  	  HAL_Delay(100);
+
+  	  if (BSP_PB_GetState(BUTTON_KEY) == 1)
+  		  break;
+    }
+   BSP_LED_Off(LED_GREEN);
+
+   while (1)
+    {
+  	  random_number = (HAL_RNG_GetRandomNumber(&rndCfg) % 10000);
+  	  HAL_Delay(random_number);
+  	  BSP_LED_On(LED_GREEN);
+  	  start = HAL_GetTick();
+  	  while (BSP_PB_GetState(BUTTON_KEY) == 0) {}
+  	  printf("your reaction time: %d\n", (int)HAL_GetTick() - (int)start);
+  	  BSP_LED_Off(LED_GREEN);
+    }
   }
+/**
+  * @brief  Retargets the C library printf function to the USART.
+  * @param  None
+  * @retval None
+  */
+PUTCHAR_PROTOTYPE
+{
+  /* Place your implementation of fputc here */
+  /* e.g. write a character to the EVAL_COM1 and Loop until the end of transmission */
+  HAL_UART_Transmit(&uart_handle, (uint8_t *)&ch, 1, 0xFFFF);
+
+  return ch;
 }
 
 /**
