@@ -48,25 +48,6 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-//#define HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET) LED01_ON;
-#define LED00_ON HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET)
-#define LED01_ON HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET)
-#define LED02_ON HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET)
-#define LED03_ON HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET)
-#define LED04_ON HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET)
-#define LED05_ON HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET)
-#define LED06_ON HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET)
-#define LED07_ON HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET)
-#define LED00_OFF HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET)
-#define LED01_OFF HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET)
-#define LED02_OFF HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET)
-#define LED03_OFF HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)
-#define LED04_OFF HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET)
-#define LED05_OFF HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET)
-#define LED06_OFF HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET)
-#define LED07_OFF HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET)
-
-
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* Private function prototypes -----------------------------------------------*/
@@ -74,139 +55,8 @@ static void SystemClock_Config(void);
 static void Error_Handler(void);
 static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
-void Light_Up_All(int);
-void switch_off_ALL();
-void chase_light(int, int);
 
 /* Private functions ---------------------------------------------------------*/
-void Light_Up_All(int var)
-{
-	if (var == 0) {
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
-	} else {
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_SET);
-		HAL_Delay(var);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-		HAL_Delay(var);
-	}
-}
-
-void switch_off_ALL()
-{
-	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_0, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_6, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOI, GPIO_PIN_3, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-
-}
-
-void chase_light(int var1, int var2)
-{
-	if (var2 == 0) {
-	//Light_Up_All(0);
-	//HAL_Delay(var1);
-	LED00_OFF;
-	HAL_Delay(var1 / 2);
-	LED00_ON;
-
-	LED01_OFF;
-	HAL_Delay(var1);
-	LED01_ON;
-
-	LED02_OFF;
-	HAL_Delay(var1);
-	LED02_ON;
-
-	LED03_OFF;
-	HAL_Delay(var1);
-	LED03_ON;
-
-	LED04_OFF;
-	HAL_Delay(var1);
-	LED04_ON;
-
-	LED05_OFF;
-	HAL_Delay(var1);
-	LED05_ON;
-
-	LED06_OFF;
-	HAL_Delay(var1);
-	LED06_ON;
-
-	LED07_OFF;
-	HAL_Delay(var1 / 2);
-	//LED07_ON;
-	} else {
-//	Light_Up_All(0);
-//	HAL_Delay(var1 / 2);
-
-	LED07_OFF;
-	HAL_Delay(var1 / 2);
-	LED07_ON;
-
-	LED06_OFF;
-	HAL_Delay(var1);
-	LED06_ON;
-
-	LED05_OFF;
-	HAL_Delay(var1);
-	LED05_ON;
-
-	LED04_OFF;
-	HAL_Delay(var1);
-	LED04_ON;
-
-	LED03_OFF;
-	HAL_Delay(var1);
-	LED03_ON;
-
-	LED02_OFF;
-	HAL_Delay(var1);
-	LED02_ON;
-
-	LED01_OFF;
-	HAL_Delay(var1);
-	LED01_ON;
-
-	LED00_OFF;
-	HAL_Delay(var1 / 2);
-	//LED00_ON;
-
-
-	}
-
-
-
-	/*
-	Light_Up_All(0);
-	GPIOC->ODR = GPIOC->ODR & 0000000000000000;
-	*/
-}
 
 /**
   * @brief  Main program
@@ -215,6 +65,7 @@ void chase_light(int var1, int var2)
   */
 int main(void)
 {
+
   /* This project template calls firstly two functions in order to configure MPU feature 
      and to enable the CPU Cache, respectively MPU_Config() and CPU_CACHE_Enable().
      These functions are provided as template implementation that User may integrate 
@@ -238,119 +89,21 @@ int main(void)
   /* Configure the System clock to have a frequency of 216 MHz */
   SystemClock_Config();
 
-  //TODO:
-  //Initialization the push button and the led with using BSP
-  BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
+
+  /* Add your application code here     */
   BSP_LED_Init(LED_GREEN);
+  BSP_LED_On(LED_GREEN);
 
-  __HAL_RCC_GPIOC_CLK_ENABLE();    // we need to enable the GPIOA port's clock first
-  __HAL_RCC_GPIOG_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOG_CLK_ENABLE();
-  __HAL_RCC_GPIOH_CLK_ENABLE();
-
-  __HAL_RCC_GPIOI_CLK_ENABLE();
-
-  	//Leds
-  	GPIO_InitTypeDef Led_00;           // create a config structure
-  	Led_00.Pin = GPIO_PIN_7;            // this is about PIN 0
-  	Led_00.Mode = GPIO_MODE_OUTPUT_PP;  // Configure as output with push-up-down enabled
-  	Led_00.Pull = GPIO_PULLDOWN;        // the push-up-down should work as pulldown
-  	Led_00.Speed = GPIO_SPEED_HIGH;     // we need a high-speed output
-
-	GPIO_InitTypeDef Led_01;
-	Led_01.Pin = GPIO_PIN_6;
-	Led_01.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_01.Pull = GPIO_PULLDOWN;
-	Led_01.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_02;
-	Led_02.Pin = GPIO_PIN_6;
-	Led_02.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_02.Pull = GPIO_PULLDOWN;
-	Led_02.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_03;
-	Led_03.Pin = GPIO_PIN_4;
-	Led_03.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_03.Pull = GPIO_PULLDOWN;
-	Led_03.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_04;
-	Led_04.Pin = GPIO_PIN_7;
-	Led_04.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_04.Pull = GPIO_PULLDOWN;
-	Led_04.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_05;
-	Led_05.Pin = GPIO_PIN_0;
-	Led_05.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_05.Pull = GPIO_PULLDOWN;
-	Led_05.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_06;
-	Led_06.Pin = GPIO_PIN_6;
-	Led_06.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_06.Pull = GPIO_PULLDOWN;
-	Led_06.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_07;
-	Led_07.Pin = GPIO_PIN_3;
-	Led_07.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_07.Pull = GPIO_PULLDOWN;
-	Led_07.Speed = GPIO_SPEED_HIGH;
-
-	//Button
-	GPIO_InitTypeDef Button_00;
-	Button_00.Pin = GPIO_PIN_2;
-	Button_00.Mode = GPIO_MODE_INPUT;
-	Button_00.Pull = GPIO_PULLUP;
-	Button_00.Speed = GPIO_SPEED_LOW;
-
-	HAL_GPIO_Init(GPIOC, &Led_00);
-	HAL_GPIO_Init(GPIOC, &Led_01);
-	HAL_GPIO_Init(GPIOG, &Led_02);
-	HAL_GPIO_Init(GPIOB, &Led_03);
-	HAL_GPIO_Init(GPIOG, &Led_04);
-	HAL_GPIO_Init(GPIOI, &Led_05);
-	HAL_GPIO_Init(GPIOH, &Led_06);
-	HAL_GPIO_Init(GPIOI, &Led_07);
-	HAL_GPIO_Init(GPIOI, &Button_00);
-
-	int counter = 0;
-
- while (1)  {
-
-	 HAL_GPIO_EXTI_Callback(GPIO_PIN_2);
-
-	 if (HAL_GPIO_ReadPin(GPIOI, GPIO_PIN_2) == 0) {
-		  ++counter;
-		  HAL_Delay(100);
-	  }
-
-	 if (counter == 0)
-		  switch_off_ALL();
-
-	  if (counter == 1)
-		  Light_Up_All(0);
-
-	  if (counter == 2)
-  		  Light_Up_All(250);
-
-	  while (counter == 3) {
-		  chase_light(50, 0);
-
-		  chase_light(50, 1);
-	  }
-
-	  if (counter >= 4)
-		  counter = 0;
- }
+  /* Infinite loop */
+ //BSP_LED_Off(LED1);
+  while (1)
+ {
+	  //TODO:
+	  //Flash the ledwith 200 ms period time
+	  HAL_Delay(200);
+	  BSP_LED_Toggle(LED1);
+  }
 }
-
-
-
-
 
 /**
   * @brief  System Clock Configuration
