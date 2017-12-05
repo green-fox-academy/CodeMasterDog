@@ -1,0 +1,6 @@
+14:10:30 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+14:10:31 Build Finished (took 999ms)
+
