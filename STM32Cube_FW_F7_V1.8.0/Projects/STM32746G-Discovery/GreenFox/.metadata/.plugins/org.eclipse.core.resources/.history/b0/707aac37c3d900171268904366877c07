@@ -53,9 +53,6 @@
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef uart_handle;
 TIM_HandleTypeDef    TimHandle;           //the timer's config structure
-TIM_OC_InitTypeDef sConfig;
-GPIO_InitTypeDef LED00;
-
 
 volatile uint32_t timIntPeriod;
 
@@ -104,14 +101,51 @@ int main(void) {
 
 	/* Configure the System clock to have a frequency of 216 MHz */
 	SystemClock_Config();
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+
+	__HAL_RCC_TIM1_CLK_ENABLE();
+	  TimHandle.Instance               = TIM1;
+	  TimHandle.Init.Period            = 0xFFFF;
+	  TimHandle.Init.Prescaler         = 54000;
+	  TimHandle.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
+	  TimHandle.Init.CounterMode       = TIM_COUNTERMODE_UP;
+
+	  HAL_TIM_Base_Init(&TimHandle);            //Configure the timer
+	  HAL_TIM_Base_Start(&TimHandle);
+
+	  TIM_OC_InitTypeDef sConfig;
+
+	    HAL_TIM_PWM_Init(&TimHandle);
+
+	    sConfig.OCMode       = TIM_OCMODE_PWM1;
+	    sConfig.Pulse = 0xFFFF/2;
+
+	    HAL_TIM_PWM_ConfigChannel(&TimHandle, TIM1, TIM_CHANNEL_1);
+
+	    HAL_TIM_PWM_Start(&TimHandle, TIM_CHANNEL_1);
+
+
+	HAL_TIM_Base_Start(&TimHandle);
+
+
+
+
+
+
+
+
+
+
+
+
+
+	BSP_PB_Init(BUTTON_WAKEUP, BUTTON_MODE_EXTI);
+
+
 
 	/* Add your application code here
 	 */
-
-	__HAL_RCC_TIM1_CLK_ENABLE();
-	__HAL_RCC_GPIOA_CLK_ENABLE();
 	BSP_LED_Init(LED_GREEN);
-	BSP_PB_Init(BUTTON_WAKEUP, BUTTON_MODE_EXTI);
 
 	uart_handle.Init.BaudRate = 115200;
 	uart_handle.Init.WordLength = UART_WORDLENGTH_8B;
@@ -122,47 +156,28 @@ int main(void) {
 
 	BSP_COM_Init(COM1, &uart_handle);
 
-
-
-
-
-	TimHandle.Instance               = TIM1;
-	TimHandle.Init.Period            = 1000;
-	TimHandle.Init.Prescaler         = 1;
-	TimHandle.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
-	TimHandle.Init.CounterMode       = TIM_COUNTERMODE_UP;
-
-	sConfig.OCMode       = TIM_OCMODE_PWM1;
-	sConfig.Pulse = 18;
-
-	HAL_TIM_PWM_Init(&TimHandle);
-
-
+	GPIO_InitTypeDef LED00;
 	LED00.Pin = GPIO_PIN_8;
-	LED00.Mode = GPIO_MODE_AF_PP;
-	LED00.Pull = GPIO_NOPULL;
+	LED00.Mode = GPIO_MODE_OUTPUT_PP;
+	LED00.Pull = GPIO_PULLDOWN;
 	LED00.Speed = GPIO_SPEED_HIGH;
-	LED00.Alternate = GPIO_AF1_TIM1;
-
 
 	HAL_GPIO_Init(GPIOA, &LED00);
 
 
 
-
 	printf("\n-----------------WELCOME-----------------\r\n");
 	printf("**********in STATIC interrupts WS**********\r\n\n");
-    HAL_TIM_PWM_ConfigChannel(&TimHandle, &sConfig, TIM_CHANNEL_1);
 
-    HAL_TIM_PWM_Start(&TimHandle, TIM_CHANNEL_1);
-
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
+	HAL_Delay(500);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
 
 
 	while (1) {
-	///*
-		printf("%lu\r\n", TIM1->CNT);
+		 printf("%lu\r\n", TIM1->CNT);
 		 		  HAL_Delay(1000);
-//	*/
+
 
 
 

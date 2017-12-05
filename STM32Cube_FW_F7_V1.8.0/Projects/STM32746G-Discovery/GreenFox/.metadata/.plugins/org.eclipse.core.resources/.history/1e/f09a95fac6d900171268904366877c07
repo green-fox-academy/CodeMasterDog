@@ -107,9 +107,6 @@ int main(void) {
 
 	/* Add your application code here
 	 */
-
-	__HAL_RCC_TIM1_CLK_ENABLE();
-	__HAL_RCC_GPIOA_CLK_ENABLE();
 	BSP_LED_Init(LED_GREEN);
 	BSP_PB_Init(BUTTON_WAKEUP, BUTTON_MODE_EXTI);
 
@@ -123,17 +120,18 @@ int main(void) {
 	BSP_COM_Init(COM1, &uart_handle);
 
 
-
+	__HAL_RCC_TIM1_CLK_ENABLE();
+	__HAL_RCC_GPIOA_CLK_ENABLE();
 
 
 	TimHandle.Instance               = TIM1;
-	TimHandle.Init.Period            = 1000;
-	TimHandle.Init.Prescaler         = 1;
+	TimHandle.Init.Period            = 3000;
+	TimHandle.Init.Prescaler         = 2500;
 	TimHandle.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
 	TimHandle.Init.CounterMode       = TIM_COUNTERMODE_UP;
 
 	sConfig.OCMode       = TIM_OCMODE_PWM1;
-	sConfig.Pulse = 18;
+	sConfig.Pulse = 10;
 
 	HAL_TIM_PWM_Init(&TimHandle);
 
@@ -150,19 +148,29 @@ int main(void) {
 
 
 
+
+
+
+
+
+
+
+
+
+
 	printf("\n-----------------WELCOME-----------------\r\n");
 	printf("**********in STATIC interrupts WS**********\r\n\n");
-    HAL_TIM_PWM_ConfigChannel(&TimHandle, &sConfig, TIM_CHANNEL_1);
+    HAL_TIM_PWM_ConfigChannel(&TimHandle, TIM1, TIM_CHANNEL_1);
 
     HAL_TIM_PWM_Start(&TimHandle, TIM_CHANNEL_1);
 
 
 
 	while (1) {
-	///*
+	/*
 		printf("%lu\r\n", TIM1->CNT);
 		 		  HAL_Delay(1000);
-//	*/
+	*/
 
 
 

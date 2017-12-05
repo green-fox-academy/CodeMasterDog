@@ -1,4 +1,4 @@
-14:10:17 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+15:55:32 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
 make -j4 all 
 Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
 Invoking: MCU GCC Compiler
@@ -16,8 +16,493 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
 arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
    text	   data	    bss	    dec	    hex	filename
-   8060	    136	   1704	   9900	   26ac	STM32746G_Discovery_interrupts.elf
+   9244	    136	   1816	  11196	   2bbc	STM32746G_Discovery_interrupts.elf
  
-14:10:30 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+15:55:43 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
 make -j4 all 
 make: Nothing to be done for 'all'.
+15:56:17 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:140:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:45,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/stm32f7xx_hal_conf.h:241,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c: In function 'main':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h:1343:29: warning: passing argument 2 of 'HAL_TIM_PWM_ConfigChannel' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:153:43: note: in expansion of macro 'TIM1'
+     HAL_TIM_PWM_ConfigChannel(&TimHandle, TIM1, TIM_CHANNEL_1);
+                                           ^~~~
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/stm32f7xx_hal_conf.h:369:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:1227:19: note: expected 'TIM_OC_InitTypeDef * {aka struct <anonymous> *}' but argument is of type 'TIM_TypeDef * {aka struct <anonymous> *}'
+ HAL_StatusTypeDef HAL_TIM_PWM_ConfigChannel(TIM_HandleTypeDef *htim, TIM_OC_InitTypeDef* sConfig, uint32_t Channel);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9244	    136	   1816	  11196	   2bbc	STM32746G_Discovery_interrupts.elf
+ 
+15:56:37 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:140:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:45,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/stm32f7xx_hal_conf.h:241,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c: In function 'main':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h:1343:29: warning: passing argument 2 of 'HAL_TIM_PWM_ConfigChannel' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:153:43: note: in expansion of macro 'TIM1'
+     HAL_TIM_PWM_ConfigChannel(&TimHandle, TIM1, TIM_CHANNEL_1);
+                                           ^~~~
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/stm32f7xx_hal_conf.h:369:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:1227:19: note: expected 'TIM_OC_InitTypeDef * {aka struct <anonymous> *}' but argument is of type 'TIM_TypeDef * {aka struct <anonymous> *}'
+ HAL_StatusTypeDef HAL_TIM_PWM_ConfigChannel(TIM_HandleTypeDef *htim, TIM_OC_InitTypeDef* sConfig, uint32_t Channel);
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:140:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_def.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:45,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/stm32f7xx_hal_conf.h:241,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f746xx.h:1343:29: warning: passing argument 1 of 'HAL_TIM_PWM_Start' from incompatible pointer type [-Wincompatible-pointer-types]
+ #define TIM1                ((TIM_TypeDef *) TIM1_BASE)
+                             ^
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:155:23: note: in expansion of macro 'TIM1'
+     HAL_TIM_PWM_Start(TIM1, TIM_CHANNEL_1);
+                       ^~~~
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/stm32f7xx_hal_conf.h:369:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:1135:19: note: expected 'TIM_HandleTypeDef * {aka struct <anonymous> *}' but argument is of type 'TIM_TypeDef * {aka struct <anonymous> *}'
+ HAL_StatusTypeDef HAL_TIM_PWM_Start(TIM_HandleTypeDef *htim, uint32_t Channel);
+                   ^~~~~~~~~~~~~~~~~
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9244	    136	   1816	  11196	   2bbc	STM32746G_Discovery_interrupts.elf
+ 
+15:58:55 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:00:45 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:01:02 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:01:17 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:01:32 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:02:06 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:02:22 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:02:39 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:02:53 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:08:38 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9240	    136	   1816	  11192	   2bb8	STM32746G_Discovery_interrupts.elf
+ 
+16:08:59 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9240	    136	   1816	  11192	   2bb8	STM32746G_Discovery_interrupts.elf
+ 
+16:09:14 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9240	    136	   1816	  11192	   2bb8	STM32746G_Discovery_interrupts.elf
+ 
+16:09:36 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9236	    136	   1816	  11188	   2bb4	STM32746G_Discovery_interrupts.elf
+ 
+16:11:13 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/stm32f7xx_hal_msp.d" -MT"Interrupts/User/stm32f7xx_hal_msp.o" -o "Interrupts/User/stm32f7xx_hal_msp.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10972	    136	   1816	  12924	   327c	STM32746G_Discovery_interrupts.elf
+ 
+16:13:33 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/stm32f7xx_hal_msp.d" -MT"Interrupts/User/stm32f7xx_hal_msp.o" -o "Interrupts/User/stm32f7xx_hal_msp.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9260	    136	   1816	  11212	   2bcc	STM32746G_Discovery_interrupts.elf
+ 
+16:14:11 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/stm32f7xx_hal_msp.d" -MT"Interrupts/User/stm32f7xx_hal_msp.o" -o "Interrupts/User/stm32f7xx_hal_msp.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9260	    136	   1816	  11212	   2bcc	STM32746G_Discovery_interrupts.elf
+ 
+16:14:48 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11040	    136	   1816	  12992	   32c0	STM32746G_Discovery_interrupts.elf
+ 
+16:15:34 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:16:51 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/main.d" -MT"Interrupts/User/main.o" -o "Interrupts/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/main.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11040	    136	   1816	  12992	   32c0	STM32746G_Discovery_interrupts.elf
+ 
+16:24:47 **** Incremental Build of configuration Debug for project STM32746G_Discovery_interrupts ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts\SW4STM32\STM32746G_Discovery_interrupts\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Interrupts/User/stm32f7xx_hal_msp.d" -MT"Interrupts/User/stm32f7xx_hal_msp.o" -o "Interrupts/User/stm32f7xx_hal_msp.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c"
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/interrupts/Src/stm32f7xx_hal_msp.c
+ 
+Building target: STM32746G_Discovery_interrupts.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_interrupts.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_interrupts.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_interrupts.elf" "STM32746G_Discovery_interrupts.bin"
+arm-none-eabi-size "STM32746G_Discovery_interrupts.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11044	    136	   1816	  12996	   32c4	STM32746G_Discovery_interrupts.elf
+ 
