@@ -1,0 +1,7 @@
+10:06:25 **** Clean-only build of configuration Debug for project STM32746G_Discovery_uart ****
+make -j4 clean 
+rm -rf *
+ 
+
+10:06:26 Build Finished (took 975ms)
+

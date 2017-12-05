@@ -49,32 +49,16 @@
   */ 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#define LED00_ON HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET)
-#define LED01_ON HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET)
-#define LED02_ON HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_SET)
-#define LED03_ON HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET)
-#define LED04_ON HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_SET)
-#define LED05_ON HAL_GPIO_WritePin(GPIOF, GPIO_PIN_6, GPIO_PIN_SET)
-#define LED06_ON HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_SET)
-#define LED07_ON HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_SET)
-#define LED08_ON HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET)
-#define LED09_ON HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET)
+/*
+ *
+ */
 
-#define LED00_OFF HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET)
-#define LED01_OFF HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET)
-#define LED02_OFF HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET)
-#define LED03_OFF HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET)
-#define LED04_OFF HAL_GPIO_WritePin(GPIOG, GPIO_PIN_7, GPIO_PIN_RESET)
-#define LED05_OFF HAL_GPIO_WritePin(GPIOF, GPIO_PIN_6, GPIO_PIN_RESET)
-#define LED06_OFF HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7, GPIO_PIN_RESET)
-#define LED07_OFF HAL_GPIO_WritePin(GPIOF, GPIO_PIN_8, GPIO_PIN_RESET)
-#define LED08_OFF HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET)
-#define LED09_OFF HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET)
-
+//#define LED00_ON HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET)
+/*
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef uart_handle;
-RNG_HandleTypeDef rndCfg; //mine
+
 
 /* Private function prototypes -----------------------------------------------*/
 
@@ -129,107 +113,31 @@ int main(void)
   /* Configure the System clock to have a frequency of 216 MHz */
   SystemClock_Config();
 
-  rndCfg.Instance = RNG; //mine
-  HAL_RNG_Init(&rndCfg); //mine
-  uint32_t random_number = 0; //mine
-  uint32_t start = 0; //mine
-
 
   /* Add your application code here
      */
   BSP_LED_Init(LED_GREEN);
   BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
 
-  __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOG_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOG_CLK_ENABLE();
-  __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
 
-  __HAL_RCC_GPIOI_CLK_ENABLE();
-
 	//Leds
-	GPIO_InitTypeDef Led_00;           // create a config structure
-	Led_00.Pin = GPIO_PIN_7;            // this is about PIN 0
-	Led_00.Mode = GPIO_MODE_OUTPUT_PP;  // Configure as output with push-up-down enabled
-	Led_00.Pull = GPIO_PULLDOWN;        // the push-up-down should work as pulldown
-	Led_00.Speed = GPIO_SPEED_HIGH;     // we need a high-speed output
 
-	GPIO_InitTypeDef Led_01;
-	Led_01.Pin = GPIO_PIN_6;
-	Led_01.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_01.Pull = GPIO_PULLDOWN;
-	Led_01.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_02;
-	Led_02.Pin = GPIO_PIN_6;
-	Led_02.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_02.Pull = GPIO_PULLDOWN;
-	Led_02.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_03;
-	Led_03.Pin = GPIO_PIN_4;
-	Led_03.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_03.Pull = GPIO_PULLDOWN;
-	Led_03.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_04;
-	Led_04.Pin = GPIO_PIN_7;
-	Led_04.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_04.Pull = GPIO_PULLDOWN;
-	Led_04.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_05;
-	Led_05.Pin = GPIO_PIN_6;
-	Led_05.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_05.Pull = GPIO_PULLDOWN;
-	Led_05.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_06;
-	Led_06.Pin = GPIO_PIN_7;
-	Led_06.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_06.Pull = GPIO_PULLDOWN;
-	Led_06.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_07;
-	Led_07.Pin = GPIO_PIN_8;
-	Led_07.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_07.Pull = GPIO_PULLDOWN;
-	Led_07.Speed = GPIO_SPEED_HIGH;
-
-	GPIO_InitTypeDef Led_08;
-	Led_08.Pin = GPIO_PIN_9;
-	Led_08.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_08.Pull = GPIO_PULLDOWN;
-	Led_08.Speed = GPIO_SPEED_HIGH;
+ 	GPIO_InitTypeDef Leds;           // create a config structure
+	Leds.Pin = GPIO_PIN_10 | GPIO_PIN_9 | GPIO_PIN_8 | GPIO_PIN_7 | GPIO_PIN_6;            // this is about PIN 0
+	Leds.Mode = GPIO_MODE_OUTPUT_PP;  // Configure as output with push-up-down enabled
+	Leds.Pull = GPIO_PULLDOWN;        // the push-up-down should work as pulldown
+	Leds.Speed = GPIO_SPEED_HIGH;     // we need a high-speed output
 
 
-	GPIO_InitTypeDef Led_09;
-	Led_09.Pin = GPIO_PIN_10;
-	Led_09.Mode = GPIO_MODE_OUTPUT_PP;
-	Led_09.Pull = GPIO_PULLDOWN;
-	Led_09.Speed = GPIO_SPEED_HIGH;
 
-	//Button
-	GPIO_InitTypeDef Button_00;
-	Button_00.Pin = GPIO_PIN_8;
-	Button_00.Mode = GPIO_MODE_INPUT;
-	Button_00.Pull = GPIO_PULLUP;
-	Button_00.Speed = GPIO_SPEED_LOW;
 
-	HAL_GPIO_Init(GPIOC, &Led_00);
-	HAL_GPIO_Init(GPIOC, &Led_01);
-	HAL_GPIO_Init(GPIOG, &Led_02);
-	HAL_GPIO_Init(GPIOB, &Led_03);
-	HAL_GPIO_Init(GPIOG, &Led_04);
-	HAL_GPIO_Init(GPIOF, &Led_05);
-	HAL_GPIO_Init(GPIOF, &Led_06);
-	HAL_GPIO_Init(GPIOF, &Led_07);
-	HAL_GPIO_Init(GPIOF, &Led_08);
-	HAL_GPIO_Init(GPIOF, &Led_09);
-	HAL_GPIO_Init(GPIOA, &Button_00);
+
+
+
+
+  HAL_GPIO_Init(GPIOF, &Leds);
+
 
   uart_handle.Init.BaudRate   = 115200;
   uart_handle.Init.WordLength = UART_WORDLENGTH_8B;
@@ -249,143 +157,18 @@ int main(void)
 
    while (1) // Superloop
     {
-	   int dec;
-	   char result[10];
-	   int pow[10] = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512};
-	   int x;
-
-	   BSP_LED_On(LED_GREEN);
-
-		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == 0) {
-			HAL_Delay(500);
-			random_number = (HAL_RNG_GetRandomNumber(&rndCfg) % 1024);
-			dec = random_number;
-			printf("%d to BIN: ", dec);
-
-			for( int i = 9; i >= 0; --i) {
-				x = pow[i];
-				if (dec - x >= 0) {
-				dec = dec -x;
-				result[i] = '1';
-				} else {
-					result[i] = '0';
-				}
-
-			}
-
-  			for ( int i = 9; i >= 0; --i) {
-  			           printf("%c", result[i]);
-  			       }
-  			printf("\n");
-
-  			if (result[0] == '1')
-  				LED00_ON;
-  			else
-  				LED00_OFF;
-
-  			if (result[1] == '1')
-  				LED01_ON;
-  			else
-  				LED01_OFF;
-
-  			if (result[2] == '1')
-  				LED02_ON;
-  			else
-  				LED02_OFF;
-
-  			if (result[3] == '1')
-  				LED03_ON;
-  			else
-  				LED03_OFF;
-
-  			if (result[4] == '1')
-  				LED04_ON;
-  			else
-  				LED04_OFF;
-
-  			if (result[5] == '1')
-  				LED05_ON;
-  			else
-  				LED05_OFF;
-
-  			if (result[6] == '1')
-  				LED06_ON;
-  			else
-  				LED06_OFF;
-
-  			if (result[7] == '1')
-  				LED07_ON;
-  			else
-  				LED07_OFF;
-
-  			if (result[8] == '1')
-  				LED08_ON;
-  			else
-  				LED08_OFF;
-
-  			if (result[9] == '1')
-  				LED09_ON;
-  			else
-  				LED09_OFF;
 
 
-		}
 
-     }
+
+
+
   }
 
-void Light_Up_All(int var)
-{
-	if (var == 0) {
-		LED00_ON;
-		LED01_ON;
-		LED02_ON;
-		LED03_ON;
-		LED04_ON;
-		LED05_ON;
-		LED06_ON;
-		LED07_ON;
-		LED08_ON;
-		LED09_ON;
-	} else {
-		LED00_ON;
-		LED01_ON;
-		LED02_ON;
-		LED03_ON;
-		LED04_ON;
-		LED05_ON;
-		LED06_ON;
-		LED07_ON;
-		LED08_ON;
-		LED09_ON;
-		HAL_Delay(var);
-		LED00_OFF;
-		LED01_OFF;
-		LED02_OFF;
-		LED03_OFF;
-		LED04_OFF;
-		LED05_OFF;
-		LED06_OFF;
-		LED07_OFF;
-		LED08_OFF;
-		LED09_OFF;
-		HAL_Delay(var);
-	}
+
 }
 
-void switch_off_ALL()
-{
-	LED00_OFF;
-	LED01_OFF;
-	LED02_OFF;
-	LED03_OFF;
-	LED04_OFF;
-	LED05_OFF;
-	LED06_OFF;
-	LED07_OFF;
-	LED08_OFF;
-	LED09_OFF;
-}
+
 
 /**
   * @brief  Retargets the C library printf function to the USART.
