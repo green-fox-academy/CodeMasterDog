@@ -59,6 +59,7 @@ GPIO_InitTypeDef LED00;
 
 volatile uint32_t timIntPeriod;
 
+
 /* Private function prototypes -----------------------------------------------*/
 
 #ifdef __GNUC__
@@ -122,10 +123,6 @@ int main(void) {
 
 	BSP_COM_Init(COM1, &uart_handle);
 
-
-
-
-
 	TimHandle.Instance               = TIM1;
 	TimHandle.Init.Period            = 1000;
 	TimHandle.Init.Prescaler         = 1;
@@ -137,17 +134,13 @@ int main(void) {
 
 	HAL_TIM_PWM_Init(&TimHandle);
 
-
 	LED00.Pin = GPIO_PIN_8;
 	LED00.Mode = GPIO_MODE_AF_PP;
 	LED00.Pull = GPIO_NOPULL;
 	LED00.Speed = GPIO_SPEED_HIGH;
 	LED00.Alternate = GPIO_AF1_TIM1;
 
-
 	HAL_GPIO_Init(GPIOA, &LED00);
-
-
 
 
 	printf("\n-----------------WELCOME-----------------\r\n");
@@ -156,13 +149,13 @@ int main(void) {
 
     HAL_TIM_PWM_Start(&TimHandle, TIM_CHANNEL_1);
 
-
-
 	while (1) {
-	///*
+
+
+	/*
 		printf("%lu\r\n", TIM1->CNT);
 		 		  HAL_Delay(1000);
-//	*/
+
 
 
 

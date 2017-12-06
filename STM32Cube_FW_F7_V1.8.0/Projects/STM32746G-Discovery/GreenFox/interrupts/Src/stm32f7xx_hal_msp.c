@@ -49,6 +49,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
 
+
 /** @addtogroup STM32F7xx_HAL_Driver
   * @{
   */
@@ -97,10 +98,13 @@ void EXTI15_10_IRQHandler()
   */
 void HAL_GPIO_EXTI_Callback(uint16_t Gpio_pin) {
 	printf("\n-Interrupted-\r\n");
+
+	/*
 	if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == 0)
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
 	else
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
+*/
 }
 
 /**

@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="HAL_TIM" key="selection"/>
+		<item value="dir" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="HAL_TIM"/>
+			<item value="dir"/>
+			<item value="pin15"/>
+			<item value="TIM1"/>
+			<item value="GPIO_InitTypeDef"/>
+			<item value="TIM_OC_InitTypeDef"/>
 			<item value="clock"/>
-			<item value=" APB2CLKDivider"/>
-			<item value="chann"/>
-			<item value="GPIO"/>
-			<item value="HAL_TIM_PWM_Init"/>
-			<item value="TIM_OC_InitTypeDef sConfig;"/>
-			<item value="HAL_TIM_Base_Init(&amp;TimHandle);"/>
+			<item value="HandleTypeDef"/>
+			<item value="GPIO_mode_define"/>
 		</list>
 		<list key="replacehistory">
 		</list>
