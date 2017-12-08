@@ -48,18 +48,28 @@
  */
 
 /* Private typedef -----------------------------------------------------------*/
+
+GPIO_InitTypeDef Button_left;
+GPIO_InitTypeDef Button_right;
+GPIO_InitTypeDef FET;
+GPIO_InitTypeDef Sensor;
+TIM_OC_InitTypeDef FETtimer;
+TIM_HandleTypeDef TimHandle;
+TIM_HandleTypeDef TimHandleSensor;
+/* Timer Input Capture Configuration Structure declaration */
+TIM_IC_InitTypeDef     sICConfig;
+
+
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef uart_handle;
-TIM_HandleTypeDef Timer2Handle;
-TIM_OC_InitTypeDef Timer2OCConfig;
-GPIO_InitTypeDef PWMPinConfig;
 
-//volatile int repetition = 5;
+volatile uint32_t timIntPeriod;
+TIM_HandleTypeDef TimHandle;
+TIM_OC_InitTypeDef sConfig;
 
 /* Private function prototypes -----------------------------------------------*/
-
 
 #ifdef __GNUC__
 /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
@@ -74,7 +84,11 @@ static void Error_Handler(void);
 static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
 
+
+
+
 /* Private functions ---------------------------------------------------------*/
+
 /**
  * @brief  Main program
  * @param  None
@@ -104,43 +118,115 @@ int main(void) {
 	/* Configure the System clock to have a frequency of 216 MHz */
 	SystemClock_Config();
 
+	__HAL_RCC_TIM1_CLK_ENABLE(); // enable TIM1 clock
 	__HAL_RCC_GPIOA_CLK_ENABLE();
-
-	PWMPinConfig.Alternate = GPIO_AF1_TIM2;
-	PWMPinConfig.Mode = GPIO_MODE_AF_PP;
-	PWMPinConfig.Pin = GPIO_PIN_15;
-	PWMPinConfig.Pull = GPIO_NOPULL;
-	PWMPinConfig.Speed = GPIO_SPEED_FAST;
-
-	HAL_GPIO_Init(GPIOA, &PWMPinConfig);
+	__HAL_RCC_GPIOF_CLK_ENABLE();
+	__HAL_RCC_GPIOB_CLK_ENABLE();         // enable the GPIOI clock
 
 	/*
-	 * Configure timer
+	 * Configuring buttons
 	 */
-	__HAL_RCC_TIM2_CLK_ENABLE();
 
-	Timer2Handle.Instance = TIM2;
-	Timer2Handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-	Timer2Handle.Init.Period = 1646;
-	Timer2Handle.Init.Prescaler = 600;
-	Timer2Handle.Init.CounterMode = TIM_COUNTERMODE_UP;
-	HAL_TIM_Base_Init(&Timer2Handle);
-	HAL_TIM_Base_Start_IT(&Timer2Handle);
+	Button_left.Pin = GPIO_PIN_10;
+	Button_left.Mode =GPIO_MODE_IT_FALLING;
+	Button_left.Pull = GPIO_PULLUP;
+	Button_left.Speed = GPIO_SPEED_FAST;
+	HAL_GPIO_Init(GPIOA, &Button_left);
 
-	HAL_TIM_PWM_Init(&Timer2Handle);
+	Button_left.Pin = GPIO_PIN_0;
+	Button_left.Mode = GPIO_MODE_IT_FALLING;
+	Button_left.Pull = GPIO_PULLDOWN;
+	Button_left.Speed = GPIO_SPEED_FAST;
+	HAL_GPIO_Init(GPIOA, &Button_right);
 
-	Timer2OCConfig.OCMode = TIM_OCMODE_PWM1;
-	Timer2OCConfig.Pulse = 823;
-	HAL_TIM_PWM_ConfigChannel(&Timer2Handle, &Timer2OCConfig, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start_IT(&Timer2Handle, TIM_CHANNEL_1);
-
-	HAL_NVIC_SetPriority(TIM2_IRQn, 0x0f, 0x00);
-	HAL_NVIC_EnableIRQ(TIM2_IRQn);
-
-	/**
-	 * Configure UART
+	/*
+	 * Configuring Interrupt for left button
 	 */
-	uart_handle.Init.BaudRate = 115200;
+	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0x0F, 0x00);
+	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
+	/*
+	 * Configuring interrupt for right button
+	 */
+	HAL_NVIC_SetPriority(EXTI0_IRQn, 0x0F, 0x00);
+	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+	/*
+	 * Configuring PWM on FET
+	 */
+	FET.Pin = GPIO_PIN_8;
+	FET.Mode = GPIO_MODE_AF_PP;
+	FET.Pull = GPIO_PULLUP;
+	FET.Speed = GPIO_SPEED_FAST;
+	FET.Alternate = GPIO_AF1_TIM1;
+	HAL_GPIO_Init(GPIOA, &FET);
+
+
+	/*
+	 * Configuring Sensor
+	 */
+	Sensor.Pin= GPIO_PIN_4;
+	Sensor. Mode = GPIO_MODE_AF_PP;
+	Sensor. Pull = GPIO_PULLUP;
+	Sensor.Speed = GPIO_SPEED_FAST;
+	Sensor.Alternate = GPIO_AF2_TIM3;
+	HAL_GPIO_Init(GPIOB, &Sensor);
+
+	/*
+	 * Configures interrupt for Sensor
+	 */
+	HAL_NVIC_SetPriority(TIM3_IRQn,0xF, 0x00);
+	HAL_NVIC_EnableIRQ(TIM3_IRQn);
+
+	/*
+	 * Timer configuration for FET
+	 */
+	TimHandle.Instance = TIM1;
+	TimHandle.Init.Period = 1646;
+	TimHandle.Init.Prescaler = 0xFFFF;
+	TimHandle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	TimHandle.Init.CounterMode = TIM_COUNTERMODE_UP;
+	TimHandle.Init.RepetitionCounter = 0;
+	HAL_TIM_PWM_Init(&TimHandle);
+
+	/*
+	 * PWM on FET
+	 */
+	FETtimer.OCMode = TIM_OCMODE_PWM1;
+	FETtimer.Pulse = 824;
+	HAL_TIM_PWM_ConfigChannel(&TimHandle, &FETtimer, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start_IT(&TimHandle, TIM_CHANNEL_1);
+
+	HAL_NVIC_SetPriority(TIM1_CC_IRQn, 0x0f, 0x00);
+	HAL_NVIC_EnableIRQ(TIM1_CC_IRQn);
+
+	/*
+	 * Timer configuration for Sensor
+	 */
+	TimHandleSensor.Instance = TIM3;
+	TimHandleSensor.Init.Period = 1000;
+	TimHandleSensor.Init.Prescaler = 0XFFFF;
+	TimHandleSensor.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	TimHandleSensor.Init.CounterMode = TIM_COUNTERMODE_UP;
+	HAL_TIM_Base_Init(&TimHandleSensor);
+	HAL_TIM_Base_Start_IT(&TimHandleSensor);
+
+	/*
+	 * Configure the Input Capture channel
+	 */
+	sICConfig.ICPolarity = TIM_ICPOLARITY_RISING;
+	sICConfig.ICSelection = TIM_ICSELECTION_DIRECTTI;
+	sICConfig.ICPrescaler = TIM_ICPSC_DIV1;
+	sICConfig.ICFilter = 0xF;
+	HAL_TIM_IC_ConfigChannel(&TimHandleSensor, &sICConfig, TIM_CHANNEL_1);
+	HAL_TIM_IC_Start_IT(&TimHandleSensor, TIM_CHANNEL_1);
+
+
+
+	/* Configure UART
+	 */
+
+	uart_handle.Init.BaudRate = 9600;
 	uart_handle.Init.WordLength = UART_WORDLENGTH_8B;
 	uart_handle.Init.StopBits = UART_STOPBITS_1;
 	uart_handle.Init.Parity = UART_PARITY_NONE;
@@ -149,39 +235,50 @@ int main(void) {
 
 	BSP_COM_Init(COM1, &uart_handle);
 
-	printf("\n-----------------WELCOME-----------------\r\n");
-	printf("**********in STATIC practise day **********\r\n\n");
 
-	int dirUp = 1;
 	while (1) {
-		///*
-		if (TIM2->CCR1 == 1646) {
-			dirUp = 0;
-		}
-		if (TIM2->CCR1 == 0) {
-			dirUp = 1;
-		}
-		TIM2->CCR1 = dirUp ? (TIM2->CCR1 + 1) : (TIM2->CCR1 - 1);
-		HAL_Delay(1);
-		//*/
+
+
 	}
 }
 
-void TIM2_IRQHandler() {
-	HAL_TIM_IRQHandler(&Timer2Handle);
+
+//Interrupt handle for button left
+void EXTI15_10_IRQHandler(){
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_10);
 }
 
-void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
-	/*repetition--;
-	if (repetition == 0) {
-		HAL_TIM_PWM_Stop_IT(&Timer2Handle, TIM_CHANNEL_1);
-	} */
-	printf("PWM pulse finished\r\n");
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	//what happens when left button is pushed
+
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	printf("Callback called!\r\n");
+/*
+ * Interrupt hadle for right button
+ */
+void EXTI0_IRQHandler(uint16_t GPIO_Pin){
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
 }
+
+/*void HAL_GPIO_EXTI_Callback(GPIO_PIN_0){
+	//what happens when right button is pushed
+}
+*/
+
+/*
+ * Interrupt handle for Sensor
+ */
+void TIM3_IRQHandler(){
+	HAL_TIM_IRQHandler(&TimHandleSensor);
+}
+
+void  HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
+	// logika
+}
+
+
+
+
 
 /**
  * @brief  Retargets the C library printf function to the USART.
@@ -245,8 +342,8 @@ static void SystemClock_Config(void) {
 			| RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2);
 	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
 	RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-	RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
-	RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+	RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+	RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV4;
 	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK) {
 		Error_Handler();
 	}

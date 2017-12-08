@@ -10,6 +10,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\Closed_loop_control"/>
+			<item value="C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\push_button"/>
 			<item value="C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox"/>
 			<item value="C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\interrupts"/>
 			<item value="C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\Examples\TIM\TIM_TimeBase"/>
