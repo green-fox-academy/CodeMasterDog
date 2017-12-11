@@ -1,4 +1,4 @@
-15:31:58 **** Incremental Build of configuration Debug for project STM32746G_Discovery_binary_counter_uart ****
+14:50:11 **** Build of configuration Debug for project STM32746G_Discovery_binary_counter_uart ****
 make -j4 all 
 Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/binary_counter_uart/Src/main.c
 Invoking: MCU GCC Compiler
@@ -22,5 +22,5 @@ arm-none-eabi-size "STM32746G_Discovery_binary_counter_uart.elf"
    7972	    136	   1704	   9812	   2654	STM32746G_Discovery_binary_counter_uart.elf
  
 
-15:32:02 Build Finished (took 3s.375ms)
+14:50:28 Build Finished (took 17s.676ms)
 

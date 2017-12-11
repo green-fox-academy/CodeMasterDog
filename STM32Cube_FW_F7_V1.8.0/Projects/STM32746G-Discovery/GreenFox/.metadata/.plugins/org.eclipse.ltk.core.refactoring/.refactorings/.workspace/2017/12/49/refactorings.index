@@ -6,3 +6,7 @@
 1512724702764	Delete resource 'STM32746G_Discovery_interrupts'
 1512724706655	Delete resource 'STM32746G_DISCOVERY'
 1512724709849	Delete resource 'push_button'
+1512739602409	Delete resource 'STM32746G_Discovery_binary_counter_uart'
+1512741621494	Delete resource 'STM32746G_Discovery_binary_counter_uart'
+1512741629657	Delete resource 'STM32746G_Discovery_closed_loop_control'
+1512741758076	Delete resource 'STM32746G_Discovery_binary_counter_uart'

@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="HAL_GPIO_EXTI_Callback" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="RNG_HandleTypeDef "/>
+			<item value="RNG_HandleTypeDef rndCfg;"/>
 			<item value="HAL_GPIO_EXTI_Callback"/>
 			<item value="Uart_Handle_Init"/>
 			<item value="uart"/>
 			<item value="exti"/>
 			<item value="puls"/>
 			<item value="input"/>
-			<item value="dir"/>
-			<item value="pin15"/>
 		</list>
 		<list key="replacehistory">
 		</list>

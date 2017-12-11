@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;STM32746G_Discovery_UART_by_yourself/LEDBlinker&apos; to &apos;UART_by_yourself&apos;" description="Rename resource &apos;LEDBlinker&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LEDBlinker" name="UART_by_yourself" stamp="1512985194218" updateReferences="true"/>
+</session>
