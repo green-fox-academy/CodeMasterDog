@@ -1,9 +1,19 @@
-13:30:36 **** Incremental Build of configuration Debug for project STM32746G_Discovery_UART_by_yourself ****
+18:05:55 **** Incremental Build of configuration Debug for project STM32746G_Discovery_UART_by_yourself ****
 make -j4 all 
 Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Src/main.c
 Invoking: MCU GCC Compiler
 C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\UART_by_yourself\SW4STM32\STM32746G_Discovery_UART_by_yourself\Debug
 arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Src/main.c"
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Src/main.c: In function 'main':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Src/main.c:172:5: warning: unused variable 'len' [-Wunused-variable]
+ int len = 0;
+     ^~~
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Src/main.c:171:6: warning: unused variable 'command' [-Wunused-variable]
+ char command[30] ="";
+      ^~~~~~~
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Src/main.c:169:6: warning: unused variable 'c' [-Wunused-variable]
+ char c[30] = "";
+      ^
 Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_by_yourself/Src/main.c
  
 Building target: STM32746G_Discovery_UART_by_yourself.elf
@@ -16,8 +26,8 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "STM32746G_Discovery_UART_by_yourself.elf" "STM32746G_Discovery_UART_by_yourself.bin"
 arm-none-eabi-size "STM32746G_Discovery_UART_by_yourself.elf"
    text	   data	    bss	    dec	    hex	filename
-   7680	    112	   1760	   9552	   2550	STM32746G_Discovery_UART_by_yourself.elf
+   7604	    112	   1760	   9476	   2504	STM32746G_Discovery_UART_by_yourself.elf
  
 
-13:30:47 Build Finished (took 10s.393ms)
+18:06:09 Build Finished (took 13s.231ms)
 

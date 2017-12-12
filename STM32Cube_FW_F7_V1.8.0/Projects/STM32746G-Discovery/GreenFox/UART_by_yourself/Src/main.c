@@ -160,22 +160,24 @@ int main(void)
   //HAL_UART_Transmit(&uart_handle, msg, strlen(msg), 100);
 
   /* Output a message using printf function */
-  printf("\n-----------------WELCOME-----------------\r\n");
-  printf("******in STATIC temp logger project******\r\n\n");
+  printf("\n--------------------WELCOME-------------------\r\n");
+  printf("******in STATIC U(S)ART protocol project******\r\n\n");
 
   /*##-1- Configure the RNG peripheral #######################################*/
   //char msg[] = "UART HAL Example\r\n";
  //HAL_UART_Transmit(&GPIOTxConfig, msg, strlen(msg), 100);
+char c[30] = "";
+//c[0] = '\0';
+char command[30] ="";
+int len = 0;
 
 
+	  while (1) {
 
-	  while (1)
-	  {
-		  	 printf("test Text...\r\n");
-		  	 HAL_Delay(3000);
-		  	 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
 
-	  }
+	}
+
+
 }
 
 /**
