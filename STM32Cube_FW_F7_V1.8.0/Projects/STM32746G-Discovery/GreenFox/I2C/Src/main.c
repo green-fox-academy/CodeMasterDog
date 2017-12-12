@@ -49,6 +49,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#define I2C_ADDRESS        1001000
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 
@@ -199,9 +200,23 @@ char c[30] = "";
 //c[0] = '\0';
 char command[30] ="";
 int len = 0;
+uint8_t reg =0;
 
+int temp;
 
 	  while (1) {
+		  //HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout)
+		  HAL_I2C_Master_Transmit(&I2cHandle, (uint16_t)0b10010000, &reg, 1 ,500 );
+
+
+		  	  	  	  	  	  	  //I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout)
+		  HAL_I2C_Master_Receive(&I2cHandle, (uint16_t)0b10010001, &temp, 1 ,500 );
+
+		  printf("temp: %d\r\n", temp);
+		  HAL_Delay(1000);
+
+
+
 
 
 	}

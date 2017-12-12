@@ -1600,3 +1600,12 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.cdt.core 1 0 2017-12-12 11:20:57.829
 !MESSAGE Indexed 'STM32746G_Discovery_templog' (75 sources, 151 headers) in 5,72 sec: 16 167 declarations; 119 981 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-12-12 11:40:21.332
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2017-12-12 11:40:21.333
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-12-12 11:50:38.282
+!MESSAGE Indexed 'STM32746G_DISCOVERY' (16 sources, 65 headers) in 1,99 sec: 4 799 declarations; 25 659 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
