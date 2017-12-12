@@ -75,6 +75,11 @@ UART_HandleTypeDef UartHandle;                          // defining the UART con
 GPIO_InitTypeDef GPIOTxConfig;
 GPIO_InitTypeDef GPIORxConfig;
 GPIO_InitTypeDef LED00;
+GPIO_InitTypeDef I2C_SCC, I2C_SDA; //// configure GPIOs for I2C data and clock lines
+I2C_HandleTypeDef I2cHandle;
+
+
+
 /**
   * @brief  Main program
   * @param  None
@@ -110,9 +115,33 @@ int main(void)
      */
 
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE(); // for TO-220 and usart
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_USART1_CLK_ENABLE();
+  __HAL_RCC_I2C1_CLK_ENABLE();
+
+
+  //I2C_SCC
+  I2C_SCC.Pin		= GPIO_PIN_8;
+  I2C_SCC.Mode		= GPIO_MODE_AF_OD;
+  I2C_SCC.Alternate	= GPIO_AF4_I2C1;
+  I2C_SCC.Speed		= GPIO_SPEED_FAST;
+  I2C_SCC.Pull		= GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOB, &I2C_SCC);
+
+  //I2C_SDA
+  I2C_SDA.Pin		= GPIO_PIN_9;
+  I2C_SDA.Mode		= GPIO_MODE_AF_OD;
+  I2C_SDA.Alternate	= GPIO_AF4_I2C1;
+  I2C_SDA.Speed		= GPIO_SPEED_FAST;
+  I2C_SDA.Pull		= GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOB, &I2C_SDA);
+
+  //I2cHandle
+  I2cHandle.Instance             = I2C1;
+  I2cHandle.Init.Timing          = 0x40912732;
+  I2cHandle.Init.AddressingMode  = I2C_ADDRESSINGMODE_7BIT;
+  HAL_I2C_Init(&I2cHandle);
 
 
   GPIOTxConfig.Pin			= GPIO_PIN_9;
