@@ -124,15 +124,15 @@ int main(void)
   __HAL_RCC_I2C1_CLK_ENABLE();
 
 
-  //I2C_SCC
+  //I2C_SCC D15
   I2C_SCC.Pin		= GPIO_PIN_8;
   I2C_SCC.Mode		= GPIO_MODE_AF_OD;
   I2C_SCC.Alternate	= GPIO_AF4_I2C1;
   I2C_SCC.Speed		= GPIO_SPEED_FAST;
   I2C_SCC.Pull		= GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOB, &I2C_SCC);
+    HAL_GPIO_Init(GPIOB, &I2C_SCC);
 
-  //I2C_SDA
+  //I2C_SDA D14
   I2C_SDA.Pin		= GPIO_PIN_9;
   I2C_SDA.Mode		= GPIO_MODE_AF_OD;
   I2C_SDA.Alternate	= GPIO_AF4_I2C1;
@@ -141,12 +141,12 @@ int main(void)
   HAL_GPIO_Init(GPIOB, &I2C_SDA);
 
 
-  //FAN
-  FAN.Pin		= GPIO_PIN_8;
-  FAN.Mode		= GPIO_MODE_OUTPUT_OD;
-  FAN.Speed		= GPIO_SPEED_FAST;
-  FAN.Pull		= GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOB, &FAN);
+  //FAN D10
+  FAN.Pin           = GPIO_PIN_8;
+  FAN.Mode          = GPIO_MODE_OUTPUT_PP;
+  FAN.Speed         = GPIO_SPEED_FAST;
+  FAN.Pull	        = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOA, &FAN);
 
   //I2cHandle
   I2cHandle.Instance             = I2C1;
@@ -172,7 +172,7 @@ int main(void)
   LED00.Pin 				= GPIO_PIN_7;
   LED00.Mode       		 	= GPIO_MODE_OUTPUT_PP;
   LED00.Speed				= GPIO_SPEED_FAST;
-  LED00.Pull				= GPIO_PULLUP;
+  LED00.Pull				= GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOC, &LED00);
 
   UartHandle.Instance         = USART1;
@@ -202,18 +202,26 @@ int main(void)
 
 
 	  while (1) {
+		  HAL_Delay(100);
 		  read_temp();
-		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
-		  HAL_Delay(5000);
-		//  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
+		  if (temp > 25) {
+			  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
+			  HAL_Delay(100);
+		  }
+		  else {
+			  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
+			  HAL_Delay(100);
+		  }
+
+		  HAL_Delay(500);
 
 	}
 }
 
 void read_temp()
 {
-	  HAL_I2C_Master_Transmit(&I2cHandle, I2C_ADDRESS << 1 | 0, &reg, 1, 100);
-	  HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
+	  HAL_I2C_Master_Transmit(&I2cHandle, I2C_ADDRESS << 1 | 0, &reg, 1, 500);
+	  HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 500);
 	  printf("temp: %d\r\n", temp);
 	  HAL_Delay(1000);
 }

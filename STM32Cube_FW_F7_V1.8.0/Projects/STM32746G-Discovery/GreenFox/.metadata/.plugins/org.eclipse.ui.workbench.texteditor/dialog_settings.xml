@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="UART_HandleTypeDef " key="selection"/>
+		<item value="LED" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="UART_HandleTypeDef "/>
-			<item value="UART_HandleTypeDef"/>
-			<item value="CLK_ENABLE()"/>
-			<item value="RNG_HandleTypeDef "/>
-			<item value="RNG_HandleTypeDef rndCfg;"/>
-			<item value="HAL_GPIO_EXTI_Callback"/>
-			<item value="Uart_Handle_Init"/>
-			<item value="uart"/>
+			<item value="led"/>
+			<item value="FAN"/>
+			<item value="vari"/>
+			<item value="proto"/>
+			<item value="add"/>
+			<item value="__HAL_RCC_GPIOB_CLK_ENABLE()"/>
+			<item value="HAL_I2C_Master_Receive"/>
+			<item value="HAL_I2C_Master_Receive()"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -28,7 +28,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="390" key="DIALOG_HEIGHT"/>
-		<item value="1017" key="DIALOG_X_ORIGIN"/>
-		<item value="115" key="DIALOG_Y_ORIGIN"/>
+		<item value="688" key="DIALOG_X_ORIGIN"/>
+		<item value="352" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
