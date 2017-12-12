@@ -78,7 +78,7 @@ UART_HandleTypeDef UartHandle;                          // defining the UART con
 GPIO_InitTypeDef GPIOTxConfig;
 GPIO_InitTypeDef GPIORxConfig;
 GPIO_InitTypeDef LED00;
-GPIO_InitTypeDef I2C_SCC, I2C_SDA; //// configure GPIOs for I2C data and clock lines
+GPIO_InitTypeDef I2C_SCC, I2C_SDA, FAN; //// configure GPIOs for I2C data and clock lines
 I2C_HandleTypeDef I2cHandle;
 
 
@@ -140,6 +140,14 @@ int main(void)
   I2C_SDA.Pull		= GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &I2C_SDA);
 
+
+  //FAN
+  FAN.Pin		= GPIO_PIN_8;
+  FAN.Mode		= GPIO_MODE_OUTPUT_OD;
+  FAN.Speed		= GPIO_SPEED_FAST;
+  FAN.Pull		= GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &FAN);
+
   //I2cHandle
   I2cHandle.Instance             = I2C1;
   I2cHandle.Init.Timing          = 0x40912732;
@@ -195,6 +203,9 @@ int main(void)
 
 	  while (1) {
 		  read_temp();
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
+		  HAL_Delay(5000);
+		//  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
 
 	}
 }
@@ -202,7 +213,7 @@ int main(void)
 void read_temp()
 {
 	  HAL_I2C_Master_Transmit(&I2cHandle, I2C_ADDRESS << 1 | 0, &reg, 1, 100);
-	  HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 0, &temp, 1, 100);
+	  HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
 	  printf("temp: %d\r\n", temp);
 	  HAL_Delay(1000);
 }

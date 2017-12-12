@@ -1,11 +1,59 @@
-15:10:31 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+17:27:07 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'main':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:208:41: error: 'GPIO_PIN_RESETSET' undeclared (first use in this function)
+     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8,GPIO_PIN_RESETSET);
+                                         ^~~~~~~~~~~~~~~~~
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:208:41: note: each undeclared identifier is reported only once for each function it appears in
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:216:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
+                                                             ^
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h:541:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_I2C_Master_Receive(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+Example/User/subdir.mk:24: recipe for target 'Example/User/main.o' failed
+make: *** [Example/User/main.o] Error 1
+17:27:29 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'main':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:208:41: error: 'GPIO_PIN_RESETSET' undeclared (first use in this function)
+     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8,GPIO_PIN_RESETSET);
+                                         ^~~~~~~~~~~~~~~~~
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:208:41: note: each undeclared identifier is reported only once for each function it appears in
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:216:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
+                                                             ^
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h:541:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_I2C_Master_Receive(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+Example/User/subdir.mk:24: recipe for target 'Example/User/main.o' failed
+make: *** [Example/User/main.o] Error 1
+17:28:01 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
 make -j4 all 
 Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
 Invoking: MCU GCC Compiler
 C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
 arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
 C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
-C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:205:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:216:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
     HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
                                                              ^
 In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
@@ -27,19 +75,16 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "STM32746G_Discovery_I2C.elf" "STM32746G_Discovery_I2C.bin"
 arm-none-eabi-size "STM32746G_Discovery_I2C.elf"
    text	   data	    bss	    dec	    hex	filename
-  10872	    112	   1888	  12872	   3248	STM32746G_Discovery_I2C.elf
+  10936	    112	   1904	  12952	   3298	STM32746G_Discovery_I2C.elf
  
-15:10:48 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-15:12:27 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+17:29:26 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
 make -j4 all 
 Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
 Invoking: MCU GCC Compiler
 C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
 arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
 C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
-C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:205:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:216:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
     HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
                                                              ^
 In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
@@ -61,17 +106,17 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "STM32746G_Discovery_I2C.elf" "STM32746G_Discovery_I2C.bin"
 arm-none-eabi-size "STM32746G_Discovery_I2C.elf"
    text	   data	    bss	    dec	    hex	filename
-  10872	    112	   1888	  12872	   3248	STM32746G_Discovery_I2C.elf
+  10940	    112	   1904	  12956	   329c	STM32746G_Discovery_I2C.elf
  
-15:16:52 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+17:31:15 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
 make -j4 all 
 Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
 Invoking: MCU GCC Compiler
 C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
 arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
 C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
-C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:205:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
-    HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 0, &temp, 1, 100);
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:216:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
                                                              ^
 In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
                  from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
@@ -92,5 +137,67 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "STM32746G_Discovery_I2C.elf" "STM32746G_Discovery_I2C.bin"
 arm-none-eabi-size "STM32746G_Discovery_I2C.elf"
    text	   data	    bss	    dec	    hex	filename
-  10872	    112	   1888	  12872	   3248	STM32746G_Discovery_I2C.elf
+  10940	    112	   1904	  12956	   329c	STM32746G_Discovery_I2C.elf
+ 
+17:33:21 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:216:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
+                                                             ^
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h:541:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_I2C_Master_Receive(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
+ 
+Building target: STM32746G_Discovery_I2C.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_I2C.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_I2C.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_I2C.elf" "STM32746G_Discovery_I2C.bin"
+arm-none-eabi-size "STM32746G_Discovery_I2C.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10928	    112	   1904	  12944	   3290	STM32746G_Discovery_I2C.elf
+ 
+17:33:56 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+make -j4 all 
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:216:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 100);
+                                                             ^
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/main.h:43,
+                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:39:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h:541:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_I2C_Master_Receive(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~~~~~~
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
+ 
+Building target: STM32746G_Discovery_I2C.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_I2C.elf" @"objects.list"   -lm
+Finished building target: STM32746G_Discovery_I2C.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "STM32746G_Discovery_I2C.elf" "STM32746G_Discovery_I2C.bin"
+arm-none-eabi-size "STM32746G_Discovery_I2C.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10928	    112	   1904	  12944	   3290	STM32746G_Discovery_I2C.elf
  
