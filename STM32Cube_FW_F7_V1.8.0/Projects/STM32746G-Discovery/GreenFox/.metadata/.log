@@ -1609,3 +1609,9 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.cdt.core 1 0 2017-12-12 11:50:38.282
 !MESSAGE Indexed 'STM32746G_DISCOVERY' (16 sources, 65 headers) in 1,99 sec: 4 799 declarations; 25 659 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.core.resources 4 372 2017-12-12 14:44:01.873
+!MESSAGE Resource '/STM32746G_DISCOVERY' is not open.
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-12-12 14:44:09.632
+!MESSAGE Indexed 'STM32746G_Discovery_templog' (75 sources, 151 headers) in 7,17 sec: 16 167 declarations; 119 981 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)

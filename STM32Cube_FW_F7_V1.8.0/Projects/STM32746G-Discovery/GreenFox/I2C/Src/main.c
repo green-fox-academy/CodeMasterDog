@@ -49,14 +49,16 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
-#define I2C_ADDRESS        1001000
+#define I2C_ADDRESS        0b1001000
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-
+int temp;
+uint8_t reg = 0;
 /* RNG handler declaration */
 
 
 /* Private function prototypes -----------------------------------------------*/
+void read_temp();
 
 #ifdef __GNUC__
 /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
@@ -144,15 +146,12 @@ int main(void)
   I2cHandle.Init.AddressingMode  = I2C_ADDRESSINGMODE_7BIT;
   HAL_I2C_Init(&I2cHandle);
 
-
   GPIOTxConfig.Pin			= GPIO_PIN_9;
   GPIOTxConfig.Mode         = GPIO_MODE_AF_PP;
   GPIOTxConfig.Speed		= GPIO_SPEED_FAST;
   GPIOTxConfig.Pull			= GPIO_PULLUP;
   GPIOTxConfig.Alternate    = GPIO_AF7_USART1;
   HAL_GPIO_Init(GPIOA, &GPIOTxConfig);
-                            // enable the clock of the used peripherial instance
-
 
   GPIORxConfig.Pin			= GPIO_PIN_7;
   GPIORxConfig.Mode        	= GPIO_MODE_AF_PP;
@@ -168,8 +167,6 @@ int main(void)
   LED00.Pull				= GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &LED00);
 
-
-
   UartHandle.Instance         = USART1;
   UartHandle.Init.BaudRate    = 115200;
   UartHandle.Init.WordLength  = UART_WORDLENGTH_8B;
@@ -177,11 +174,6 @@ int main(void)
   UartHandle.Init.Parity      = UART_PARITY_NONE;
   UartHandle.Init.HwFlowCtl   = UART_HWCONTROL_NONE;
   UartHandle.Init.Mode        = UART_MODE_TX_RX;
-
-
-
-
-
   HAL_UART_Init(&UartHandle);
 
 
@@ -191,37 +183,28 @@ int main(void)
 
   /* Output a message using printf function */
   printf("\n--------------------WELCOME-------------------\r\n");
-  printf("******in STATIC U(S)ART protocol project******\r\n\n");
+  printf("******in I2C Temperature sensor project******\r\n\n");
 
   /*##-1- Configure the RNG peripheral #######################################*/
   //char msg[] = "UART HAL Example\r\n";
  //HAL_UART_Transmit(&GPIOTxConfig, msg, strlen(msg), 100);
-char c[30] = "";
-//c[0] = '\0';
-char command[30] ="";
-int len = 0;
-uint8_t reg =0;
 
-int temp;
+
+
+
 
 	  while (1) {
-		  //HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout)
-		  HAL_I2C_Master_Transmit(&I2cHandle, (uint16_t)0b10010000, &reg, 1 ,500 );
-
-
-		  	  	  	  	  	  	  //I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout)
-		  HAL_I2C_Master_Receive(&I2cHandle, (uint16_t)0b10010001, &temp, 1 ,500 );
-
-		  printf("temp: %d\r\n", temp);
-		  HAL_Delay(1000);
-
-
-
-
+		  read_temp();
 
 	}
+}
 
-
+void read_temp()
+{
+	  HAL_I2C_Master_Transmit(&I2cHandle, I2C_ADDRESS << 1 | 0, &reg, 1, 100);
+	  HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 0, &temp, 1, 100);
+	  printf("temp: %d\r\n", temp);
+	  HAL_Delay(1000);
 }
 
 /**
