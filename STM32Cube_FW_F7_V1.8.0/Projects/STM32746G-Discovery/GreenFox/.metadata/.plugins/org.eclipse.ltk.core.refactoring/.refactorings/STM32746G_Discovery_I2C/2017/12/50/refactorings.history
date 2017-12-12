@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;STM32746G_Discovery_I2C/UART_by_yourself&apos; to &apos;I2C&apos;" description="Rename resource &apos;UART_by_yourself&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="UART_by_yourself" name="I2C" stamp="1513073482714" updateReferences="true"/>
+</session>
