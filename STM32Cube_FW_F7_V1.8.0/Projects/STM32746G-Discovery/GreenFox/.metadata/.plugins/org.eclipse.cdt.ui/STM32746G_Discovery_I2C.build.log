@@ -1,34 +1,6 @@
-22:59:10 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
+11:02:50 **** Incremental Build of configuration Debug for project STM32746G_Discovery_I2C ****
 make -j4 all 
-Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
-Invoking: MCU GCC Compiler
-C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\I2C\SW4STM32\STM32746G_Discovery_I2C\Debug
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/main.d" -MT"Example/User/main.o" -o "Example/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c"
-C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c: In function 'read_temp':
-C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:224:61: warning: passing argument 3 of 'HAL_I2C_Master_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
-    HAL_I2C_Master_Receive(&I2cHandle, I2C_ADDRESS << 1 | 1, &temp, 1, 500);
-                                                             ^
-In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/stm32f7xx_hal_conf.h:317:0,
-                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:46,
-                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Inc/main.h:43,
-                 from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c:39:
-C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_i2c.h:541:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
- HAL_StatusTypeDef HAL_I2C_Master_Receive(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
-                   ^~~~~~~~~~~~~~~~~~~~~~
-Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/I2C/Src/main.c
- 
-Building target: STM32746G_Discovery_I2C.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_I2C.elf" @"objects.list"   -lm
-Finished building target: STM32746G_Discovery_I2C.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "STM32746G_Discovery_I2C.elf" "STM32746G_Discovery_I2C.bin"
-arm-none-eabi-size "STM32746G_Discovery_I2C.elf"
-   text	   data	    bss	    dec	    hex	filename
-  10952	    112	   1904	  12968	   32a8	STM32746G_Discovery_I2C.elf
- 
+make: Nothing to be done for 'all'.
 
-22:59:24 Build Finished (took 13s.823ms)
+11:02:52 Build Finished (took 2s.81ms)
 
