@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;STM32746G_Discovery_UART_practice/Interrupts&apos; to &apos;UART_practice&apos;" description="Rename resource &apos;Interrupts&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Interrupts" name="UART_practice" stamp="1513265414677" updateReferences="true"/>
+</session>

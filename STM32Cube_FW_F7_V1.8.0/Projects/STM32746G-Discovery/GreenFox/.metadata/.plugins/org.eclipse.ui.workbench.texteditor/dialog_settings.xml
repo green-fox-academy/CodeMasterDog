@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="LED" key="selection"/>
+		<item value="type" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="led"/>
-			<item value="FAN"/>
-			<item value="vari"/>
-			<item value="proto"/>
-			<item value="add"/>
-			<item value="__HAL_RCC_GPIOB_CLK_ENABLE()"/>
-			<item value="HAL_I2C_Master_Receive"/>
-			<item value="HAL_I2C_Master_Receive()"/>
+			<item value="uart"/>
+			<item value="type"/>
+			<item value="call"/>
+			<item value="inst"/>
+			<item value="EXTI15_10_IRQHandler"/>
+			<item value="EXTI15_10"/>
+			<item value="EXTI15_10_IRQHandler()"/>
+			<item value="EXTI15_10_IRQn"/>
 		</list>
 		<list key="replacehistory">
 		</list>
