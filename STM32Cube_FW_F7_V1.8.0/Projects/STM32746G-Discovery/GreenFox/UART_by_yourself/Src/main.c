@@ -51,6 +51,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+volatile uint8_t state = 0;
 
 /* RNG handler declaration */
 
@@ -75,6 +76,8 @@ UART_HandleTypeDef UartHandle;                          // defining the UART con
 GPIO_InitTypeDef GPIOTxConfig;
 GPIO_InitTypeDef GPIORxConfig;
 GPIO_InitTypeDef LED00;
+TIM_HandleTypeDef TimHandler;
+GPIO_InitTypeDef button;
 /**
   * @brief  Main program
   * @param  None
@@ -112,8 +115,18 @@ int main(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOI_CLK_ENABLE();
   __HAL_RCC_USART1_CLK_ENABLE();
+  __HAL_RCC_TIM8_CLK_ENABLE();
 
+	button.Mode = GPIO_MODE_IT_RISING;
+	button.Pin = GPIO_PIN_11;
+	button.Pull = GPIO_NOPULL;
+	button.Speed = GPIO_SPEED_FAST;
+	HAL_GPIO_Init(GPIOI, &button);
+
+	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0x0F, 0x00);
+	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
   GPIOTxConfig.Pin			= GPIO_PIN_9;
   GPIOTxConfig.Mode         = GPIO_MODE_AF_PP;
@@ -121,8 +134,6 @@ int main(void)
   GPIOTxConfig.Pull			= GPIO_PULLUP;
   GPIOTxConfig.Alternate    = GPIO_AF7_USART1;
   HAL_GPIO_Init(GPIOA, &GPIOTxConfig);
-                            // enable the clock of the used peripherial instance
-
 
   GPIORxConfig.Pin			= GPIO_PIN_7;
   GPIORxConfig.Mode        	= GPIO_MODE_AF_PP;
@@ -132,11 +143,23 @@ int main(void)
   HAL_GPIO_Init(GPIOB, &GPIORxConfig);
 
   //LED00
-  LED00.Pin 				= GPIO_PIN_7;
+  LED00.Pin 				= GPIO_PIN_1;
   LED00.Mode       		 	= GPIO_MODE_OUTPUT_PP;
   LED00.Speed				= GPIO_SPEED_FAST;
   LED00.Pull				= GPIO_PULLUP;
-  HAL_GPIO_Init(GPIOC, &LED00);
+  HAL_GPIO_Init(GPIOI, &LED00);
+
+	TimHandler.Instance = TIM8;
+	TimHandler.Init.ClockDivision = TIM_CLOCKDIVISION_DIV4;
+	TimHandler.Init.Period = 4000;
+	TimHandler.Init.Prescaler = 54000;
+	TimHandler.Init.CounterMode = TIM_COUNTERMODE_UP;
+
+	HAL_TIM_Base_Init(&TimHandler);
+	HAL_TIM_Base_Start_IT(&TimHandler);
+	HAL_NVIC_SetPriority(TIM8_UP_TIM13_IRQn, 0x0F, 0x00);
+	HAL_NVIC_EnableIRQ(TIM8_UP_TIM13_IRQn);
+
 
 
 
@@ -161,18 +184,45 @@ int main(void)
 
   /* Output a message using printf function */
   printf("\n--------------------WELCOME-------------------\r\n");
-  printf("******in STATIC U(S)ART protocol project******\r\n\n");
+  printf("******Exam project******\r\n\n");
 
   /*##-1- Configure the RNG peripheral #######################################*/
   //char msg[] = "UART HAL Example\r\n";
  //HAL_UART_Transmit(&GPIOTxConfig, msg, strlen(msg), 100);
-char c[30] = "";
-//c[0] = '\0';
-char command[30] ="";
-int len = 0;
+
 
 
 	  while (1) {
+		  if (state == 0) {
+			  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+			  printf("state open\r\n");
+			  HAL_Delay(1000); //for dev state onley
+		  }
+
+		  if (state == 1) {
+			  printf("state securing\r\n");
+			  HAL_Delay(1000); //for dev state onley
+			  HAL_NVIC_DisableIRQ(EXTI15_10_IRQn);
+			  //TODO: mod timer
+
+		  }
+
+		  if (state == 2) {
+			  printf("state secured\r\n");
+			  HAL_Delay(1000); //for dev state onley
+			  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+			  HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, RESET);
+		  }
+
+		  if (state == 3) {
+			  printf("state Opening\r\n");
+			  HAL_GPIO_Init(GPIOI, &LED00);
+
+			  HAL_NVIC_DisableIRQ(EXTI15_10_IRQn);
+			  HAL_Delay(5000); //for dev state onley
+		  }
+	//}
+
 
 
 	}
@@ -185,6 +235,36 @@ int len = 0;
   * @param  None
   * @retval None
   */
+
+void EXTI15_10_IRQHandler(){
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_11);
+	}
+//pb interrupt
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+
+	state++;
+	if (state == 4) {
+		state = 0;
+	}
+	printf("%d\r\n", state);
+}
+
+void TIM8_UP_TIM13_IRQHandler (){
+	HAL_TIM_IRQHandler(&TimHandler);
+
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if (state ==  2) {
+		HAL_GPIO_WritePin(GPIOI, GPIO_PIN_1, RESET);
+	}
+	else {
+		HAL_GPIO_TogglePin(GPIOI, GPIO_PIN_1);
+	}
+
+
+}
+
 PUTCHAR_PROTOTYPE
 {
   /* Place your implementation of fputc here */

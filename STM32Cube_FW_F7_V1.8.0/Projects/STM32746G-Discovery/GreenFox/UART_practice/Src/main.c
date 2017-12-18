@@ -1,4 +1,3 @@
-// UART practice
 
 /**
  ******************************************************************************
@@ -53,6 +52,7 @@
 GPIO_InitTypeDef myuartTX;
 GPIO_InitTypeDef myuartRX;
 UART_HandleTypeDef myuart;
+GPIO_InitTypeDef led;
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
@@ -62,6 +62,7 @@ UART_HandleTypeDef myuart;
 volatile uint32_t timIntPeriod;
 
 /* Private function prototypes -----------------------------------------------*/
+
 
 #ifdef __GNUC__
 /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
@@ -76,8 +77,9 @@ static void Error_Handler(void);
 static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
 
-/* Private functions ---------------------------------------------------------*/
 
+/* Private functions ---------------------------------------------------------*/
+void init_led()
 /**
  * @brief  Main program
  * @param  None
@@ -132,6 +134,8 @@ int main(void) {
 	myuart.Init.Mode        = UART_MODE_TX_RX;
 	HAL_UART_Init(&myuart);
 
+	init_led();
+
 
 	printf("\n-----------------WELCOME-----------------\r\n");
 	printf("**********in STATIC UART Practice**********\r\n\n");
@@ -139,6 +143,18 @@ int main(void) {
 
 	while (1) {
 	}
+}
+
+void init_led(){
+	__HAL_RCC_GPIOI_CLK_ENABLE();
+
+	led.Pin = GPIO_PIN_1;
+	led.Mode = GPIO_MODE_OUTPUT_PP;
+	led.Pull = GPIO_PULLDOWN;
+	led.Speed = GPIO_SPEED_FAST;
+
+	HAL_GPIO_Init(GPIOI, &led);
+
 }
 
 /**
@@ -285,6 +301,7 @@ void assert_failed(uint8_t* file, uint32_t line)
 	{
 	}
 }
+
 #endif
 
 /**
