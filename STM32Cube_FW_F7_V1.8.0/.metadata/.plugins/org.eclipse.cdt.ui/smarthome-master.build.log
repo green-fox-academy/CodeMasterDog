@@ -1,0 +1,6 @@
+17:06:52 **** Incremental Build of configuration Debug for project smarthome-master ****
+make all 
+make: Nothing to be done for 'all'.
+
+17:06:53 Build Finished (took 1s.34ms)
+

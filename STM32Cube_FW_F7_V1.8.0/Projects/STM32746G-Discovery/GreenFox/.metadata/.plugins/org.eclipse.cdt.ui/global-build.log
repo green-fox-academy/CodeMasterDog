@@ -1,26 +1,42 @@
-17:20:05 **** Incremental Build of configuration Debug for project STM32746G_Discovery_UART_practice ****
+14:47:20 **** Incremental Build of configuration Debug for project STM32746G_Discovery_aventurin-server-board ****
 make -j4 all 
-make: Nothing to be done for 'all'.
-17:20:16 **** Incremental Build of configuration Debug for project STM32746G_Discovery_UART_practice ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:20:50 **** Incremental Build of configuration Debug for project STM32746G_Discovery_UART_practice ****
-make -j4 all 
-Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_practice/Src/main.c
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/main.c
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/stm32f7xx_hal_msp.c
 Invoking: MCU GCC Compiler
-C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\UART_practice\SW4STM32\STM32746G_Discovery_UART_practice\Debug
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_practice/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ft5336" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/ov9655" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/rk043fn48h" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/n25q128a" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/wm8994" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"UART_practice/User/main.d" -MT"UART_practice/User/main.o" -o "UART_practice/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_practice/Src/main.c"
-Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/UART_practice/Src/main.c
- 
-Building target: STM32746G_Discovery_UART_practice.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_Discovery_UART_practice.elf" @"objects.list"   -lm
-Finished building target: STM32746G_Discovery_UART_practice.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "STM32746G_Discovery_UART_practice.elf" "STM32746G_Discovery_UART_practice.bin"
-arm-none-eabi-size "STM32746G_Discovery_UART_practice.elf"
-   text	   data	    bss	    dec	    hex	filename
-   7532	    112	   1744	   9388	   24ac	STM32746G_Discovery_UART_practice.elf
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\aventurin-server-board\SW4STM32\STM32746G_Discovery_aventurin-server-board\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Inc" -I../../../../../../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../../../../../../Drivers/STM32F7xx_HAL_Driver/Inc -I../../../../../../Drivers/BSP/STM32746G-Discovery -I../../../../../../Drivers/BSP/Components/Common -I../../../../../../Drivers/BSP/Components/ft5336 -I../../../../../../Drivers/BSP/Components/ov9655 -I../../../../../../Drivers/BSP/Components/rk043fn48h -I../../../../../../Drivers/BSP/Components/n25q128a -I../../../../../../Drivers/BSP/Components/wm8994 -I../../../../../../Utilities/Log -I../../../../../../Utilities/Fonts -I../../../../../../Utilities/CPU -I../../../../../../Drivers/CMSIS/Include  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"aventurin-server-board/User/main.d" -MT"aventurin-server-board/User/main.o" -o "aventurin-server-board/User/main.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/main.c"
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\aventurin-server-board\SW4STM32\STM32746G_Discovery_aventurin-server-board\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Inc" -I../../../../../../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../../../../../../Drivers/STM32F7xx_HAL_Driver/Inc -I../../../../../../Drivers/BSP/STM32746G-Discovery -I../../../../../../Drivers/BSP/Components/Common -I../../../../../../Drivers/BSP/Components/ft5336 -I../../../../../../Drivers/BSP/Components/ov9655 -I../../../../../../Drivers/BSP/Components/rk043fn48h -I../../../../../../Drivers/BSP/Components/n25q128a -I../../../../../../Drivers/BSP/Components/wm8994 -I../../../../../../Utilities/Log -I../../../../../../Utilities/Fonts -I../../../../../../Utilities/CPU -I../../../../../../Drivers/CMSIS/Include  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"aventurin-server-board/User/stm32f7xx_hal_msp.d" -MT"aventurin-server-board/User/stm32f7xx_hal_msp.o" -o "aventurin-server-board/User/stm32f7xx_hal_msp.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/stm32f7xx_hal_msp.c"
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/stm32f7xx_it.c
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/main.c:39:0:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Inc/main.h:43:27: fatal error: stm32f7xx_hal.h: No such file or directory
+ #include "stm32f7xx_hal.h"
+                           ^
+compilation terminated.
+make: *** No rule to make target 'C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c', needed by 'Drivers/STM32F7xx_HAL_Driver/stm32f7xx_hal.o'.  Stop.
+make: *** Waiting for unfinished jobs....
+make: *** [aventurin-server-board/User/main.o] Error 1
+aventurin-server-board/User/subdir.mk:24: recipe for target 'aventurin-server-board/User/main.o' failed
+Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/SW4STM32/syscalls.c
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/stm32f7xx_hal_msp.c:50:27: fatal error: stm32f7xx_hal.h: No such file or directory
+ #include "stm32f7xx_hal.h"
+                           ^
+compilation terminated.
+make: *** [aventurin-server-board/User/stm32f7xx_hal_msp.o] Error 1
+aventurin-server-board/User/subdir.mk:32: recipe for target 'aventurin-server-board/User/stm32f7xx_hal_msp.o' failed
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\aventurin-server-board\SW4STM32\STM32746G_Discovery_aventurin-server-board\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Inc" -I../../../../../../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../../../../../../Drivers/STM32F7xx_HAL_Driver/Inc -I../../../../../../Drivers/BSP/STM32746G-Discovery -I../../../../../../Drivers/BSP/Components/Common -I../../../../../../Drivers/BSP/Components/ft5336 -I../../../../../../Drivers/BSP/Components/ov9655 -I../../../../../../Drivers/BSP/Components/rk043fn48h -I../../../../../../Drivers/BSP/Components/n25q128a -I../../../../../../Drivers/BSP/Components/wm8994 -I../../../../../../Utilities/Log -I../../../../../../Utilities/Fonts -I../../../../../../Utilities/CPU -I../../../../../../Drivers/CMSIS/Include  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"aventurin-server-board/User/stm32f7xx_it.d" -MT"aventurin-server-board/User/stm32f7xx_it.o" -o "aventurin-server-board/User/stm32f7xx_it.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/stm32f7xx_it.c"
+C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\aventurin-server-board\SW4STM32\STM32746G_Discovery_aventurin-server-board\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Inc" -I../../../../../../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../../../../../../Drivers/STM32F7xx_HAL_Driver/Inc -I../../../../../../Drivers/BSP/STM32746G-Discovery -I../../../../../../Drivers/BSP/Components/Common -I../../../../../../Drivers/BSP/Components/ft5336 -I../../../../../../Drivers/BSP/Components/ov9655 -I../../../../../../Drivers/BSP/Components/rk043fn48h -I../../../../../../Drivers/BSP/Components/n25q128a -I../../../../../../Drivers/BSP/Components/wm8994 -I../../../../../../Utilities/Log -I../../../../../../Utilities/Fonts -I../../../../../../Utilities/CPU -I../../../../../../Drivers/CMSIS/Include  -Os -g3 -Wall -fmessage-length=0 -Wno-strict-aliasing -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"aventurin-server-board/SW4STM32/syscalls.d" -MT"aventurin-server-board/SW4STM32/syscalls.o" -o "aventurin-server-board/SW4STM32/syscalls.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/SW4STM32/syscalls.c"
+In file included from C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Src/stm32f7xx_it.c:42:0:
+C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/Inc/main.h:43:27: fatal error: stm32f7xx_hal.h: No such file or directory
+ #include "stm32f7xx_hal.h"
+                           ^
+compilation terminated.
+aventurin-server-board/User/subdir.mk:40: recipe for target 'aventurin-server-board/User/stm32f7xx_it.o' failed
+make: *** [aventurin-server-board/User/stm32f7xx_it.o] Error 1
+Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/GreenFox/aventurin-server-board/SW4STM32/syscalls.c
  

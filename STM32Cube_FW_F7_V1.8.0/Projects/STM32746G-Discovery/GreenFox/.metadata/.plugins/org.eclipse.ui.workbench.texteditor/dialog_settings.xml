@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="type" key="selection"/>
+		<item value="netconn" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="netconn"/>
+			<item value="res"/>
+			<item value="Main"/>
+			<item value="main"/>
+			<item value="__HAL_RCC_ETHMAC_CLK_ENABLE"/>
+			<item value="handle"/>
 			<item value="uart"/>
 			<item value="type"/>
-			<item value="call"/>
-			<item value="inst"/>
-			<item value="EXTI15_10_IRQHandler"/>
-			<item value="EXTI15_10"/>
-			<item value="EXTI15_10_IRQHandler()"/>
-			<item value="EXTI15_10_IRQn"/>
 		</list>
 		<list key="replacehistory">
 		</list>

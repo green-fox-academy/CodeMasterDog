@@ -1,23 +1,6 @@
-15:57:09 **** Incremental Build of configuration Debug for project STM32746G_DISCOVERY ****
+14:35:33 **** Incremental Build of configuration Debug for project STM32746G_DISCOVERY ****
 make all 
-Building file: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/Examples/TIM/TIM_TimeBase/Src/stm32f7xx_hal_msp.c
-Invoking: MCU GCC Compiler
-C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\Examples\TIM\TIM_TimeBase\SW4STM32\STM32746G_DISCOVERY\Debug
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -DSTM32746G_DISCOVERY -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/Examples/TIM/TIM_TimeBase/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Log" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/Fonts" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Utilities/CPU" -I"C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include"  -Os -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Example/User/stm32f7xx_hal_msp.d" -MT"Example/User/stm32f7xx_hal_msp.o" -o "Example/User/stm32f7xx_hal_msp.o" "C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/Examples/TIM/TIM_TimeBase/Src/stm32f7xx_hal_msp.c"
-Finished building: C:/Users/CMD/greenfox/CodeMasterDog/STM32Cube_FW_F7_V1.8.0/Projects/STM32746G-Discovery/Examples/TIM/TIM_TimeBase/Src/stm32f7xx_hal_msp.c
- 
-Building target: STM32746G_DISCOVERY.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "STM32746G_DISCOVERY.elf" @"objects.list"   -lm
-Finished building target: STM32746G_DISCOVERY.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "STM32746G_DISCOVERY.elf" "STM32746G_DISCOVERY.bin"
-arm-none-eabi-size "STM32746G_DISCOVERY.elf"
-   text	   data	    bss	    dec	    hex	filename
-   4112	     12	   1636	   5760	   1680	STM32746G_DISCOVERY.elf
- 
+make: Nothing to be done for 'all'.
 
-15:57:11 Build Finished (took 2s.270ms)
+14:35:35 Build Finished (took 1s.989ms)
 
