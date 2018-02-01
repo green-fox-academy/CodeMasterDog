@@ -1,20 +1,22 @@
 #ifndef FUNCTIONS_H_INCLUDED
 #define FUNCTIONS_H_INCLUDED
 
-typedef struct Task {
-  //enum progression {have_not_started_yet, in_progress, finished};
-  //  enum progression inprog;
-    char taskname[40];
-    int   priority;
+#include <stdio.h>
+#include <unistd.h>
 
+typedef struct Task {
+    enum progression {HAVE_NOT_STARTED_YET, IN_PROGRESS, FINISHED};
+    char taskname[40];
+    int priority;
 }TASKS;
 
 int get_userinput();
-void add_new_task(TASKS *, char* , int, int);
-void list_tasks(TASKS* );
+void add_new_task(TASKS *, char* , int);
+void list_tasks(TASKS *);
 void print_menu_src();
-void create_file(char*, TASKS *);
+int create_file(TASKS *);
 void remove_task(TASKS *, char []);
+
 
 
 

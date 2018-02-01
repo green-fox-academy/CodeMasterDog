@@ -7,7 +7,6 @@ package.xml
 *.txt
 *.html
 Projects/*/*
-!GreenFox
-*.xml
 .metadata/*
-*.pdom
+!GreenFox
+
