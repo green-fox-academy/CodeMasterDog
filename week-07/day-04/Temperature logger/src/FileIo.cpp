@@ -96,7 +96,7 @@ void FileIo::read_from_file(Storage &var)
 
            if (!var.getter_vektor().empty()) {
                 cout << "Memory contains data. Do you want to append to it or overwrite?" << endl;
-                cout << "\t\t a / o or Esc" << endl;
+                cout << printf("The file is already exist\n"); << endl;
 
                 char a;
                 while (1) {

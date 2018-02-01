@@ -2,29 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="DEFAULT_TIMEOUT" key="selection"/>
+		<item value="GUI" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="DEFAULT_TIMEOUT"/>
-			<item value="RestApiThread"/>
-			<item value="DHCPStateReportThread"/>
-			<item value="ERR"/>
-			<item value="could"/>
-			<item value="time"/>
-			<item value="netTransportContext"/>
-			<item value="api"/>
+			<item value="gui"/>
+			<item value="fan"/>
+			<item value="refr"/>
+			<item value="{360, 150, CIRCLE, 80, 80, LCD_COLOR_WHITE, LCD_COLOR_LIGHTGRAY,&quot;&quot;},"/>
+			<item value="FAN_CONTROL"/>
+			<item value="clear"/>
+			<item value="FAN"/>
+			<item value="BSP_LCD_SelectLayer"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="389" key="DIALOG_HEIGHT"/>
-		<item value="1029" key="DIALOG_X_ORIGIN"/>
-		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="977" key="DIALOG_X_ORIGIN"/>
+		<item value="228" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

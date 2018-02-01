@@ -1,6 +1,83 @@
-17:06:52 **** Incremental Build of configuration Debug for project smarthome-master ****
+19:21:38 **** Incremental Build of configuration Debug for project smarthome-master ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c
+Invoking: MCU GCC Compiler
+C:\Users\CMD\greenfox\STM32Cube_FW_F7_V1.8.0\Projects\aventurin\smarthome-master\SW4STM32\smarthome-master\Debug
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_STM32746G_DISCOVERY -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Inc/network" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Inc/config" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Device/ST/STM32F7xx/Include" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/STM32F7xx_HAL_Driver/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components/Common" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/Components" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Utilities" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/CMSIS/Include" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/LwIP/src/include" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/LwIP/system" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/FreeRTOS/Source" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/FreeRTOS/Source/include" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/wolfmqtt-0.14.0" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/wolfssl-3.13.0" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/RTCUtils/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/NTP/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/JSONUtils/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/NetSecure/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/HTTPClient/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/NetSecure/implementations/F7/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/MQTT/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/GoogleIOT/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Middlewares/Third_Party/SmarthomeCommon/LOG/Inc" -I"C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/common/JSMN/Inc"  -Os -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/gui.d" -MT"Application/User/gui.o" -o "Application/User/gui.o" "C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c"
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c: In function 'WelcomeScreen':
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:109:2: warning: implicit declaration of function 'RGBControlScreen' [-Wimplicit-function-declaration]
+  RGBControlScreen();
+  ^~~~~~~~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c: At top level:
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:124:6: warning: conflicting types for 'RGBControlScreen'
+ void RGBControlScreen() {
+      ^~~~~~~~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:109:2: note: previous implicit declaration of 'RGBControlScreen' was here
+  RGBControlScreen();
+  ^~~~~~~~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c: In function 'FanControlScreen':
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:168:2: warning: implicit declaration of function 'SetFanMode' [-Wimplicit-function-declaration]
+  SetFanMode();
+  ^~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c: At top level:
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:174:6: warning: conflicting types for 'SetFanMode'
+ void SetFanMode() {
+      ^~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:168:2: note: previous implicit declaration of 'SetFanMode' was here
+  SetFanMode();
+  ^~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c: In function 'Refresh_Coordinates':
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:217:35: warning: passing argument 3 of 'BSP_LCD_DisplayStringAt' from incompatible pointer type [-Wincompatible-pointer-types]
+  BSP_LCD_DisplayStringAt(32, 110, (uint32_t *) text, LEFT_MODE);
+                                   ^
+In file included from C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:14:0:
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_lcd.h:219:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint32_t * {aka long unsigned int *}'
+ void     BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *Text, Text_AlignModeTypdef Mode);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:220:35: warning: passing argument 3 of 'BSP_LCD_DisplayStringAt' from incompatible pointer type [-Wincompatible-pointer-types]
+  BSP_LCD_DisplayStringAt(32, 150, (uint32_t *) text, LEFT_MODE);
+                                   ^
+In file included from C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:14:0:
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Drivers/BSP/STM32746G-Discovery/stm32746g_discovery_lcd.h:219:10: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint32_t * {aka long unsigned int *}'
+ void     BSP_LCD_DisplayStringAt(uint16_t Xpos, uint16_t Ypos, uint8_t *Text, Text_AlignModeTypdef Mode);
+          ^~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c: In function 'Button_Highlight':
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'GREEN_BUTTON' not handled in switch [-Wswitch]
+  switch (buttonID) {
+  ^~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'BLUE_BUTTON' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'YELLOW_BUTTON' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'MAGENTA_BUTTON' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'CYAN_BUTTON' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'WHITE_BUTTON' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'SCRCHNG_BUTTON' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'LOAD_LOAD' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'LOAD_UP' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'LOAD_DOWN' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'TEMP_UP' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'TEMP_DOWN' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'FAN_ON' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:301:2: warning: enumeration value 'FAN_OFF' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c: In function 'Button_Run':
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:350:2: warning: enumeration value 'LOAD_LOAD' not handled in switch [-Wswitch]
+  switch (buttonID) {
+  ^~~~~~
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:350:2: warning: enumeration value 'LOAD_UP' not handled in switch [-Wswitch]
+C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c:350:2: warning: enumeration value 'LOAD_DOWN' not handled in switch [-Wswitch]
+Finished building: C:/Users/CMD/greenfox/STM32Cube_FW_F7_V1.8.0/Projects/aventurin/smarthome-master/Src/gui.c
+ 
+Building target: smarthome-master.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -specs=nosys.specs -specs=nano.specs -T"../STM32F746NGHx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "smarthome-master.elf" @"objects.list"   -lm
+Finished building target: smarthome-master.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "smarthome-master.elf" "smarthome-master.bin"
+arm-none-eabi-size "smarthome-master.elf"
+   text	   data	    bss	    dec	    hex	filename
+ 223376	  13504	 278424	 515304	  7dce8	smarthome-master.elf
+ 
 
-17:06:53 Build Finished (took 1s.34ms)
+19:21:43 Build Finished (took 5s.105ms)
 

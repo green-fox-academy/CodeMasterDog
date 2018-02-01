@@ -16,6 +16,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
 			<item value="C:\Users\CMD\greenfox\STM32Cube_FW_F7_V1.8.0\Projects\aventurin\smarthome-master"/>
+			<item value="C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\reaction_game"/>
+			<item value="C:\Users\CMD\greenfox\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\GreenFox\timer_pwm"/>
+			<item value="D:\board\timer_pwm"/>
+			<item value="C:\Users\CMD\greenfox\STM32Cube_FW_F7_V1.8.0\Projects\aventurin\aventurin-server-board"/>
+			<item value="C:\Users\CMD\Downloads\aventurin-development_bence\GUI TEST"/>
 			<item value="C:\Users\CMD\greenfox\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\aventurin\smarthome-master"/>
 			<item value="C:\Users\CMD\greenfox\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\aventurin\aventurin-server-board"/>
 			<item value="C:\Users\CMD\greenfox\CodeMasterDog\STM32Cube_FW_F7_V1.8.0\Projects\STM32746G-Discovery\aventurin-master"/>
