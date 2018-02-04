@@ -1,4 +1,4 @@
-
+﻿
 Laci's repository
 -----------------
 
@@ -20,13 +20,13 @@ class StaticPallida
 )
 
 **Making my DSO 311 Digital Mini Oscilloscope**
-![alt tag](https://github.com/greenfox-academy/CodeMasterDog/blob/master/DSO328%20LCD%20Mini%20Oscilloscope/01.JPG "Description goes here")
+![alt tag](https://github.com/greenfox-academy/CodeMasterDog/blob/master/DSO311%20LCD%20Mini%20Oscilloscope/01.JPG)
 
 **Some resistors are already in their place**
-![alt tag](https://github.com/greenfox-academy/CodeMasterDog/blob/master/DSO328%20LCD%20Mini%20Oscilloscope/02.JPG "Description goes here")
+![alt tag](https://raw.githubusercontent.com/greenfox-academy/CodeMasterDog/master/DSO311%20LCD%20Mini%20Oscilloscope/02.JPG)
 
 **Testing it with its own signal**
-![alt tag](https://github.com/greenfox-academy/CodeMasterDog/blob/master/DSO328%20LCD%20Mini%20Oscilloscope/03.JPG "Description goes here")
+![alt tag](https://raw.githubusercontent.com/greenfox-academy/CodeMasterDog/master/DSO311%20LCD%20Mini%20Oscilloscope/03.JPG)
 
 **Measuring an STM32 with another STM32. Awesome!**
-![alt tag](https://github.com/greenfox-academy/CodeMasterDog/blob/master/DSO328%20LCD%20Mini%20Oscilloscope/04.JPG "Description goes here")
+![alt tag](https://raw.githubusercontent.com/greenfox-academy/CodeMasterDog/master/DSO311%20LCD%20Mini%20Oscilloscope/04.JPG)
