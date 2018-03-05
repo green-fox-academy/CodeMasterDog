@@ -3,7 +3,7 @@
 Character::Character(bool character_type)
 {   //player
     if (character_type) {   //player
-        health = 100;
+        health = 130;
         attack = 15;
         defense = 30;
     }
@@ -25,15 +25,15 @@ void Character::getter_other()
     cout << "defense value: " << defense << endl;
     cout << "character type: " << std::boolalpha << character_type << endl;
 }
-//attacking method which takes a character class and decreases its health
-//value with (current character class attack - input character class defense),
-//if the output is minus, then our health is decreased
-//set the attacking method to have 50% chance to count our attack value twice,
-//(2xcurrent attack - input defense) before calculating the final health points.
 
 void Character::attacking(Character& enemy)
 {
-    int diff = attack - enemy.defense;
+    int diff;
+
+    if (rand() % 2)
+       diff = 2 * attack - enemy.defense;
+    else
+       diff = attack - enemy.defense;
 
     if (diff > 0)
         enemy.health -= diff;

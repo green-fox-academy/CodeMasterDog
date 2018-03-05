@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <time.h>
 
 #include "Character.h"
 
@@ -7,6 +8,7 @@ using namespace std;
 
 int main() {
 
+    srand(time(NULL));
     Character LordVau(true);
     Character ScarryVacuumCleaner(false);
     cout << "LordVau's heals: "<< LordVau.getter_health() << endl;
@@ -21,8 +23,13 @@ int main() {
     ScarryVacuumCleaner.getter_other();
     cout << endl;
 
+    while (LordVau.getter_health() >= 0 && ScarryVacuumCleaner.getter_health() >= 0) {
     LordVau.attacking(ScarryVacuumCleaner);
     cout << "ScarryVacuumCleaner's heals: " << ScarryVacuumCleaner.getter_health() << endl;
+    ScarryVacuumCleaner.attacking(LordVau);
+    cout << "LordVau's heals: " << LordVau.getter_health() << endl;
+
+    }
 
 
    // */
