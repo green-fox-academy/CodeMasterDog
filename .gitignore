@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+.gitignore
 .metadata/
 
 # Compiled Object files
@@ -69,3 +69,7 @@
 
 /STM32Cube_FW_F7_V1.8.0/.metadata/.log
 /STM32Cube_FW_F7_V1.8.0/.metadata/.plugins/org.eclipse.core.resources/.projects/smarthome-master/.indexes/d0/eb/history.index
+STM32Cube_FW_F7_V1.8.0/.metadata/version.ini
+STM32Cube_FW_F7_V1.8.0/.metadata/.plugins/org.eclipse.ui.workbench.texteditor/dialog_settings.xml
+STM32Cube_FW_F7_V1.8.0/.metadata/.plugins/org.eclipse.search/dialog_settings.xml
+STM32Cube_FW_F7_V1.8.0/.metadata/.log
