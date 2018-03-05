@@ -14,7 +14,6 @@ int Factorial( int number ) {
   *  Task03: Create a function which takes a string as a parameter and returns the lenght of it.
   */
 
-
 int SumOfElements(int testArray[], int numOfElements) {
     int sum = 0;
     for (unsigned int i = 0; i < numOfElements ; i++) {
@@ -23,13 +22,11 @@ int SumOfElements(int testArray[], int numOfElements) {
         return sum;
 }
 
-using namespace std;
-
 bool IsItPrime(int MyNumber) {
     if (MyNumber < 2)
         return false;
 
-    for (unsigned int i = 2; i < MyNumber; i++) {
+    for (unsigned int i = 2; i < MyNumber; ++i) {
         if(MyNumber % i == 0)
             return false;
     }
@@ -55,8 +52,7 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
     REQUIRE( Factorial(10) == 3628800 );
 }
 
-TEST_CASE("Calculate the Sum of the Array Elements", "[Sum]"){
-
+TEST_CASE("Calculate the Sum of the Array Elements", "[Sum]") {
     int testArray[] = {1, 2, 3, 4, 5, 6, 7, 8};
 
     REQUIRE( SumOfElements(testArray, 1) == 1);
