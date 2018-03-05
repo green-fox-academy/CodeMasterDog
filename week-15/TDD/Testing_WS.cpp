@@ -36,7 +36,7 @@ bool IsItPrime(int MyNumber) {
     return true;
 }
 
-
+//I could include string and use .length, but writing my own strlen function is much more fun...
 unsigned int LenghtOfString(string str)
 {
     unsigned int len = 0;
