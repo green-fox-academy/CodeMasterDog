@@ -10,8 +10,8 @@ int Factorial( int number ) {
 }
 
  /** Task01: Create a function which takes an array of integer as a parameter and returns the sum of the elements.
-  *  Task02 Create a function which takes an integer as a parameter and returns true if that number is prime and false if it is not.
-  *
+  *  Task02: Create a function which takes an integer as a parameter and returns true if that number is prime and false if it is not.
+  *  Task03: Create a function which takes a string as a parameter and returns the lenght of it.
   */
 
 
@@ -36,6 +36,16 @@ bool IsItPrime(int MyNumber) {
     return true;
 }
 
+
+unsigned int LenghtOfString(string str)
+{
+    unsigned int len = 0;
+
+    while (str[len] != '\0') {
+        len++;
+  }
+    return  len;
+}
 
 TEST_CASE( "Factorials are computed", "[factorial]" ) {
     REQUIRE( Factorial(0) == 1 );
@@ -79,4 +89,11 @@ TEST_CASE("Prime Test", "[IsItPrime]") {
     REQUIRE( IsItPrime(15) == false);
     REQUIRE( IsItPrime(16) == false);
     REQUIRE( IsItPrime(17) == true);
+}
+
+TEST_CASE( "Return length of string", "[LenghtOfString]" ) {
+    REQUIRE( LenghtOfString("123456") == 6);
+    REQUIRE( LenghtOfString("1234567") == 7);
+    REQUIRE( LenghtOfString("12345678") == 8);
+    REQUIRE( LenghtOfString("Yoda said this string is long 32") == 32);
 }
