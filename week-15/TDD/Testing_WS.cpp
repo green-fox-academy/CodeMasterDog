@@ -1,3 +1,14 @@
+/*     Task01: Create a function which takes an array of integer as a parameter and returns the sum of the elements.
+ *     Task02: Create a function which takes an integer as a parameter and returns true if that number is prime and false if it is not.
+ *     Task03: Create a function which takes a string as a parameter and returns the lenght of it.
+ *     Task04: Create Animal class
+ *                 Every animal has a hunger value, which is a whole number
+ *                 Every animal has a thirst value, which is a whole number
+ *                 when creating a new animal object these values are created with the default 50 value
+ *                 Every animal can eat() which decreases their hunger by one
+ *                 Every animal can drink() which decreases their thirst by one
+ *                 Every animal can play() which increases both by one
+ */
 #include <iostream>
 
 #define CATCH_CONFIG_MAIN
@@ -6,13 +17,8 @@
 using namespace std;
 
 int Factorial( int number ) {
-    return number <= 1 ? 1      : Factorial( number - 1 ) * number;
+    return number <= 1 ? 1 : Factorial( number - 1 ) * number;
 }
-
- /** Task01: Create a function which takes an array of integer as a parameter and returns the sum of the elements.
-  *  Task02: Create a function which takes an integer as a parameter and returns true if that number is prime and false if it is not.
-  *  Task03: Create a function which takes a string as a parameter and returns the lenght of it.
-  */
 
 int SumOfElements(int testArray[], int numOfElements) {
     int sum = 0;
@@ -44,6 +50,39 @@ unsigned int LenghtOfString(string str)
     return  len;
 }
 
+class Animal {
+        public:
+            Animal() {
+               hunger = 50;
+               thirst = 50;
+            }
+
+            unsigned int GetHunger() {
+                return hunger;
+            }
+
+            unsigned int GetThirst() {
+                return thirst;
+            }
+
+            void eat() {
+                hunger--;
+            }
+
+            void drink() {
+                thirst--;
+            }
+
+            void play() {
+               hunger++;
+               thirst++;
+            }
+
+        private:
+            unsigned int hunger;
+            unsigned int thirst;
+};
+
 TEST_CASE( "Factorials are computed", "[factorial]" ) {
     REQUIRE( Factorial(0) == 1 );
     REQUIRE( Factorial(1) == 1 );
@@ -66,7 +105,6 @@ TEST_CASE("Calculate the Sum of the Array Elements", "[Sum]") {
 }
 
 TEST_CASE("Prime Test", "[IsItPrime]") {
-
     REQUIRE( IsItPrime(0) == false);
     REQUIRE( IsItPrime(1) == false);
     REQUIRE( IsItPrime(2) == true);
@@ -92,4 +130,17 @@ TEST_CASE( "Return length of string", "[LenghtOfString]" ) {
     REQUIRE( LenghtOfString("1234567") == 7);
     REQUIRE( LenghtOfString("12345678") == 8);
     REQUIRE( LenghtOfString("Yoda said this string is long 32") == 32);
+}
+
+TEST_CASE( "Testing Animal Class") {
+    Animal dog;
+    CHECK(dog.GetHunger() == 50);
+    CHECK(dog.GetThirst() == 50);
+    dog.eat();
+    REQUIRE( dog.GetHunger() == 49);
+    dog.drink();
+    REQUIRE ( dog.GetThirst() == 49);
+    dog.play();
+    CHECK(dog.GetHunger() == 50);
+    CHECK(dog.GetThirst() == 50);
 }
